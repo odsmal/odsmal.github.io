@@ -1,16 +1,40 @@
+@import url(//db.onlinewebfonts.com/c/123c7e674188c97798dd39cd41ff2d85?family=Brown+Regular);
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
   font-size: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Brown Regular', sans-serif;
 }
 body {
-  background-color: rgb(65, 65, 65);
   color: hsla(0, 0%, 38%, 1);
 }
-h1 {
-  color: aqua;
+
+#container {
+  /* height: 100vh; */
+  /* width: 100vh; */
+}
+#nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  width: 100vw;
+  height: 72px;
+  background-color: hsla(0, 0%, 22%, 1);
+  font-size: 1.8rem;
+  color: hsla(44, 11%, 81%, 1);
+}
+
+#content {
+  width: 100vw;
+  height: calc(100vh - 72px);
+  background-color: hsla(0, 0%, 18%, 1);
 }
