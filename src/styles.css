@@ -33,11 +33,11 @@ body {
   color: hsla(44, 11%, 81%, 1);
 }
 
-#selected {
+.selected {
   position: relative;
 }
 
-#selected::before {
+.selected::before {
   content: '';
   position: absolute;
   top: 28px;
