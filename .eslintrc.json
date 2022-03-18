@@ -10,6 +10,10 @@
   },
   "rules": {
     "max-classes-per-file": ["error", 10],
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "windows"],
+    "implicit-arrow-linebreak": "off",
+    "comma-dangle": "off",
+    "no-unused-vars": "off",
+    "function-paren-newline": "off"
   }
 }

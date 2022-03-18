@@ -1,6 +1,5 @@
 {
   "liveServer.settings.port": 5501,
-  "cSpell.words": ["Kristoffer", "onlinewebfonts"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
