@@ -1,5 +1,6 @@
-import latest from './html/latest.html';
-
+import projects from './html/projects.html';
+import portfolio from './html/portfolio.html';
+import about from './html/about.html';
 import './styles.css';
 
 class DisplayController {
@@ -14,21 +15,26 @@ class DisplayController {
   navLinkSelected = (e) => {
     this.navLinks.forEach((link) => link.classList.remove('selected'));
     e.target.classList.add('selected');
+    main.showPage(e.target.id);
   };
 
-  renderPage(html) {
-    this.content.innerHTML = html;
+  renderPage(content) {
+    this.content.innerHTML = content;
   }
 }
 
 class Main {
   constructor() {
     this.displayController = new DisplayController();
-    this.showContent(latest);
+    this.showPage('projects');
   }
 
-  showContent() {
-    this.displayController.renderPage(latest);
+  showPage(name) {
+    let content;
+    if (name === 'projects') content = projects;
+    if (name === 'portfolio') content = portfolio;
+    if (name === 'about') content = about;
+    this.displayController.renderPage(content);
   }
 }
 
