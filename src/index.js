@@ -25,15 +25,13 @@ class DisplayController {
 
 class Main {
   constructor() {
+    this.html = { projects, portfolio, about };
     this.displayController = new DisplayController();
     this.showPage('projects');
   }
 
   showPage(name) {
-    let content;
-    if (name === 'projects') content = projects;
-    if (name === 'portfolio') content = portfolio;
-    if (name === 'about') content = about;
+    const content = this.html[`${name}`];
     this.displayController.renderPage(content);
   }
 }
