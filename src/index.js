@@ -1,4 +1,4 @@
-//npx webpack --watch
+/* eslint-disable func-call-spacing */
 import './styles.css';
 
 class DisplayController {
@@ -21,4 +21,4 @@ class Main {
   }
 }
 
-new Main();
+const main = new Main();

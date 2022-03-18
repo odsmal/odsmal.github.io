@@ -42,7 +42,8 @@ body {
   position: absolute;
   top: 28px;
   width: 100%;
-  /* left: 0; */
+  left: 0;
+  bottom: 0;
   height: 2px;
   border-radius: 2px;
   background: linear-gradient(
@@ -53,6 +54,10 @@ body {
     #cc99cc 90%
   );
 }
+
+/* .selected::hover {
+  transform: scaleY(2);
+} */
 
 #content {
   width: 100vw;
