@@ -13,10 +13,14 @@ class DisplayController {
   }
 
   navLinkSelected = (e) => {
-    this.navLinks.forEach((link) => link.classList.remove('selected'));
-    e.target.classList.add('selected');
+    this.highlightNav(e);
     main.showPage(e.target.id);
   };
+
+  highlightNav(e) {
+    this.navLinks.forEach((link) => link.classList.remove('highlight'));
+    e.target.classList.add('highlight');
+  }
 
   renderPage(content) {
     this.content.innerHTML = content;

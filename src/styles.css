@@ -28,15 +28,24 @@ html {
   width: 100vw;
   height: 72px;
   background-color: hsla(0, 0%, 22%, 1);
-  font-size: 1.8rem;
-  color: hsla(44, 11%, 81%, 1);
 }
 
-.selected {
+#nav > div {
+  font-size: 1.8rem;
+  color: hsl(44, 11%, 81%);
+  transition: color 0.1s ease-out;
+  cursor: pointer;
+}
+
+#nav > div:hover {
+  color: hsl(44, 11%, 91%);
+}
+
+.highlight {
   position: relative;
 }
 
-.selected::before {
+.highlight::before {
   content: '';
   position: absolute;
   top: 28px;
