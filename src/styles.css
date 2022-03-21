@@ -107,6 +107,7 @@ h2 {
 .date-published,
 .date-date {
   font-size: 1.6rem;
+  line-height: 1rem;
 }
 
 .date-published {
@@ -117,7 +118,7 @@ h2 {
   color: hsla(0, 0%, 38%, 1);
 }
 .summary-text {
-  margin-top: 20px;
+  margin-top: 18px;
   color: hsla(0, 0%, 35%, 1);
   font-size: 1.8rem;
   line-height: 3rem;
