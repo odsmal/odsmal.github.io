@@ -31,7 +31,7 @@ class Main {
   constructor() {
     this.html = { projects, portfolio, about };
     this.displayController = new DisplayController();
-    this.showPage('projects');
+    this.showPage('portfolio');
   }
 
   showPage(name) {
