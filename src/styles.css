@@ -28,6 +28,10 @@ h2 {
   line-height: 4.6rem;
 }
 
+a {
+  color: hsla(216, 37%, 42%, 1);
+}
+
 body {
   background-color: hsla(0, 0%, 18%, 1);
 }
@@ -101,21 +105,26 @@ body {
 .article-container {
   display: flex;
   flex-direction: column;
-  /* height: 400px; */
   width: 980px;
   background-color: hsla(36, 60%, 98%, 1);
   border-radius: 10px;
   margin-top: 40px;
-  background-color: #478671;
+  /* background-color: #478671; */
 }
 
 .article-heading-date-img-container {
-  padding: 64px;
+  padding: 64px 64px 64px 64px;
 }
 
 .article-img-container {
   width: 852px;
   height: 480px;
+}
+
+.article-img-text {
+  margin-top: 12px;
+  text-align: center;
+  color: hsla(0, 0%, 51%, 1);
 }
 
 #article-img {
@@ -135,9 +144,11 @@ body {
 .date {
   margin-top: 15px;
 }
+
+.article-img-text,
 .date-published,
 .date-date {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1rem;
 }
 
