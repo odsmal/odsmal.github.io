@@ -168,6 +168,16 @@ body {
   text-align: left;
 }
 
+.article-text {
+  margin-top: 11px;
+  padding: 0px 80px 64px 80px;
+  color: hsla(0, 0%, 35%, 1);
+  font-size: 1.8rem;
+  line-height: 3rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
 .btn-read-more-container {
   margin-top: auto;
   display: flex;
