@@ -31,10 +31,11 @@ class Main {
   constructor() {
     this.html = { projects, portfolio, about };
     this.displayController = new DisplayController();
-    this.showPage('portfolio');
+    this.showPage('projects');
   }
 
   showPage(name) {
+    console.log(name);
     const content = this.html[`${name}`];
     this.displayController.renderPage(content);
   }
