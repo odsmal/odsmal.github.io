@@ -35,7 +35,6 @@ class Main {
   }
 
   showPage(name) {
-    console.log(name);
     const content = this.html[`${name}`];
     this.displayController.renderPage(content);
   }
