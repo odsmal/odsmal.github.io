@@ -42,7 +42,7 @@ body {
 } */
 #nav {
   /* width 100vw to prevent repostioning when vert scroll bar is lit */
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   flex-direction: row;
   justify-content: center;
