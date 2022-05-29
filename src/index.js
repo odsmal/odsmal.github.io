@@ -15,13 +15,8 @@ class DisplayController {
   }
 
   articleSelected = (e) => {
-    if (e.target.id) {
-      main.showPage(e.target.id);
-      return;
-    }
-    if (e.target.parentNode.id) main.showPage(e.target.parentNode.id);
-    // console.log(e.target.parentNode.id);
-    // main.showPage(e.target.id);
+    const articleName = e.target.id || e.target.parentNode.id;
+    main.showPage(articleName);
   };
 
   navLinkSelected = (e) => {
