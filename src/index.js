@@ -15,8 +15,11 @@ class DisplayController {
   }
 
   articleSelected = (e) => {
-    console.log(e.target.id);
-    main.showPage(e.target.id);
+    e.target.id
+      ? main.showPage(e.target.id)
+      : main.showPage(e.target.parentNode.id);
+    // console.log(e.target.parentNode.id);
+    // main.showPage(e.target.id);
   };
 
   navLinkSelected = (e) => {
@@ -36,7 +39,7 @@ class DisplayController {
 
 class Main {
   constructor() {
-    this.html = {
+    this.htmlPages = {
       projects,
       portfolio,
       about,
@@ -47,8 +50,8 @@ class Main {
   }
 
   showPage(name) {
-    if (name in this.html) {
-      const content = this.html[`${name}`];
+    if (name in this.htmlPages) {
+      const content = this.htmlPages[`${name}`];
       this.displayController.renderPage(content);
     }
   }
