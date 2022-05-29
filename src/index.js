@@ -15,9 +15,11 @@ class DisplayController {
   }
 
   articleSelected = (e) => {
-    e.target.id
-      ? main.showPage(e.target.id)
-      : main.showPage(e.target.parentNode.id);
+    if (e.target.id) {
+      main.showPage(e.target.id);
+      return;
+    }
+    if (e.target.parentNode.id) main.showPage(e.target.parentNode.id);
     // console.log(e.target.parentNode.id);
     // main.showPage(e.target.id);
   };
