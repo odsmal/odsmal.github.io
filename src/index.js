@@ -27,7 +27,7 @@ class DisplayController {
   }
 
   articleSelected = (e) => {
-    const articleName = e.target.id || e.target.parentNode.id;
+    const articleName = e.target.id;
     main.showPage(articleName);
   };
 

@@ -220,7 +220,7 @@ body {
 .btn-read-more-text {
   font-size: 1.8rem;
   color: hsla(0, 0%, 35%, 1);
-  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .project-summary-img-container {
