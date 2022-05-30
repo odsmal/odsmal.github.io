@@ -13,6 +13,7 @@ class DisplayController {
       this.articleSelected
     );
     this.addGlobalEventListener('click', '#nav > div', this.navLinkSelected);
+    this.firstHighlight = document.getElementById('projects');
     this.oldHighlight = '';
   }
 
@@ -21,6 +22,8 @@ class DisplayController {
       if (e.target.matches(selector)) callback(e);
     });
   }
+
+  np;
 
   articleSelected = (e) => {
     main.showPage(e.target.id);
@@ -34,7 +37,7 @@ class DisplayController {
   highlightSelected(e) {
     this.oldHighlight
       ? this.oldHighlight.classList.remove('highlight')
-      : document.getElementById('projects').classList.remove('highlight');
+      : this.firstHighlight.classList.remove('highlight');
     e.target.classList.add('highlight');
     this.oldHighlight = e.target;
   }
