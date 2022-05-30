@@ -7,11 +7,23 @@ import './styles.css';
 class DisplayController {
   constructor() {
     this.content = document.getElementById('content');
-    this.content.addEventListener('click', this.articleSelected);
     this.navLinks = document.querySelectorAll('#nav > div');
-    this.navLinks.forEach((link) =>
-      link.addEventListener('click', this.navLinkSelected)
+    // this.navLinks.forEach((link) =>
+    //   link.addEventListener('click', this.navLinkSelected)
+    // );
+
+    this.addGlobalEventListener(
+      'click',
+      '.btn-read-more',
+      this.articleSelected
     );
+    this.addGlobalEventListener('click', '#nav > div', this.navLinkSelected);
+  }
+
+  addGlobalEventListener(type, selector, callback) {
+    document.addEventListener(type, (e) => {
+      if (e.target.matches(selector)) callback(e);
+    });
   }
 
   articleSelected = (e) => {
