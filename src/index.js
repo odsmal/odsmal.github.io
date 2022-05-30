@@ -6,15 +6,10 @@ import './styles.css';
 
 class DisplayController {
   constructor() {
-    this.content = document.getElementById('content');
-    this.addGlobalEventListener(
-      'click',
-      '.btn-read-more',
-      this.articleSelected
-    );
+    this.addGlobalEventListener('click', '.btn-read-more', this.linkSelected);
     this.addGlobalEventListener('click', '#nav > div', this.navLinkSelected);
-    this.firstHighlight = document.getElementById('projects');
-    this.oldHighlight = '';
+    this.content = document.getElementById('content');
+    this.oldHighlight = document.getElementById('projects');
   }
 
   addGlobalEventListener(type, selector, callback) {
@@ -23,26 +18,22 @@ class DisplayController {
     });
   }
 
-  np;
-
-  articleSelected = (e) => {
-    main.showPage(e.target.id);
+  linkSelected = (e) => {
+    main.selectPage(e.target.id);
   };
 
   navLinkSelected = (e) => {
     this.highlightSelected(e);
-    main.showPage(e.target.id);
+    this.linkSelected(e);
   };
 
   highlightSelected(e) {
-    this.oldHighlight
-      ? this.oldHighlight.classList.remove('highlight')
-      : this.firstHighlight.classList.remove('highlight');
+    this.oldHighlight.classList.remove('highlight');
     e.target.classList.add('highlight');
     this.oldHighlight = e.target;
   }
 
-  renderPage(content) {
+  showPage(content) {
     this.content.innerHTML = content;
   }
 }
@@ -56,13 +47,13 @@ class Main {
       weatherapp,
     };
     this.displayController = new DisplayController();
-    this.showPage('projects');
+    this.selectPage('projects');
   }
 
-  showPage(name) {
+  selectPage(name) {
     if (name in this.htmlPages) {
       const content = this.htmlPages[`${name}`];
-      this.displayController.renderPage(content);
+      this.displayController.showPage(content);
     }
   }
 }
