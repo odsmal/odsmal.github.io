@@ -7,17 +7,13 @@ import './styles.css';
 class DisplayController {
   constructor() {
     this.content = document.getElementById('content');
-    this.navLinks = document.querySelectorAll('#nav > div');
-    // this.navLinks.forEach((link) =>
-    //   link.addEventListener('click', this.navLinkSelected)
-    // );
-
     this.addGlobalEventListener(
       'click',
       '.btn-read-more',
       this.articleSelected
     );
     this.addGlobalEventListener('click', '#nav > div', this.navLinkSelected);
+    this.oldHighlight = '';
   }
 
   addGlobalEventListener(type, selector, callback) {
@@ -27,8 +23,7 @@ class DisplayController {
   }
 
   articleSelected = (e) => {
-    const articleName = e.target.id;
-    main.showPage(articleName);
+    main.showPage(e.target.id);
   };
 
   navLinkSelected = (e) => {
@@ -37,8 +32,11 @@ class DisplayController {
   };
 
   highlightSelected(e) {
-    this.navLinks.forEach((link) => link.classList.remove('highlight'));
+    this.oldHighlight
+      ? this.oldHighlight.classList.remove('highlight')
+      : document.getElementById('projects').classList.remove('highlight');
     e.target.classList.add('highlight');
+    this.oldHighlight = e.target;
   }
 
   renderPage(content) {
