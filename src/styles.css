@@ -1,5 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/123c7e674188c97798dd39cd41ff2d85?family=Brown+Regular);
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap'); */
 
 *,
 *::before,
@@ -29,6 +29,7 @@ h2 {
 
 a {
   color: hsla(216, 37%, 42%, 1);
+  text-decoration: none;
 }
 
 body {
@@ -48,7 +49,7 @@ body {
   align-items: center;
   gap: 32px;
   height: 72px;
-  background-color: hsla(0, 0%, 22%, 1);
+  background-color: hsl(272, 9%, 24%);
 }
 
 #nav > div {
@@ -157,7 +158,7 @@ body {
   width: 100%;
   height: 100%;
   /* filter: drop-shadow(0px 1px 2px #988d7e); */
-  border: 2px solid rgb(214, 214, 214);
+  /* border: 2px solid rgb(214, 214, 214); */
 }
 
 .project-summary-text-container {
