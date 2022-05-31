@@ -214,14 +214,21 @@ body {
   align-items: center;
   width: 190px;
   height: 44px;
-  border: 1.5px solid hsla(0, 0%, 35%, 1);
+  border: 1.5px solid hsl(0, 0%, 50%);
   border-radius: 10px;
+  transition: color 0.1s ease-out;
+  cursor: pointer;
+  user-select: none;
 }
 
 .btn-read-more-text {
   font-size: 1.8rem;
   color: hsla(0, 0%, 35%, 1);
   padding-bottom: 5px;
+}
+
+.btn-read-more:hover {
+  background-color: rgb(255, 255, 255);
 }
 
 .project-summary-img-container {
@@ -232,7 +239,7 @@ body {
 
 #project-summary-img-wheater {
   position: relative;
-  left: -1025px;
-  top: -30px;
-  transform: scale(1.4);
+  left: -500px;
+  top: -20px;
+  transform: scale(1);
 }
