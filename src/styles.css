@@ -17,7 +17,7 @@
   --text-published-color: hsl(0, 0%, 51%);
   --text-published-date-color: hsl(0, 0%, 38%);
   --text-paragraph-color: hsl(0, 0%, 35%);
-  --btn-read-more-border-color: hsl(0, 0%, 50%);
+  --btn-read-more-background-color: hsl(273, 9%, 32%);
   --btn-read-more-text-color: hsl(0, 0%, 35%);
   --btn-read-more-hover-color: hsl(0, 0%, 100%);
   --nav-background-color: hsl(273, 9%, 24%);
@@ -144,7 +144,7 @@ nav {
   width: 150px;
   height: 44px;
   border-radius: 2px;
-  background: var(--nav-background-color);
+  background: var(--btn-read-more-background-color);
   transition: color 0.1s ease-out;
   cursor: pointer;
   user-select: none;
