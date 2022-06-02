@@ -28,8 +28,8 @@ class DisplayController {
   };
 
   highlightSelected(e) {
-    this.oldHighlight.classList.remove('highlight');
-    e.target.classList.add('highlight');
+    this.oldHighlight.classList.remove('navlink-highlight');
+    e.target.classList.add('navlink-highlight');
     this.oldHighlight = e.target;
   }
 

@@ -7,22 +7,41 @@
   padding: 0;
   margin: 0;
 }
+
 :root {
-  --background-color: hsla(0, 0%, 85%, 1);
-  --headline-color: hsla(0, 0%, 28%, 1);
-  --link-color: hsla(216, 37%, 42%, 1);
+  --body-background-color: hsl(0, 0%, 85%);
+  --headline-color: hsl(0, 0%, 28%);
+  --link-color: hsl(216, 37%, 42%);
+  --text-background-color: hsl(0, 0%, 94%);
+  --image-desc-color: hsl(0, 0%, 51%);
+  --text-published-color: hsl(0, 0%, 51%);
+  --text-published-date-color: hsl(0, 0%, 38%);
+  --text-paragraph-color: hsl(0, 0%, 35%);
+  --btn-read-more-border-color: hsl(0, 0%, 50%);
+  --btn-read-more-text-color: hsl(0, 0%, 35%);
+  --btn-read-more-hover-color: hsl(0, 0%, 100%);
+  --nav-background-color: hsl(273, 9%, 24%);
+  --nav-link-color: hsl(44, 11%, 81%);
+  --nav-link-hover-color: hsl(44, 11%, 91%);
+  --nav-link-underline-color: linear-gradient(
+    90deg,
+    hsl(359, 83%, 71%) 0%,
+    hsl(40, 100%, 70%) 30%,
+    hsl(180, 50%, 60%) 60%,
+    hsl(300, 33%, 70%) 90%
+  );
 }
 
 html {
   font-size: 10px;
   font-family: 'Brown Regular', sans-serif;
-  height: 100%;
   overflow-y: scroll;
+  height: 100%;
 }
 
 body {
+  background-color: var(--body-background-color);
   min-height: 100%;
-  background-color: var(--background-color);
 }
 
 h1,
@@ -51,34 +70,33 @@ a {
 }
 
 nav {
-  /* width 100vw to prevent repostioning when vert scroll bar is lit */
-  /* width: 100vw; */
+  background-color: var(--nav-background-color);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 32px;
-  height: 72px;
-  background-color: hsl(272, 9%, 24%);
+  gap: 40px;
+  height: 80px;
 }
 
 .navlink {
+  color: var(--nav-link-color);
   font-size: 1.8rem;
-  color: hsl(44, 11%, 81%);
   transition: color 0.1s ease-out;
   cursor: pointer;
   user-select: none;
 }
 
 .navlink:hover {
-  color: hsl(44, 11%, 91%);
+  color: var(--nav-link-hover-color);
 }
 
-.highlight {
+.navlink-highlight {
   position: relative;
 }
 
-.highlight::before {
+.navlink-highlight::before {
+  background: var(--nav-link-underline-color);
   content: '';
   position: absolute;
   top: 28px;
@@ -87,25 +105,18 @@ nav {
   bottom: 0;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(
-    90deg,
-    #f2777a 0%,
-    #ffcc66 30%,
-    #66cccc 60%,
-    #cc99cc 90%
-  );
 }
 
 #content {
-  /* height: calc(100vh - 72px); */
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 40px;
+  padding: 40px 40px;
 }
 
 .about-container {
   width: 980px;
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +132,7 @@ nav {
 .about-text,
 .project-summary-container,
 .article-container {
-  background-color: hsl(0, 0%, 94%);
+  background-color: var(--text-background-color);
 }
 
 .about-text {
@@ -136,7 +147,6 @@ nav {
   height: 400px;
   width: 980px;
   border-radius: 10px;
-  margin-top: 40px;
 }
 
 .article-container {
@@ -144,7 +154,6 @@ nav {
   flex-direction: column;
   width: 980px;
   border-radius: 10px;
-  margin-top: 40px;
 }
 
 .article-heading-date-img-container {
@@ -157,9 +166,9 @@ nav {
 }
 
 .article-img-text {
+  color: var(--image-desc-color);
   margin-top: 12px;
   text-align: center;
-  color: hsla(0, 0%, 51%, 1);
 }
 
 #article-img {
@@ -190,17 +199,22 @@ nav {
 }
 
 .date-published {
-  color: hsla(0, 0%, 51%, 1);
+  color: var(--text-published-color);
 }
 
 .date-date {
-  color: hsla(0, 0%, 38%, 1);
+  color: var(--text-published-date-color);
+}
+
+.about-text,
+.summary-text,
+.article-text {
+  color: var(--text-paragraph-color);
 }
 
 .about-text,
 .summary-text {
   margin-top: 18px;
-  color: hsla(0, 0%, 35%, 1);
   font-size: 1.8rem;
   line-height: 3rem;
   letter-spacing: 0em;
@@ -209,7 +223,6 @@ nav {
 
 .article-text {
   padding: 11px 80px 64px 80px;
-  color: hsla(0, 0%, 35%, 1);
   font-size: 1.8rem;
   line-height: 3rem;
   letter-spacing: 0em;
@@ -223,7 +236,7 @@ nav {
   align-items: center;
   width: 190px;
   height: 44px;
-  border: 1.5px solid hsl(0, 0%, 50%);
+  border: 1.5px solid var(--btn-read-more-border-color);
   border-radius: 10px;
   transition: color 0.1s ease-out;
   cursor: pointer;
@@ -232,12 +245,12 @@ nav {
 
 .btn-read-more-text {
   font-size: 1.8rem;
-  color: hsla(0, 0%, 35%, 1);
+  color: var(--btn-read-more-text-color);
   padding-bottom: 5px;
 }
 
 .btn-read-more:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--btn-read-more-hover-color);
 }
 
 .project-summary-img-container {
