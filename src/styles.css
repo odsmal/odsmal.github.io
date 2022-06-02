@@ -120,14 +120,13 @@ nav {
 .project-summary-container {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
-  height: 400px;
-  max-width: 980px;
+  flex-wrap: wrap-reverse;
   border-radius: 2px;
 }
 
 .project-summary-text-container {
-  width: 50%;
+  max-width: 490px;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -163,16 +162,17 @@ nav {
 }
 
 .project-summary-img-container {
-  width: 50%;
+  max-width: 490px;
+  max-height: 400px;
   overflow: hidden;
   border-radius: 0px 2px 2px 0px;
 }
 
 #project-summary-img-weather {
   position: relative;
-  left: -550px;
-  top: -230px;
-  transform: scale(0.85);
+  left: -580px;
+  top: -80px;
+  transform: scale(0.8);
 }
 
 #project-summary-img-this-site {
@@ -197,7 +197,7 @@ nav {
 }
 
 .about-text,
-.project-summary-container,
+.project-summary-text-container,
 .article-container {
   background-color: var(--text-background-color);
 }
