@@ -126,7 +126,7 @@ nav {
 
 .project-summary-text-container {
   max-width: 490px;
-  max-height: 400px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   padding: 40px;
