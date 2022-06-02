@@ -18,13 +18,13 @@
   --text-published-date-color: hsl(0, 0%, 38%);
   --text-paragraph-color: hsl(0, 0%, 35%);
   --btn-read-more-background-color: hsl(273, 9%, 32%);
-  --btn-read-more-text-color: hsl(0, 0%, 35%);
+  --btn-read-more-text-color: hsl(44, 11%, 81%);
   --btn-read-more-hover-color: hsl(0, 0%, 100%);
   --nav-background-color: hsl(273, 9%, 24%);
   --nav-background-bright-color: hsl(273, 9%, 34%);
-  --nav-link-color: hsl(44, 11%, 81%);
-  --nav-link-hover-color: hsl(44, 11%, 91%);
-  --nav-link-underline-color: linear-gradient(
+  --nav-link-text-color: hsl(44, 11%, 81%);
+  --nav-link-text-hover-color: hsl(44, 11%, 91%);
+  --nav-link-text-underline-color: linear-gradient(
     90deg,
     hsl(359, 83%, 71%) 0%,
     hsl(40, 100%, 70%) 30%,
@@ -63,6 +63,7 @@ h2 {
 h3 {
   font-size: 2.8rem;
   line-height: 2.6rem;
+  margin-bottom: 15px;
 }
 
 a {
@@ -81,7 +82,7 @@ nav {
 }
 
 .navlink {
-  color: var(--nav-link-color);
+  color: var(--nav-link-text-color);
   font-size: 1.8rem;
   transition: color 0.1s ease-out;
   cursor: pointer;
@@ -89,7 +90,7 @@ nav {
 }
 
 .navlink:hover {
-  color: var(--nav-link-hover-color);
+  color: var(--nav-link-text-hover-color);
 }
 
 .navlink-highlight {
@@ -97,7 +98,7 @@ nav {
 }
 
 .navlink-highlight::before {
-  background: var(--nav-link-underline-color);
+  background: var(--nav-link-text-underline-color);
   content: '';
   position: absolute;
   top: 28px;
