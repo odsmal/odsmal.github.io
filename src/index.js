@@ -49,8 +49,7 @@ class Main {
       thiswebsite,
     };
     this.displayController = new DisplayController();
-    this.selectPage('portfolio');
-    // this.selectPage('projects');
+    this.selectPage('projects');
   }
 
   selectPage(name) {
