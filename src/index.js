@@ -2,6 +2,7 @@ import projects from './html/projects.html';
 import portfolio from './html/portfolio.html';
 import about from './html/about.html';
 import weatherapp from './html/weatherapp.html';
+import thiswebsite from './html/thiswebsite.html';
 import './styles.css';
 
 class DisplayController {
@@ -45,6 +46,7 @@ class Main {
       portfolio,
       about,
       weatherapp,
+      thiswebsite,
     };
     this.displayController = new DisplayController();
     this.selectPage('portfolio');
