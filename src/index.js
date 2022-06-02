@@ -47,7 +47,7 @@ class Main {
       weatherapp,
     };
     this.displayController = new DisplayController();
-    this.selectPage('weatherapp');
+    this.selectPage('about');
     // this.selectPage('projects');
   }
 
