@@ -7,7 +7,7 @@ import './styles.css';
 class DisplayController {
   constructor() {
     this.addGlobalEventListener('click', '.btn-read-more', this.linkSelected);
-    this.addGlobalEventListener('click', '#nav > div', this.navLinkSelected);
+    this.addGlobalEventListener('click', '.navlink', this.navLinkSelected);
     this.content = document.getElementById('content');
     this.oldHighlight = document.getElementById('projects');
   }

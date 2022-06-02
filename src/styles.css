@@ -62,7 +62,7 @@ nav {
   background-color: hsl(272, 9%, 24%);
 }
 
-nav > div {
+.navlink {
   font-size: 1.8rem;
   color: hsl(44, 11%, 81%);
   transition: color 0.1s ease-out;
@@ -70,7 +70,7 @@ nav > div {
   user-select: none;
 }
 
-nav > div:hover {
+.navlink:hover {
   color: hsl(44, 11%, 91%);
 }
 
