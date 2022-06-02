@@ -121,7 +121,7 @@ nav {
   flex-direction: row;
   height: 400px;
   width: 980px;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 .project-summary-text-container {
@@ -164,7 +164,7 @@ nav {
 .project-summary-img-container {
   width: 50%;
   overflow: hidden;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 2px 2px 0px;
 }
 
 #project-summary-img-weather {
