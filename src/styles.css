@@ -120,6 +120,7 @@ nav {
 .project-summary-container {
   display: flex;
   flex-direction: row;
+  /* flex-wrap: wrap; */
   height: 400px;
   width: 980px;
   border-radius: 2px;
@@ -134,7 +135,7 @@ nav {
 }
 
 .project-summary-header {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .btn-read-more {
@@ -217,17 +218,19 @@ nav {
 }
 
 .article-header {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .article-img {
   width: 100%;
   height: 100%;
+  border-radius: 2px;
+  margin-bottom: 12px;
 }
 
 .article-img-text {
   color: var(--image-desc-color);
-  margin-top: 12px;
+  /* margin-top: 12px; */
   text-align: center;
 }
 
@@ -243,7 +246,6 @@ nav {
 .date-published,
 .date-date {
   font-size: 1.5rem;
-  line-height: 1rem;
 }
 
 .date-published {
