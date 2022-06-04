@@ -196,11 +196,15 @@ nav {
 }
 
 #project-summary-img-weather {
-  /* width: 100%; */
-  position: relative;
+  width: 400%;
+
+  object-fit: cover;
+  object-position: top right;
+
+  /* position: relative;
   left: -580px;
   top: -80px;
-  transform: scale(0.8);
+  transform: scale(0.8); */
 }
 
 .about-container {
