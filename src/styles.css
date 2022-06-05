@@ -9,6 +9,7 @@
 }
 
 :root {
+  --text-article-todo: hsl(273, 9%, 84%);
   --body-background-color: hsl(0, 0%, 85%);
   --header-color: hsl(0, 0%, 28%);
   --link-color: hsl(216, 37%, 42%);
@@ -267,7 +268,7 @@ nav {
 }
 
 .article-text-todo {
-  background-color: hsl(273, 9%, 84%);
+  background-color: var(--text-article-todo);
   padding: 20px;
 }
 
