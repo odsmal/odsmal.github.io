@@ -78,7 +78,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  height: 80px;
+  min-height: 80px;
 }
 
 .navlink {
@@ -87,6 +87,7 @@ nav {
   transition: color 0.1s ease-out;
   cursor: pointer;
   user-select: none;
+  letter-spacing: 0.1rem;
 }
 
 .navlink:hover {
@@ -122,8 +123,8 @@ nav {
   flex-direction: row;
   border-radius: 2px;
   height: 400px;
-  width: 100vw;
-  max-width: 960px;
+  width: 100%;
+  max-width: 980px;
 }
 
 .project-summary-text-container {
@@ -138,23 +139,6 @@ nav {
   flex: 1;
   overflow: hidden;
   border-radius: 0px 2px 2px 0px;
-}
-
-@media screen and (max-width: 768px) {
-  #content {
-    padding: 0px;
-    gap: 3px;
-  }
-  .project-summary-container {
-    height: 600px;
-    width: 100vw;
-    max-width: 490px;
-    flex-direction: column-reverse;
-  }
-
-  .project-summary-text-container {
-    flex: 2;
-  }
 }
 
 .project-summary-header {
@@ -201,7 +185,8 @@ nav {
 }
 
 .about-container {
-  width: 980px;
+  max-width: 480px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,16 +201,22 @@ nav {
   margin-bottom: 20px;
 }
 
+.about-img-container {
+  flex: 1;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.about-text {
+  flex: 1;
+  padding: 40px;
+  border-radius: 2px;
+}
+
 .about-text,
 .project-summary-text-container,
 .article-container {
   background-color: var(--text-background-color);
-}
-
-.about-text {
-  padding: 40px;
-  border-radius: 2px;
-  width: 450px;
 }
 
 .article-container {
@@ -250,7 +241,6 @@ nav {
 
 .article-img-text {
   color: var(--image-desc-color);
-  /* margin-top: 12px; */
   text-align: center;
 }
 
@@ -266,6 +256,11 @@ nav {
 .date-published,
 .date-date {
   font-size: 1.5rem;
+}
+
+.date-published,
+.date-date {
+  letter-spacing: 0.1rem;
 }
 
 .date-published {
@@ -295,4 +290,34 @@ ul {
 }
 li {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #content {
+    padding: 0px;
+    gap: 3px;
+  }
+  .project-summary-container {
+    height: 600px;
+    width: 100%;
+    max-width: 490px;
+    flex-direction: column-reverse;
+  }
+
+  .project-summary-text-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .about-container {
+    gap: 0px;
+  }
+
+  .nail-img-container {
+    margin-bottom: 10px;
+  }
+
+  .about-text {
+    padding: 20px;
+  }
 }
