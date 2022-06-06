@@ -275,7 +275,7 @@ nav {
 
 .article-text-todo {
   background-color: var(--text-article-todo);
-  padding: 20px;
+  padding: 64px;
 }
 
 .article-img-text,
@@ -343,6 +343,11 @@ li {
 
   .article-header-container {
     padding: 0px 20px;
+  }
+
+  .article-img-container {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .article-text {
