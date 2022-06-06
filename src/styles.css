@@ -176,7 +176,8 @@ nav {
 }
 
 #project-summary-img-this-site,
-#project-summary-img-weather {
+#project-summary-img-weather,
+#about-img-me {
   height: 500px;
   width: 500px;
   object-fit: cover;
@@ -186,7 +187,8 @@ nav {
   object-position: top left;
 }
 
-#project-summary-img-weather {
+#project-summary-img-weather,
+#about-img-me {
   object-position: top right;
 }
 
@@ -210,12 +212,6 @@ nav {
 .about-img-container {
   flex: 1;
   overflow: hidden;
-}
-
-#about-img-me {
-  height: 300px;
-  width: 300px;
-  object-fit: scale-down;
 }
 
 .about-text {
