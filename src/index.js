@@ -49,7 +49,7 @@ class Main {
       thiswebsite,
     };
     this.displayController = new DisplayController();
-    this.selectPage('projects');
+    this.selectPage('portfolio');
   }
 
   selectPage(name) {

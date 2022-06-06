@@ -244,8 +244,14 @@ nav {
   margin-bottom: 12px;
 }
 
+.article-img-container {
+  margin-left: -64px;
+  margin-right: -64px;
+}
+
 .article-img {
   width: 100%;
+  height: 100%;
   border-radius: 2px;
   margin-bottom: 12px;
 }
