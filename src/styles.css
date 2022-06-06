@@ -183,6 +183,10 @@ nav {
   object-fit: cover;
 }
 
+#about-img-me {
+  object-fit: scale-down;
+}
+
 #project-summary-img-this-site {
   object-position: top left;
 }
