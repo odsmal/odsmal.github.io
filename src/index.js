@@ -54,9 +54,14 @@ class Main {
 
   selectPage(name) {
     if (name in this.htmlPages) {
+      this.scrollToTop();
       const content = this.htmlPages[`${name}`];
       this.displayController.showPage(content);
     }
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 }
 
