@@ -11,13 +11,13 @@
 :root {
   --text-article-todo: hsl(273, 9%, 84%);
   --body-background-color: hsl(0, 0%, 85%);
-  --header-color: hsl(0, 0%, 28%);
+  --header-color: hsl(280, 2%, 35%);
   --link-color: hsl(216, 37%, 42%);
   --text-background-color: hsl(0, 0%, 94%);
-  --image-desc-color: hsl(0, 0%, 51%);
+  --image-desc-color: hsl(0, 0%, 31%);
   --text-published-color: hsl(0, 0%, 51%);
   --text-published-date-color: hsl(0, 0%, 38%);
-  --text-paragraph-color: hsl(0, 0%, 35%);
+  --text-paragraph-color: hsl(273, 9%, 35%);
   --btn-read-more-background-color: hsl(273, 9%, 32%);
   --btn-read-more-text-color: hsl(44, 11%, 81%);
   --btn-read-more-hover-color: hsl(0, 0%, 100%);
