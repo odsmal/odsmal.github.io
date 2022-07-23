@@ -11,7 +11,7 @@
 :root {
   --text-article-todo: hsl(0, 0%, 85%);
   --body-background-color: hsl(0, 0%, 85%);
-  --header-color: hsl(210, 16%, 20%);
+  --header-color: hsl(210, 4%, 20%);
   --link-color: hsl(216, 37%, 42%);
   --text-background-color: hsl(0, 0%, 95%);
   --image-desc-color: hsl(0, 0%, 20%);
