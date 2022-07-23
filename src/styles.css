@@ -9,20 +9,19 @@
 }
 
 :root {
-  --text-article-todo: hsl(273, 9%, 84%);
+  --text-article-todo: hsl(0, 0%, 85%);
   --body-background-color: hsl(0, 0%, 85%);
-  --header-color: hsl(273, 9%, 32%);
+  --header-color: hsl(0, 0%, 20%);
   --link-color: hsl(216, 37%, 42%);
   --text-background-color: hsl(0, 0%, 94%);
-  --image-desc-color: hsl(0, 0%, 50%);
+  --image-desc-color: hsl(0, 0%, 20%);
   --text-published-color: hsl(0, 0%, 50%);
-  --text-published-date-color: hsl(0, 0%, 38%);
-  --text-paragraph-color: hsl(275, 7%, 40%);
-  --btn-read-more-background-color: hsl(273, 9%, 32%);
+  --text-published-date-color: hsl(0, 0%, 20%);
+  --text-paragraph-color: hsl(0, 0%, 20%);
+  --btn-read-more-background-color: hsl(216, 37%, 42%);
   --btn-read-more-text-color: hsl(44, 11%, 81%);
-  --btn-read-more-hover-color: hsl(0, 0%, 100%);
-  --nav-background-color: hsl(273, 9%, 24%);
-  --nav-background-bright-color: hsl(273, 9%, 34%);
+  --nav-background-color: hsl(0, 0%, 20%);
+  --nav-background-hover-color: hsl(216, 37%, 52%);
   --nav-link-text-color: hsl(44, 11%, 81%);
   --nav-link-text-hover-color: hsl(44, 11%, 91%);
   --nav-link-text-underline-color: linear-gradient(
@@ -171,7 +170,7 @@ nav {
 }
 
 .btn-read-more:hover {
-  background-color: var(--nav-background-bright-color);
+  background-color: var(--nav-background-hover-color);
 }
 
 #project-summary-img-this-site,
