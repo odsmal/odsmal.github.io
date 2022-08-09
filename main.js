@@ -40,7 +40,7 @@ class Main {
 
   async selectPage(name) {
     try {
-      const response = await fetch(`./html/${name}.html`);
+      const response = await fetch(`./pages/${name}.html`);
       const content = await response.text();
       this.displayController.showPage(content);
     } catch (err) {
