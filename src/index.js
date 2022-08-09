@@ -1,8 +1,8 @@
-import projects from './html/projects.html';
-import portfolio from './html/portfolio.html';
-import about from './html/about.html';
-import weatherapp from './html/weatherapp.html';
-import thiswebsite from './html/thiswebsite.html';
+// import projects from './html/projects.html';
+// import portfolio from './html/portfolio.html';
+// import about from './html/about.html';
+// import weatherapp from './html/weatherapp.html';
+// import thiswebsite from './html/thiswebsite.html';
 import './styles.css';
 
 class DisplayController {
@@ -41,22 +41,29 @@ class DisplayController {
 
 class Main {
   constructor() {
-    this.htmlPages = {
-      projects,
-      portfolio,
-      about,
-      weatherapp,
-      thiswebsite,
-    };
+    // this.htmlPages = {
+    //   projects,
+    //   portfolio,
+    //   about,
+    //   weatherapp,
+    //   thiswebsite,
+    // };
     this.displayController = new DisplayController();
     this.selectPage('projects');
   }
 
-  selectPage(name) {
-    if (name in this.htmlPages) {
-      this.scrollToTop();
-      const content = this.htmlPages[`${name}`];
+  async selectPage(name) {
+    // if (name in this.htmlPages) {
+    //   this.scrollToTop();
+    //   const content = this.htmlPages[`${name}`];
+    //   this.displayController.showPage(content);
+    // }
+    try {
+      const response = await fetch(`./html/${name}.html`); // Gets a promise
+      const content = await response.text();
       this.displayController.showPage(content);
+    } catch (err) {
+      console.log(`Fetch error:${err}`); // Error handling
     }
   }
 
