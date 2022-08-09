@@ -43,6 +43,7 @@ class Main {
       const response = await fetch(`./pages/${name}.html`);
       const content = await response.text();
       this.displayController.showPage(content);
+      this.scrollToTop();
     } catch (err) {
       console.log(`Fetch error:${err}`);
     }
