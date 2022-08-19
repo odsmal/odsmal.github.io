@@ -1,4 +1,8 @@
-@import url(https://db.onlinewebfonts.com/c/123c7e674188c97798dd39cd41ff2d85?family=Brown+Regular);
+/* @import url(https://db.onlinewebfonts.com/c/123c7e674188c97798dd39cd41ff2d85?family=Brown+Regular); */
+@font-face {
+  font-family: brownRegular;
+  src: url(fonts/brownregular.ttf);
+}
 
 *,
 *::before,
@@ -35,7 +39,7 @@
 
 html {
   font-size: 10px;
-  font-family: 'Brown Regular', sans-serif;
+  font-family: brownRegular, sans-serif;
   overflow-y: scroll;
   height: 100%;
 }
