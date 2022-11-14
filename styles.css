@@ -12,11 +12,11 @@
 }
 
 :root {
-  --text-article-todo: hsl(0, 0%, 85%);
-  --body-background-color: hsl(0, 0%, 85%);
-  --header-color: hsl(210, 4%, 20%);
+  --text-article-todo: hsl(0, 0%, 95%);
+  --body-background-color: hsl(0, 0%, 89%);
+  --header-color: hsl(0, 0%, 29%);
   --link-color: hsl(216, 37%, 42%);
-  --text-background-color: hsl(0, 0%, 95%);
+  --text-background-color: hsl(0, 0%, 100%);
   --image-desc-color: hsl(0, 0%, 50%);
   --text-published-color: hsl(0, 0%, 50%);
   --text-published-date-color: hsl(0, 0%, 20%);
@@ -25,8 +25,8 @@
   --btn-read-more-text-color: hsl(0, 0%, 85%);
   --nav-background-color: hsl(215, 35%, 25%);
   --nav-background-hover-color: hsl(216, 37%, 52%);
-  --nav-link-text-color: hsl(0, 0%, 85%);
-  --nav-link-text-hover-color: hsl(0, 0%, 95%);
+  --nav-link-text-color: hsl(0, 0%, 89%);
+  --nav-link-text-hover-color: hsl(0, 0%, 100%);
   --nav-link-text-underline-color: linear-gradient(
     90deg,
     hsl(359, 83%, 71%) 0%,
