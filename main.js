@@ -2,7 +2,7 @@ class DisplayController {
   constructor() {
     this.addGlobalEventListener('click', '.btn-read-more', this.linkSelected);
     this.addGlobalEventListener('click', '.navlink', this.navLinkSelected);
-    this.content = document.getElementById('content');
+    this.main = document.querySelector('main');
     this.oldHighlight = document.getElementById('projects');
   }
 
@@ -28,7 +28,7 @@ class DisplayController {
   }
 
   showPage(content) {
-    this.content.innerHTML = content;
+    this.main.innerHTML = content;
   }
 }
 
