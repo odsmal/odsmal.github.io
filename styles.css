@@ -82,11 +82,11 @@ nav {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  min-height: 80px;
+  gap: 32px;
 }
 
 .navlink {
+  padding: 24px 0px;
   color: var(--nav-link-text-color);
   font-size: 1.8rem;
   transition: color 0.1s ease-out;
@@ -101,19 +101,10 @@ nav {
 }
 
 .navlink-highlight {
-  position: relative;
-}
-
-.navlink-highlight::before {
   background: var(--nav-link-text-underline-color);
-  content: '';
-  position: absolute;
-  top: 28px;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  border-radius: 2px;
+  background-position: 0 75%;
+  background-size: 100% 2px;
+  background-repeat: repeat-x;
 }
 
 main {
