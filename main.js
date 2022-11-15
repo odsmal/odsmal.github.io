@@ -35,7 +35,7 @@ class DisplayController {
 class Main {
   constructor() {
     this.displayController = new DisplayController();
-    this.selectPage('projects');
+    this.selectPage('start');
   }
 
   async selectPage(name) {

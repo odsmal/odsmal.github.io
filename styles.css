@@ -36,18 +36,21 @@
   );
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   font-size: 10px;
   font-family: brownRegular, sans-serif;
   overflow-y: scroll;
-  /* height: 100%; */
 }
 
 body {
   background-color: var(--body-background-color);
   display: flex;
   flex-direction: column;
-  /* min-height: 100%; */
   gap: 8px;
 }
 
@@ -59,7 +62,7 @@ h3 {
 
 h1 {
   font-size: 7.2rem;
-  line-height: 6.6rem;
+  /* line-height: 6.6rem; */
 }
 h2 {
   font-size: 4.8rem;
@@ -69,6 +72,13 @@ h2 {
 h3 {
   font-size: 2.8rem;
   line-height: 2.6rem;
+}
+
+.start-presentation-text-p {
+  color: var(--header-color);
+  font-size: 1.8rem;
+  /* font-weight: bold; */
+  line-height: 3rem;
 }
 
 a {
@@ -109,8 +119,31 @@ nav {
 }
 
 main {
+  flex-grow: 1;
+  background-color: var(--nav-background-color);
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  /* gap: 40px; */
+}
+
+.start-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  gap: 16px;
+}
+
+.start-presentation-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 320px;
+}
+
+.start-skills-wrapper {
+  display: flex;
   gap: 40px;
 }
 
