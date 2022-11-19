@@ -112,6 +112,7 @@ nav {
 }
 
 main {
+  padding: 32px;
   border-top: 1px solid hsl(0, 0%, 90%);
   flex-grow: 1;
   background-color: var(--nav-background-color);
@@ -122,7 +123,7 @@ main {
 }
 
 .start-wrapper {
-  margin-top: 32px;
+  margin-top: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,7 +154,9 @@ main {
 }
 
 .start-skills-wrapper div {
+  padding: 16px;
   max-width: 320px;
+  background-color: var(--body-background-color);
 }
 
 .start-skills-wrapper p {
