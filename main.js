@@ -3,7 +3,7 @@ class DisplayController {
     this.addGlobalEventListener('click', '.btn-read-more', this.linkSelected);
     this.addGlobalEventListener('click', '.navlink', this.navLinkSelected);
     this.main = document.querySelector('main');
-    this.oldHighlight = document.getElementById('projects');
+    this.oldHighlight = document.getElementById('start');
   }
 
   addGlobalEventListener(type, selector, callback) {

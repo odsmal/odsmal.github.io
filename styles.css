@@ -74,13 +74,6 @@ h3 {
   /* line-height: 2.6rem; */
 }
 
-.start-presentation-text-p {
-  color: var(--header-color);
-  font-size: 1.8rem;
-  /* font-weight: bold; */
-  line-height: 3rem;
-}
-
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -144,6 +137,12 @@ main {
   max-width: 320px;
 }
 
+.start-presentation-wrapper p {
+  color: var(--header-color);
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
 .start-skills-wrapper {
   display: flex;
   flex-direction: row;
@@ -153,8 +152,14 @@ main {
   gap: 40px;
 }
 
-.start-skills {
+.start-skills-wrapper div {
   max-width: 320px;
+}
+
+.start-skills-wrapper p {
+  color: var(--header-color);
+  font-size: 1.8rem;
+  line-height: 3rem;
 }
 
 .project-summary-container {
