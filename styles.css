@@ -66,12 +66,12 @@ h1 {
 }
 h2 {
   font-size: 4.8rem;
-  line-height: 4.4rem;
+  /* line-height: 4.4rem; */
 }
 
 h3 {
   font-size: 2.8rem;
-  line-height: 2.6rem;
+  /* line-height: 2.6rem; */
 }
 
 .start-presentation-text-p {
@@ -128,23 +128,33 @@ main {
 }
 
 .start-wrapper {
+  margin-top: 32px;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  padding: 24px;
-  gap: 16px;
+  /* padding: 24px; */
+  gap: 64px;
 }
 
 .start-presentation-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   max-width: 320px;
 }
 
 .start-skills-wrapper {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 40px;
+}
+
+.start-skills {
+  max-width: 320px;
 }
 
 .project-summary-container {
