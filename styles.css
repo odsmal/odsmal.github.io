@@ -174,13 +174,6 @@ main {
   line-height: 3rem;
 }
 
-footer .color {
-  background: var(--nav-link-text-underline-color);
-  background-position: 0 75%;
-  background-size: 100% 20px;
-  background-repeat: repeat-x;
-}
-
 .project-summary-container {
   display: flex;
   flex-direction: row;
