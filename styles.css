@@ -170,6 +170,11 @@ main {
   line-height: 3rem;
 }
 
+.portfolio-img-wrapper img {
+  max-width: 1080px;
+  height: auto;
+}
+
 .project-summary-container {
   display: flex;
   flex-direction: row;
