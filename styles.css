@@ -128,6 +128,7 @@ main {
   /* gap: 40px; */
 }
 
+.portfolio-wrapper,
 .start-wrapper {
   margin-top: 32px;
   display: flex;
@@ -171,7 +172,7 @@ main {
 }
 
 .portfolio-img-wrapper {
-  max-width: 1080px;
+  max-width: 500px;
 }
 
 .portfolio-img-wrapper img {
