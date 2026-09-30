@@ -225,7 +225,7 @@
             </ol>
           </figure>
           <h3>About disclosure</h3>
-          <p>The About panel introduces Kristoffer Johansson, briefly describes his interface design work and the site's purpose, and defines “bös” in a dashed lexicon note. It opens from the button, closes from the same button, closes on outside click, and closes on Escape. Escape returns focus to About. It is a nonmodal disclosure: the rest of the page remains available and there is no focus trap.</p>
+          <p>The About panel introduces Kristoffer Johansson, briefly describes his interface design work and the site's purpose, and defines “bös” in a dashed lexicon note. It opens from the button, closes from the same button, closes on outside click, and closes on Escape. Escape returns focus to About. It is a nonmodal disclosure: the rest of the page remains available and there is no focus trap. At narrow widths, the panel aligns to both edges of the shared top bar and scrolls internally when the available viewport height is limited.</p>
           <h3>Theme selector</h3>
           <p>Sun selects light mode and the solid moon selects dark mode. The selected segment is visually filled and programmatically exposed through <code>aria-pressed="true"</code>. The moon inherits the current foreground color so its appearance is consistent on every page.</p>
         </section>
@@ -247,12 +247,12 @@
             <ol class="spec-callout-key">
               <li><strong>Top bar</strong> — About disclosure and theme selector.</li>
               <li><strong>Hero</strong> — the site title, Blandat bös. “Bös” uses the accent-colored serif emphasis treatment from long-form headings.</li>
-              <li><strong>Index heading</strong> — “Project index / 2026-2026” plus a horizontal rule.</li>
+              <li><strong>Index heading</strong> — “Project index” plus a horizontal rule.</li>
               <li><strong>Category filters</strong> — independent rectangular buttons: All categories, Articles, Reports, Documentation, Visualizations.</li>
               <li><strong>View selector</strong> — right-aligned rectangular segmented control for card and table view, with both 38px choices centered within its 48px container.</li>
               <li><strong>Results line</strong> — live result count and sorting description.</li>
               <li><strong>Project collection</strong> — either the project grid or semantic data table.</li>
-              <li><strong>Footer</strong> — “Prompted by human, made by AI.” and copyright year.</li>
+              <li><strong>Footer</strong> — copyright year.</li>
             </ol>
           </figure>
           <h3>Control order</h3>
@@ -482,9 +482,8 @@
           <h3>Naming and dates</h3>
           <ul>
             <li>Site title: <strong>Blandat bös</strong>.</li>
-            <li>Index range: <strong>Project index / 2026-2026</strong>.</li>
+            <li>Index heading: <strong>Project index</strong>.</li>
             <li>Long-form eyebrow: <strong>Category · Published D Mon YYYY · Author: Name</strong>.</li>
-            <li>Footer authorship: <strong>Prompted by human, made by AI.</strong></li>
             <li>Published project author: <strong>GPT-5.6 Sol Ultra</strong>.</li>
             <li>Entry numbers are editorial and stable. Display order is publication date descending; same-day projects use the higher entry number first.</li>
           </ul>
@@ -555,11 +554,11 @@
                 <tr><th scope="row">861px and above</th><td>Three card columns.</td><td>250px sticky contents rail beside article.</td><td>Subpage controls remain one row.</td></tr>
                 <tr><th scope="row">641–860px</th><td>Two card columns.</td><td>Contents moves above article and uses two columns.</td><td>Subpage controls remain one row.</td></tr>
                 <tr><th scope="row">591–640px</th><td>Two columns until 590px.</td><td>Contents above article; one column at 640px.</td><td>Back and action group become two rows at 640px.</td></tr>
-                <tr><th scope="row">590px and below</th><td>One card column; filters occupy a full row; footer stacks.</td><td>Single reading column and 12px page gutters.</td><td>Actions stay right aligned; About panel remains within viewport.</td></tr>
+                <tr><th scope="row">590px and below</th><td>One card column; filters occupy a full row; table project titles use 18px text with a 1.25 line height; footer stacks.</td><td>Single reading column and 12px page gutters.</td><td>Actions stay right aligned; About panel remains within viewport.</td></tr>
               </tbody>
             </table>
           </div>
-          <p>The project table keeps a 760px minimum width inside a horizontal scroll region. Columns must remain readable rather than compressing to the viewport width. The generic project template has an additional 680px layout change for its two-column content and project navigation.</p>
+          <p>The project table keeps a 760px minimum width inside a horizontal scroll region. Columns must remain readable rather than compressing to the viewport width. At 590px and below, project titles decrease from 25px to 18px so more of each title remains visible in the initial phone viewport while the complete table stays horizontally scrollable. The generic project template has an additional 680px layout change for its two-column content and project navigation.</p>
         </section>
 
         <section id="maintenance" aria-labelledby="maintenance-heading">

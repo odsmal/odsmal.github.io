@@ -369,6 +369,11 @@ html[data-theme="dark"] .visual-glyph {
     margin-left: auto;
   }
 
+  .table-view .table-title {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
   .index-footer {
     align-items: flex-start;
     flex-direction: column;
