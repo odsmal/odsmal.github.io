@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-page="gestalt-principles">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical analysis of Gestalt principles in graphical user interfaces, with interactive examples for toolbars, forms, tables, workflows, overlays, and live systems.">
+  <title>Gestalt Principles in Graphical User Interfaces — Blandat bös</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/essay.css">
+  <link rel="stylesheet" href="assets/css/gestalt-principles.css">
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/gestalt-principles.js" defer></script>
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="shell topbar">
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <div class="topbar-actions">
+      <div class="about-control">
+        <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+        <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+          <h2 id="about-person">Kristoffer Johansson</h2>
+          <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+          <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+        </aside>
+      </div>
+      <div class="theme-segment" role="group" aria-label="Color theme">
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="shell essay-hero">
+      <p class="eyebrow">Article · Published 30 Sep 2026 · Author: GPT-5.6 Sol Ultra</p>
+      <h1>Gestalt Principles in <em>Graphical User Interfaces</em></h1>
+      <p class="dek">How perceptual grouping determines action scope, label ownership, comparison paths, and object identity in complex interfaces.</p>
+    </header>
+
+    <div class="shell article-layout">
+      <aside class="toc-wrap" aria-labelledby="toc-heading">
+        <h2 class="toc-title" id="toc-heading">Table of contents</h2>
+        <nav aria-label="Article contents">
+          <ol class="toc">
+            <li><a href="#premise"><span class="toc-number">01</span>Perception assigns structure</a></li>
+            <li><a href="#principles"><span class="toc-number">02</span>Principles, not commands</a></li>
+            <li><a href="#toolbar"><span class="toc-number">03</span>Scope in a toolbar</a></li>
+            <li><a href="#forms"><span class="toc-number">04</span>Ownership in forms</a></li>
+            <li><a href="#tables"><span class="toc-number">05</span>Rows, columns, and task</a></li>
+            <li><a href="#connections"><span class="toc-number">06</span>Lines are claims</a></li>
+            <li><a href="#motion"><span class="toc-number">07</span>Movement creates membership</a></li>
+            <li><a href="#interference"><span class="toc-number">08</span>Grouping can interfere</a></li>
+            <li><a href="#figure-ground"><span class="toc-number">09</span>Foreground owns interaction</a></li>
+            <li><a href="#similarity"><span class="toc-number">10</span>Appearance is a promise</a></li>
+            <li><a href="#review"><span class="toc-number">11</span>Accessibility and review</a></li>
+            <li><a href="#sources"><span class="toc-number">12</span>Sources</a></li>
+          </ol>
+        </nav>
+        <p class="snapshot"><strong>Scope.</strong> The examples concern task-oriented graphical interfaces. They treat grouping as part of the interaction model, not as surface decoration.</p>
+      </aside>
+
+      <article class="essay-article" id="article" tabindex="-1">
+        <section id="premise" aria-labelledby="premise-heading">
+          <h2 id="premise-heading">Perception assigns structure</h2>
+          <p class="lead">Gestalt principles do not tell designers what looks harmonious. They predict which elements are likely to be perceived as one unit.</p>
+          <aside class="gestalt-brief" aria-labelledby="summary-heading">
+            <h3 id="summary-heading">Executive summary</h3>
+            <ul>
+              <li>Begin with the relationships required by the task, then make spacing, enclosure, connection, similarity, and movement support them.</li>
+              <li>Expect cues to compete. A connector can override distance; a region can override similarity; synchronized movement can create a temporary group.</li>
+              <li>Use similarity as a behavioral promise. Controls that look alike should behave alike, and passive information should not resemble an action.</li>
+              <li>Represent every important visual relationship in structure, labels, and state. Perceptual grouping cannot replace semantic HTML or accessible names.</li>
+            </ul>
+          </aside>
+          <p>A screen arrives as pixels, but people act on objects: a field and its error, a selected record and its actions, a node and its outgoing connection. The interface must make those units apparent before labels can be interpreted in detail. When the perceived groups differ from the functional groups, users must repeatedly resolve ownership and scope.</p>
+          <p>The classical Gestalt research program examined how visual elements become organized into figures and groups. Max Wertheimer’s 1923 paper described grouping by proximity, similarity, common fate, good continuation, and other factors. Later work added common region and uniform connectedness, and contemporary research models grouping as graded and context dependent.</p>
+          <figure class="principle-map">
+            <figcaption><strong>Illustration 1 — A cue is an assignment</strong><span>The same four controls can be organized into different units without changing their labels.</span></figcaption>
+            <div class="principle-map__grid">
+              <article>
+                <span class="figure-label">Proximity</span>
+                <div class="cue cue--proximity" aria-hidden="true"><i>A</i><i>B</i><i>C</i><i>D</i></div>
+                <p>Shorter distance assigns A–B and C–D to separate groups.</p>
+              </article>
+              <article>
+                <span class="figure-label">Common region</span>
+                <div class="cue cue--region" aria-hidden="true"><span><i>A</i><i>C</i></span><span><i>B</i><i>D</i></span></div>
+                <p>Enclosure reassigns the elements even though their spacing is similar.</p>
+              </article>
+              <article>
+                <span class="figure-label">Connectedness</span>
+                <div class="cue cue--connected" aria-hidden="true"><span><i>A</i><i>D</i></span><span><i>B</i><i>C</i></span></div>
+                <p>Lines assert relationships that can dominate proximity.</p>
+              </article>
+              <article>
+                <span class="figure-label">Similarity</span>
+                <div class="cue cue--similarity" aria-hidden="true"><i>A</i><i>B</i><i>C</i><i>D</i></div>
+                <p>Shared appearance suggests a class, state, or behavior.</p>
+              </article>
+            </div>
+          </figure>
+        </section>
+
+        <section id="principles" aria-labelledby="principles-heading">
+          <h2 id="principles-heading">Principles, not commands</h2>
+          <p>Despite their familiar name, Gestalt “laws” are better treated as competing, graded perceptual principles. Their strength varies with scale, timing, depth, attention, task, and surrounding context. Several can support or oppose one another in the same interface.</p>
+          <p>This distinction prevents formulaic design. Proximity does not mean that every related object should be close. Similarity does not mean that every control should use the same component. Closure does not justify omitting essential boundaries or labels. Prägnanz—the tendency toward a stable, coherent organization—is not a command to make every interface minimal.</p>
+          <dl class="principle-definitions">
+            <div><dt>Proximity</dt><dd>Elements near one another tend to be grouped.</dd></div>
+            <div><dt>Similarity</dt><dd>Shared visual properties suggest a shared class or role.</dd></div>
+            <div><dt>Common region</dt><dd>Elements inside one bounded area tend to form a unit.</dd></div>
+            <div><dt>Connectedness</dt><dd>Visibly joined elements are likely to be treated as one object or relationship.</dd></div>
+            <div><dt>Good continuation</dt><dd>Aligned paths are commonly interpreted as continuing through interruption.</dd></div>
+            <div><dt>Common fate</dt><dd>Elements that change or move together are likely to be grouped.</dd></div>
+            <div><dt>Figure–ground</dt><dd>The field is organized into an attended figure and a supporting ground.</dd></div>
+            <div><dt>Closure</dt><dd>Incomplete contours may be completed into a stable form when sufficient evidence exists.</dd></div>
+          </dl>
+          <p>A controlled study of menu interfaces found that visual grouping improved selection when it matched meaningful categories and hindered selection when it grouped unrelated commands. The finding is practical: grouping is not inherently helpful; its value depends on whether the perceived unit is useful to the task.</p>
+          <p>The relevant design question is therefore not “Which law should be used?” It is “Which elements must be interpreted as one unit, which cue will establish that unit, and what competing cue could reverse it?”</p>
+        </section>
+
+        <section id="toolbar" aria-labelledby="toolbar-heading">
+          <h2 id="toolbar-heading">Scope in a responsive toolbar</h2>
+          <p>A toolbar often contains more than one action group: formatting, distribution, and destructive actions. At a wide viewport, gaps may communicate those groups. At a narrow viewport, ordinary flex wrapping can place an unrelated action closer to the wrong neighbor.</p>
+          <div class="lab" aria-labelledby="toolbar-lab-title">
+            <p class="lab-kicker">Interactive example 01 · Proximity and common region</p>
+            <h3 id="toolbar-lab-title">Preserve semantic groups while controls wrap</h3>
+            <p class="lab-intro">Compare a flat list that wraps each button independently with containers that keep each action group intact.</p>
+            <div class="button-row gestalt-controls" role="group" aria-label="Toolbar grouping example">
+              <button class="demo-button" type="button" data-toolbar-mode="flat" aria-pressed="true">Independent buttons</button>
+              <button class="demo-button" type="button" data-toolbar-mode="grouped" aria-pressed="false">Semantic groups</button>
+            </div>
+            <figure class="toolbar-figure">
+              <figcaption><strong>Illustration 2 — A toolbar at constrained width</strong><span>The viewport is deliberately too narrow for a single row.</span></figcaption>
+              <div class="toolbar-window is-flat" id="toolbar-demo">
+                <div class="toolbar-window__header" aria-hidden="true"><span>Report editor</span><span>560 px</span></div>
+                <div class="demo-toolbar" aria-hidden="true">
+                  <span class="toolbar-group toolbar-group--format"><button type="button" tabindex="-1">Align left</button><button type="button" tabindex="-1">Align center</button></span>
+                  <span class="toolbar-group toolbar-group--share"><button type="button" tabindex="-1">Export</button><button type="button" tabindex="-1">Share</button></span>
+                  <span class="toolbar-group toolbar-group--danger"><button type="button" tabindex="-1">Delete</button></span>
+                </div>
+              </div>
+              <p class="figure-note" id="toolbar-result" aria-live="polite"><strong>Independent buttons:</strong> wrapping places Delete beside Share, so proximity implies the wrong scope and class.</p>
+            </figure>
+          </div>
+          <p>Making every gap larger does not solve the problem because the layout engine still controls the new neighbors. The robust implementation groups related controls in containers, lets those containers wrap as units, and gives a destructive action an explicit label and stable separation. DOM structure, keyboard order, and visible grouping then describe the same model.</p>
+        </section>
+
+        <section id="forms" aria-labelledby="forms-heading">
+          <h2 id="forms-heading">Ownership in forms</h2>
+          <p>Forms depend on ownership. A label belongs to one control; help text explains one field or group; an error identifies the value that must change. Ambiguous vertical spacing can make a message appear equally related to the field above and the field below.</p>
+          <figure class="form-ownership">
+            <figcaption><strong>Illustration 3 — Error ownership in a repeated form</strong><span>Common region and local proximity must remain valid when a two-column form becomes one column.</span></figcaption>
+            <div class="comparison-grid">
+              <article class="comparison-panel comparison-panel--problem">
+                <span class="comparison-label">Ambiguous</span>
+                <div class="mini-form" aria-hidden="true">
+                  <strong>Delivery addresses</strong>
+                  <label>Shipping postcode<input value="413 02" tabindex="-1"></label>
+                  <p class="mock-error">Enter five digits.</p>
+                  <label>Billing postcode<input value="114 46" tabindex="-1"></label>
+                </div>
+                <p>The message sits between two visually identical fields. At a glance, either field could own it.</p>
+              </article>
+              <article class="comparison-panel comparison-panel--solution">
+                <span class="comparison-label">Explicit</span>
+                <div class="mini-form" aria-hidden="true">
+                  <fieldset><legend>Shipping address</legend><label>Postcode<input value="413 02" class="mock-invalid" tabindex="-1"></label><p class="mock-error">Shipping postcode: enter five digits.</p></fieldset>
+                  <fieldset><legend>Billing address</legend><label>Postcode<input value="114 46" tabindex="-1"></label></fieldset>
+                </div>
+                <p>Fieldsets establish regions; the error stays inside the affected group and names its owner.</p>
+              </article>
+            </div>
+          </figure>
+          <p>A visual border is not sufficient. Use a programmatic label, connect help or error text with <code>aria-describedby</code> where appropriate, and expose invalid state. Common region clarifies the scan path; HTML communicates the same association when layout, zoom, or assistive technology removes that region.</p>
+        </section>
+
+        <section id="tables" aria-labelledby="tables-heading">
+          <h2 id="tables-heading">Rows, columns, and the task</h2>
+          <p>A table supports two competing continuities. Horizontal alignment groups the attributes of one record; vertical alignment groups one measure across records. Neither direction is universally primary.</p>
+          <div class="lab" aria-labelledby="table-lab-title">
+            <p class="lab-kicker">Interactive example 02 · Continuity and common region</p>
+            <h3 id="table-lab-title">Emphasize the direction of comparison</h3>
+            <p class="lab-intro">The data do not change. The active task determines which grouping receives restrained emphasis.</p>
+            <div class="button-row gestalt-controls" role="group" aria-label="Table comparison task">
+              <button class="demo-button" type="button" data-table-task="record" aria-pressed="true">Inspect one service</button>
+              <button class="demo-button" type="button" data-table-task="metric" aria-pressed="false">Compare latency</button>
+            </div>
+            <figure class="task-table-figure">
+              <figcaption><strong>Illustration 4 — One dataset, two comparison paths</strong><span>Row region supports record inspection; column continuation supports metric comparison.</span></figcaption>
+              <div class="task-table-wrap" tabindex="0" role="region" aria-label="Service health comparison example">
+                <table class="task-table is-record-task" id="task-table">
+                  <caption>Service health at 14:20</caption>
+                  <thead><tr><th scope="col">Service</th><th scope="col">Latency</th><th scope="col">Errors</th><th scope="col">State</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Identity</th><td>118 ms</td><td>0.3%</td><td><span>Stable</span></td></tr>
+                    <tr class="is-selected"><th scope="row">Checkout</th><td>436 ms</td><td>2.8%</td><td><span>Degraded</span></td></tr>
+                    <tr><th scope="row">Inventory</th><td>184 ms</td><td>0.5%</td><td><span>Stable</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="figure-note" id="table-result" aria-live="polite"><strong>Record task:</strong> a bounded selected row keeps the service name, values, state, and any row actions together.</p>
+            </figure>
+          </div>
+          <p>Zebra striping is not automatically helpful. Strong bands may assist row tracking but can suppress column comparison or create visual noise. Use the lightest cue that supports the primary task, retain headers when scrolling, and provide an explicit selected state when actions apply to a record.</p>
+        </section>
+
+        <section id="connections" aria-labelledby="connections-heading">
+          <h2 id="connections-heading">Lines are claims</h2>
+          <p>Uniform connectedness is a powerful grouping cue. In a node editor, dependency map, or process diagram, a line is not decoration: it claims that two ports participate in one relationship. Good continuation then influences which path a crossing appears to follow.</p>
+          <div class="lab" aria-labelledby="workflow-lab-title">
+            <p class="lab-kicker">Interactive example 03 · Connectedness and continuation</p>
+            <h3 id="workflow-lab-title">Route for unambiguous tracing</h3>
+            <p class="lab-intro">Both views contain the same nodes and dependencies. Only placement and routing change.</p>
+            <div class="button-row gestalt-controls" role="group" aria-label="Workflow routing example">
+              <button class="demo-button" type="button" data-workflow-mode="crossed" aria-pressed="true">Crossed routes</button>
+              <button class="demo-button" type="button" data-workflow-mode="lanes" aria-pressed="false">Aligned lanes</button>
+            </div>
+            <figure class="workflow-figure">
+              <figcaption><strong>Illustration 5 — Dependency paths</strong><span>Hover or focus a node in a production editor to isolate its path; this static example compares the base routing.</span></figcaption>
+              <svg class="workflow-svg is-crossed" id="workflow-demo" viewBox="0 0 720 330" role="img" aria-labelledby="workflow-title workflow-description">
+                <title id="workflow-title">A workflow with alternative connector routing</title>
+                <desc id="workflow-description">Four source and processing nodes connect to two destinations. The crossed view creates ambiguous intersections. The aligned view uses separate lanes and explicit ports.</desc>
+                <g class="workflow-lines workflow-lines--crossed">
+                  <path class="flow-a" d="M150 82 C300 82 410 248 570 248"/>
+                  <path class="flow-b" d="M150 248 C300 248 410 82 570 82"/>
+                  <path class="flow-c" d="M360 165 L570 248"/>
+                </g>
+                <g class="workflow-lines workflow-lines--lanes">
+                  <path class="flow-a" d="M150 82 H250 V56 H500 V82 H570"/>
+                  <path class="flow-b" d="M150 248 H280 V274 H500 V248 H570"/>
+                  <path class="flow-c" d="M360 165 H470 V226 H570"/>
+                </g>
+                <g class="workflow-nodes">
+                  <g transform="translate(30 52)"><rect width="120" height="60" rx="10"/><circle cx="120" cy="30" r="5"/><text x="18" y="36">Orders</text></g>
+                  <g transform="translate(30 218)"><rect width="120" height="60" rx="10"/><circle cx="120" cy="30" r="5"/><text x="18" y="36">Returns</text></g>
+                  <g transform="translate(240 135)"><rect width="120" height="60" rx="10"/><circle cx="120" cy="30" r="5"/><text x="18" y="36">Review</text></g>
+                  <g transform="translate(570 52)"><circle cx="0" cy="30" r="5"/><rect width="120" height="60" rx="10"/><text x="18" y="36">Fulfil</text></g>
+                  <g transform="translate(570 218)"><circle cx="0" cy="30" r="5"/><rect width="120" height="60" rx="10"/><text x="18" y="36">Hold</text></g>
+                </g>
+              </svg>
+              <p class="figure-note" id="workflow-result" aria-live="polite"><strong>Crossed routes:</strong> smooth continuation through the intersection suggests paths that are not present in the data.</p>
+            </figure>
+          </div>
+          <p>Better routing reduces crossings, attaches lines to visible ports, preserves direction, and uses arrowheads or labels where sequence matters. If crossings cannot be avoided, bridge gaps or interaction-based path isolation can interrupt the false continuation. Decorative connector-like lines should be removed.</p>
+        </section>
+
+        <section id="motion" aria-labelledby="motion-heading">
+          <h2 id="motion-heading">Movement creates membership</h2>
+          <p>Common fate groups elements that change together. In a live interface, coordinated movement, luminance, or size can identify a shared event even when the objects are separated. The same mechanism can create a false relationship when every row animates because the display refreshed.</p>
+          <div class="lab" aria-labelledby="motion-lab-title">
+            <p class="lab-kicker">Interactive example 04 · Common fate and object constancy</p>
+            <h3 id="motion-lab-title">Animate the event, not the screen</h3>
+            <p class="lab-intro">Activate either event. Motion occurs only on request and is replaced by a static highlight when reduced motion is preferred.</p>
+            <div class="button-row gestalt-controls" role="group" aria-label="Live system motion examples">
+              <button class="demo-button" id="shared-event-button" type="button">Show shared incident</button>
+              <button class="demo-button" id="refresh-event-button" type="button">Show indiscriminate refresh</button>
+            </div>
+            <figure class="fate-figure">
+              <figcaption><strong>Illustration 6 — A live service list</strong><span>Identity remains stable; only the services affected by one incident should share a transient change.</span></figcaption>
+              <div class="service-map" id="service-map">
+                <article data-cluster="incident"><span class="service-symbol" aria-hidden="true">ID</span><div><strong>Identity</strong><small>EU cluster</small></div><b>Elevated latency</b></article>
+                <article data-cluster="stable"><span class="service-symbol" aria-hidden="true">SR</span><div><strong>Search</strong><small>Global</small></div><b>Stable</b></article>
+                <article data-cluster="incident"><span class="service-symbol" aria-hidden="true">CK</span><div><strong>Checkout</strong><small>EU cluster</small></div><b>Elevated latency</b></article>
+                <article data-cluster="stable"><span class="service-symbol" aria-hidden="true">BL</span><div><strong>Billing</strong><small>Global</small></div><b>Stable</b></article>
+              </div>
+              <p class="figure-note" id="motion-result" aria-live="polite">No animation has run. The current states are available as text.</p>
+            </figure>
+          </div>
+          <p>During sorting or filtering, stable object identity matters as much as shared movement. Preserve keys, keep labels attached to their records, and let transitions explain where items went. Do not morph unrelated objects into one another. Provide the final state immediately when motion is disabled, and never make animation the only evidence of change.</p>
+        </section>
+
+        <section id="interference" aria-labelledby="interference-heading">
+          <h2 id="interference-heading">Grouping can interfere</h2>
+          <p>Perceptual closeness is beneficial when values must be integrated, but it can impede selective attention when one item must be assessed independently. The proximity-compatibility principle states that display proximity should match the task’s need for integration.</p>
+          <figure class="dashboard-figure">
+            <figcaption><strong>Illustration 7 — Group for the judgment being made</strong><span>The same operational data require different structures for diagnosis and alarm response.</span></figcaption>
+            <div class="comparison-grid">
+              <article class="comparison-panel">
+                <span class="comparison-label">Joint diagnosis</span>
+                <div class="process-unit" aria-hidden="true"><header>Pump P-14</header><div><span>Pressure<strong>4.8 bar</strong></span><span>Flow<strong>62 L/min</strong></span><span>Valve<strong>71%</strong></span></div><footer>Values share one process relationship</footer></div>
+                <p>Pressure, flow, and valve position belong together because the operator judges their relationship.</p>
+              </article>
+              <article class="comparison-panel">
+                <span class="comparison-label">Focused response</span>
+                <div class="alarm-unit" aria-hidden="true"><header>Action required</header><strong>Cooling loop pressure high</strong><p>6.4 bar · threshold 6.0</p><button type="button" tabindex="-1">Open procedure</button></div>
+                <p>The alarm is separated from routine telemetry because it requires focused recognition and action.</p>
+              </article>
+            </div>
+          </figure>
+          <p>Dashboard density should therefore follow decisions, not a desire to fill a grid. Put jointly interpreted variables in one bounded process unit. Separate alarms, overrides, and independent controls when interference would be costly. Over-grouping can be as misleading as fragmentation.</p>
+        </section>
+
+        <section id="figure-ground" aria-labelledby="figure-ground-heading">
+          <h2 id="figure-ground-heading">Foreground must also own interaction</h2>
+          <p>A dialog or side sheet creates a new figure over an existing interface. Surface elevation, a clear boundary, and a restrained scrim can establish figure–ground. If the background remains equally salient, focus ownership and action scope become uncertain.</p>
+          <figure class="overlay-figure">
+            <figcaption><strong>Illustration 8 — Visual foreground and interaction foreground</strong><span>Dimming supports the distinction but does not create modal behavior.</span></figcaption>
+            <div class="comparison-grid">
+              <article class="comparison-panel comparison-panel--problem">
+                <span class="comparison-label">Competing layers</span>
+                <div class="mock-app mock-app--weak" aria-hidden="true"><div class="mock-app__content"><i></i><i></i><i></i><i></i></div><div class="mock-dialog"><strong>Archive report?</strong><p>This action can be reversed.</p><span>Cancel&nbsp;&nbsp; Archive</span></div></div>
+                <p>The dialog and page have similar contrast; background controls still appear available.</p>
+              </article>
+              <article class="comparison-panel comparison-panel--solution">
+                <span class="comparison-label">Owned foreground</span>
+                <div class="mock-app mock-app--clear" aria-hidden="true"><div class="mock-app__content"><i></i><i></i><i></i><i></i></div><div class="mock-scrim"></div><div class="mock-dialog"><strong>Archive report?</strong><p>This action can be reversed.</p><span>Cancel&nbsp;&nbsp; Archive</span></div></div>
+                <p>The bounded surface is unambiguous; the page is visibly unavailable until a decision is made.</p>
+              </article>
+            </div>
+          </figure>
+          <p>Visual figure–ground must agree with behavior. A modal dialog needs an accessible name, an appropriate dialog role, initial focus, contained keyboard navigation, Escape behavior where applicable, and focus restoration. A nonmodal panel should not visually imply that the rest of the page is unavailable.</p>
+          <h3>Closure is a hint, not a control</h3>
+          <p>Partially visible content can suggest that a sequence continues beyond its container. This use of incomplete form is sometimes described through closure, but recognition of continuation does not reveal how to operate it, how many items exist, or whether content is merely clipped by mistake.</p>
+          <figure class="closure-figure">
+            <figcaption><strong>Illustration 9 — Continuation requires an explicit control</strong><span>A cropped card may prompt completion, but it cannot replace sequence position, a label, or an operable next action.</span></figcaption>
+            <div class="comparison-grid">
+              <article class="comparison-panel comparison-panel--problem">
+                <span class="comparison-label">Implicit only</span>
+                <div class="carousel-demo carousel-demo--implicit" aria-hidden="true"><span>Current report</span><span>Next report</span></div>
+                <p>The cut edge might imply more content, or it might look like a responsive-layout defect.</p>
+              </article>
+              <article class="comparison-panel comparison-panel--solution">
+                <span class="comparison-label">Perception plus operation</span>
+                <div class="carousel-demo carousel-demo--explicit" aria-hidden="true"><span>Current report</span><span>Next report</span><b>2 of 5</b><i>Next →</i></div>
+                <p>The visual continuation remains, but count and named control make the sequence operable.</p>
+              </article>
+            </div>
+          </figure>
+        </section>
+
+        <section id="similarity" aria-labelledby="similarity-heading">
+          <h2 id="similarity-heading">Similar appearance is a behavioral promise</h2>
+          <p>Similarity is often discussed as a way to make a family of elements look consistent. In an interface, it also teaches a grammar. If two elements share shape, border, typography, hover response, and placement, users reasonably infer that they share behavior.</p>
+          <figure class="affordance-figure">
+            <figcaption><strong>Illustration 10 — Status is not an action</strong><span>Similarity should describe role; exceptions require more than a color change.</span></figcaption>
+            <div class="comparison-grid">
+              <article class="comparison-panel comparison-panel--problem">
+                <span class="comparison-label">False equivalence</span>
+                <div class="permission-row permission-row--ambiguous" aria-hidden="true"><strong>API access</strong><span>Enabled</span><span>Configure</span><span>Remove</span></div>
+                <p>State, neutral action, and destructive action use the same button-like treatment.</p>
+              </article>
+              <article class="comparison-panel comparison-panel--solution">
+                <span class="comparison-label">Distinct roles</span>
+                <div class="permission-row permission-row--clear" aria-hidden="true"><strong>API access</strong><span class="status-mark">● Enabled</span><button type="button" tabindex="-1">Configure</button><button class="danger-mark" type="button" tabindex="-1">Remove access</button></div>
+                <p>Passive status, routine action, and destructive action have different visual and textual grammar.</p>
+              </article>
+            </div>
+          </figure>
+          <p>Color alone is insufficient because it may be unavailable, hard to distinguish, or reassigned by forced-color modes. Combine wording, position, shape, iconography, and programmatic state. Preserve visible focus and disabled-state meaning without making disabled text illegible.</p>
+        </section>
+
+        <section id="review" aria-labelledby="review-heading">
+          <h2 id="review-heading">Accessibility and review</h2>
+          <p>Gestalt principles describe likely perception; accessibility standards require important relationships and states to remain available under different modes of perception and operation. WCAG 2.2 requires information conveyed through presentation to be programmatically determinable or available in text. It also prohibits color as the only means of conveying information and requires sufficient non-text contrast for meaningful controls and graphics.</p>
+          <ol class="review-method">
+            <li><div><strong>Name the intended units.</strong><span>List the record, group, action scope, state, and reading path the task requires.</span></div></li>
+            <li><div><strong>Identify every active cue.</strong><span>Mark spacing, alignment, enclosure, similarity, connection, overlap, and movement. Do not count only the cue that was intentional.</span></div></li>
+            <li><div><strong>Find cue conflicts.</strong><span>Ask which relationship a quick glance implies. Check whether a strong line, region, or animation overrides a weaker spacing cue.</span></div></li>
+            <li><div><strong>Test transformations.</strong><span>Reflow the interface, zoom to 400%, switch themes, translate labels, add realistic errors, and increase data density.</span></div></li>
+            <li><div><strong>Remove presentation.</strong><span>Inspect headings, lists, fieldsets, labels, table headers, names, descriptions, live state, focus order, and reading order.</span></div></li>
+            <li><div><strong>Test fast and slow tasks.</strong><span>Use a glance test for group recognition, then a focused task for exact ownership, comparison, and action scope.</span></div></li>
+          </ol>
+          <div class="review-matrix" role="region" aria-label="Gestalt interface review questions" tabindex="0">
+            <table>
+              <caption>Review questions by cue</caption>
+              <thead><tr><th scope="col">Cue</th><th scope="col">Useful when</th><th scope="col">Failure to test</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Proximity</th><td>Local ownership must be scanned quickly.</td><td>Wrapping or localization creates new neighbors.</td></tr>
+                <tr><th scope="row">Common region</th><td>A persistent scope or object needs a boundary.</td><td>Nested panels flatten hierarchy into “card soup.”</td></tr>
+                <tr><th scope="row">Similarity</th><td>Elements share role, behavior, or state.</td><td>Passive and interactive elements become indistinguishable.</td></tr>
+                <tr><th scope="row">Connectedness</th><td>An explicit relation or sequence must be traced.</td><td>Crossings imply false dependencies.</td></tr>
+                <tr><th scope="row">Common fate</th><td>A transition explains shared change.</td><td>Unrelated objects move together or motion cannot be disabled.</td></tr>
+                <tr><th scope="row">Figure–ground</th><td>Attention and interaction move to a new layer.</td><td>Visual priority and keyboard focus disagree.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="gestalt-thesis">The useful question is not which Gestalt law a screen demonstrates. It is whether the groups perceived at a glance are the groups the task, interaction model, and accessibility tree actually require.</p>
+        </section>
+
+        <section id="sources" aria-labelledby="sources-heading">
+          <h2 id="sources-heading">Sources and further reading</h2>
+          <ol class="sources">
+            <li><a href="https://www.yorku.ca/pclassic/Wertheimer/Forms/forms.htm">Max Wertheimer — <em>Laws of Organization in Perceptual Forms</em>, 1923, English translation</a>.</li>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3482144/">Wagemans et al. — <em>A Century of Gestalt Psychology in Visual Perception I</em>, 2012</a>.</li>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3728284/">Wagemans et al. — <em>A Century of Gestalt Psychology in Visual Perception II</em>, 2012</a>.</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/1516361/">Stephen E. Palmer — Common region as a principle of perceptual grouping, 1992</a>.</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/24203413/">Palmer and Rock — Rethinking perceptual organization: uniform connectedness, 1994</a>.</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/18211188/">Kubovy and van den Berg — The whole is equal to the sum of its parts: proximity and similarity, 2008</a>.</li>
+            <li><a href="https://doi.org/10.1518/001872095779049408">Wickens and Carswell — The proximity compatibility principle, 1995</a>.</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/1754368/">Kramer and Jacobson — Perceptual organization and focused attention, 1991</a>.</li>
+            <li><a href="https://discovery.ucl.ac.uk/id/eprint/1499240/">Brumby and Zhuang — Visual grouping in menu interfaces, 2015</a>.</li>
+            <li><a href="https://sites.stat.columbia.edu/gelman/communication/HeerRobertson2007.pdf">Heer and Robertson — Animated transitions in statistical data graphics, 2007</a>.</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/31425094/">Chalbi et al. — Common fate for animated data grouping, 2020</a>.</li>
+            <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html">W3C — Understanding Success Criterion 1.3.1: Info and Relationships</a>.</li>
+            <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html">W3C — Understanding Success Criterion 1.4.1: Use of Color</a>.</li>
+            <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html">W3C — Understanding Success Criterion 1.4.11: Non-text Contrast</a>.</li>
+            <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html">W3C — Understanding Success Criterion 2.3.3: Animation from Interactions</a>.</li>
+          </ol>
+          <p class="updated">Research checked 30 September 2026. The examples are original interface demonstrations built with semantic HTML, CSS, inline SVG, and JavaScript. Motion is user initiated and has a reduced-motion alternative.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+      <span>Article · Project 06</span>
+    </div>
+  </footer>
+</body>
+</html>

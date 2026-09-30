@@ -70,7 +70,7 @@
         <section id="language" aria-labelledby="language-heading">
           <h2 id="language-heading">Purpose and terminology</h2>
           <p class="lead">This specification defines the current implementation and the requirements for future revisions.</p>
-          <p>It documents the website as implemented on 29 September 2026. When the code and specification differ, determine the intended behavior and update both in the same revision.</p>
+          <p>It documents the website as implemented on 30 September 2026. When the code and specification differ, determine the intended behavior and update both in the same revision.</p>
           <div class="spec-rule"><strong>Revision 2.0</strong><p>This revision establishes formal, concise titles and prose across all published projects while preserving their research, sources, interactive examples, and accessibility behavior.</p></div>
           <div class="spec-definition-grid">
             <article><span class="spec-term">Site</span><h3>Blandat bös</h3><p>The complete static website and its local assets.</p></article>
@@ -91,6 +91,7 @@
             <nav class="spec-sitemap" aria-label="Website map">
               <div class="spec-sitemap__root"><span class="spec-node-index">Entry point</span><strong>Blandat bös</strong><code>index.html</code></div>
               <ul>
+                <li><div class="spec-sitemap__node"><span>06</span><strong>Gestalt Principles in Graphical User Interfaces</strong><code>gestalt-principles-gui.html</code><small>Article</small></div></li>
                 <li><div class="spec-sitemap__node"><span>05</span><strong>Tables: History and Interface Design</strong><code>tables-history-ux.html</code><small>Article</small></div></li>
                 <li><div class="spec-sitemap__node"><span>04</span><strong>Family Tree Visualization: History and Design</strong><code>family-tree-visualization.html</code><small>Visualization</small></div></li>
                 <li><div class="spec-sitemap__node"><span>03</span><strong>Website Design and Implementation Specification</strong><code>website-specification.html</code><small>Documentation</small></div></li>
@@ -120,6 +121,7 @@
               <li class="folder"><code>outputs/</code>
                 <ul>
                   <li><code>index.html</code><span>Main project index</span></li>
+                  <li><code>gestalt-principles-gui.html</code><span>Gestalt and interface-design article 06</span></li>
                   <li><code>website-specification.html</code><span>This living reference</span></li>
                   <li><code>family-tree-visualization.html</code><span>Interactive visual-history project</span></li>
                   <li><code>tables-history-ux.html</code><span>Historical and UX article 05</span></li>
@@ -140,6 +142,7 @@
                       <li><code>website-specification.css</code><span>This page’s diagrams and tables</span></li>
                       <li><code>family-tree.css</code><span>Family-tree diagrams and interactive views</span></li>
                       <li><code>tables-history.css</code><span>Table history, anatomy, and decision-guide visuals</span></li>
+                      <li><code>gestalt-principles.css</code><span>Perceptual-grouping comparisons and interactive diagrams</span></li>
                     </ul>
                   </li>
                   <li class="folder"><code>assets/js/</code>
@@ -152,6 +155,7 @@
                       <li><code>wcag-medical.js</code><span>WCAG report interactive labs</span></li>
                       <li><code>family-tree.js</code><span>Family views, re-rooting, and relationship paths</span></li>
                       <li><code>tables-history.js</code><span>Sortable history and representation chooser</span></li>
+                      <li><code>gestalt-principles.js</code><span>Grouping, comparison-path, routing, and common-fate demonstrations</span></li>
                     </ul>
                   </li>
                 </ul>
@@ -185,7 +189,7 @@
               <div class="spec-token-theme spec-token-theme--dark"><h4>Dark theme</h4><div class="spec-swatches"><span class="paper">Paper<small>#313338</small></span><span class="surface">Surface<small>#2b2d31</small></span><span class="surface-2">Surface 2<small>#1e1f22</small></span><span class="ink">Ink<small>#f2f3f5</small></span><span class="accent">Spec accent<small>#8ed6c4</small></span><span class="muted">Muted<small>#b5bac1</small></span></div></div>
             </div>
           </figure>
-          <p>The dark canvas, surface, and inset-surface values are shared across pages. Dark accents are page-specific: the index and interface-models article use <code>#aeb4ff</code>, the WCAG report uses <code>#8ecbff</code>, this specification uses <code>#8ed6c4</code>, the family-tree visualization uses <code>#a6d49f</code>, and the table-history article uses <code>#e7c58d</code>.</p>
+          <p>The dark canvas, surface, and inset-surface values are shared across pages. Dark accents are page-specific: the index and interface-models article use <code>#aeb4ff</code>, the WCAG report uses <code>#8ecbff</code>, this specification uses <code>#8ed6c4</code>, the family-tree visualization uses <code>#a6d49f</code>, the table-history article uses <code>#e7c58d</code>, and the Gestalt article uses <code>#c4b5fd</code>.</p>
           <div class="spec-table-scroll" tabindex="0" role="region" aria-label="Foundation token reference">
             <table class="spec-table">
               <thead><tr><th scope="col">Token</th><th scope="col">Meaning</th><th scope="col">Typical use</th></tr></thead>
@@ -450,6 +454,20 @@
                 <li><code>.history-table</code>, <code>.table-tools</code> — sortable and filterable native-table demonstration.</li>
                 <li><code>.decision-controls</code>, <code>.decision-preview</code> — representation chooser.</li>
                 <li><code>tables-history.js</code> — sorting, filtering, live status, reset, and recommendation logic.</li>
+              </ul>
+            </article>
+            <article>
+              <span class="spec-term">Gestalt principles article</span>
+              <h3><code>gestalt-principles.css</code></h3>
+              <ul>
+                <li><code>.principle-map</code>, <code>.principle-definitions</code> — grouping-cue overview and terminology.</li>
+                <li><code>.toolbar-window</code>, <code>.toolbar-group</code> — responsive action-scope comparison.</li>
+                <li><code>.mini-form</code>, <code>.comparison-grid</code> — form ownership and paired examples.</li>
+                <li><code>.task-table</code> — row-versus-column comparison paths.</li>
+                <li><code>.workflow-svg</code> — crossed and lane-routed dependency paths.</li>
+                <li><code>.service-map</code> — user-initiated common-fate demonstration with reduced-motion behavior.</li>
+                <li><code>.mock-app</code>, <code>.carousel-demo</code>, <code>.permission-row</code> — figure–ground, closure, and behavioral-similarity comparisons.</li>
+                <li><code>gestalt-principles.js</code> — mutually exclusive example states, live explanations, and motion triggers.</li>
               </ul>
             </article>
           </div>

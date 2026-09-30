@@ -15,10 +15,12 @@ Open `index.html` to view the site. No build command is required.
 - `assets/css/website-specification.css` — visual diagrams and reference tables for the site specification.
 - `assets/css/family-tree.css` — historical family-tree illustrations and interactive visualization layouts.
 - `assets/css/tables-history.css` — historical table illustrations, table anatomy, and decision-guide layouts.
+- `assets/css/gestalt-principles.css` — perceptual-grouping comparisons, diagrams, and responsive interface examples.
 - `assets/js/theme.js` and `about.js` — shared behavior used by every page.
 - The remaining JavaScript files contain only page-specific interactions.
 - `assets/js/family-tree.js` — re-rooting, generation depth, view switching, and relationship-path exploration.
 - `assets/js/tables-history.js` — sortable and filterable table history plus the representation chooser.
+- `assets/js/gestalt-principles.js` — toolbar, table, workflow, and common-fate demonstrations.
 
 `project-showcase.html` remains as a compatibility redirect to `index.html`.
 
@@ -27,3 +29,5 @@ Open `index.html` to view the site. No build command is required.
 `family-tree-visualization.html` examines historical and interactive family-tree representations.
 
 `tables-history-ux.html` documents the history of tables and their appropriate use in graphical interfaces.
+
+`gestalt-principles-gui.html` applies Gestalt principles to realistic graphical-interface problems with accessible, interactive examples.

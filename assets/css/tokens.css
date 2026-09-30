@@ -292,3 +292,56 @@ html[data-theme="dark"][data-page="tables-history"] {
   --table-blue: #8ecbff;
   --table-leaf: #a6d49f;
 }
+
+html[data-page="gestalt-principles"] {
+  --paper: #f2efe8;
+  --surface: #fffdf7;
+  --surface-2: #e5e1d7;
+  --ink: #202421;
+  --muted: #555a55;
+  --line: #666a64;
+  --soft-line: #cecac0;
+  --control-line: #77786f;
+  --accent: #594b8f;
+  --note-accent: #b27b1f;
+  --gestalt-blue: #285e8e;
+  --gestalt-green: #1f6b50;
+  --gestalt-amber: #8a5a00;
+  --gestalt-red: #a43838;
+  --gestalt-lilac: #ded8ec;
+  --gestalt-mint: #c8ded2;
+  --gestalt-scrim: rgba(24, 25, 31, .58);
+  --link-color: var(--accent);
+  --about-copy-font: var(--font-sans);
+  --essay-hero-bottom: 56px;
+  --essay-title-max: 1030px;
+  --essay-title-size: clamp(44px, 7.8vw, 88px);
+  --essay-title-line: .93;
+  --essay-title-tracking: -.055em;
+  --essay-dek-max: 820px;
+  --essay-dek-margin: 26px;
+  --essay-article-width: 790px;
+  --essay-layout-bottom: 90px;
+  --essay-section-bottom: 60px;
+  --essay-section-top: 6px;
+}
+
+html[data-theme="dark"][data-page="gestalt-principles"] {
+  --paper: #313338;
+  --surface: #2b2d31;
+  --surface-2: #1e1f22;
+  --ink: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #797c84;
+  --soft-line: rgba(255, 255, 255, .12);
+  --control-line: #949ba4;
+  --accent: #c4b5fd;
+  --note-accent: #f0c36d;
+  --gestalt-blue: #8ecbff;
+  --gestalt-green: #8ed6b5;
+  --gestalt-amber: #f0c36d;
+  --gestalt-red: #ffaaa4;
+  --gestalt-lilac: #45415b;
+  --gestalt-mint: #29483f;
+  --gestalt-scrim: rgba(10, 11, 14, .72);
+}
