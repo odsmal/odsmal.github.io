@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-page="website-specification">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The complete visual and technical specification for Blandat bös: structure, pages, components, states, behavior, responsive rules, and accessibility requirements.">
+  <title>Website Design and Implementation Specification — Blandat bös</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/essay.css">
+  <link rel="stylesheet" href="assets/css/website-specification.css">
+  <script src="assets/js/about.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to specification</a>
+  <header class="shell topbar">
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <div class="topbar-actions">
+      <div class="about-control">
+        <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+        <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+          <h2 id="about-person">Kristoffer Johansson</h2>
+          <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+          <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+        </aside>
+      </div>
+      <div class="theme-segment" role="group" aria-label="Color theme">
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="shell essay-hero spec-hero">
+      <p class="eyebrow">Documentation · Published 27 Sep 2026 · Author: GPT-5.6 Sol Ultra</p>
+      <h1>Website Design and Implementation Specification</h1>
+      <p class="dek">Technical reference for the site’s structure, components, behavior, content, responsive rules, and accessibility requirements.</p>
+    </header>
+
+    <div class="shell article-layout spec-layout">
+      <aside class="toc-wrap" aria-labelledby="toc-heading">
+        <h2 class="toc-title" id="toc-heading">Table of contents</h2>
+        <nav aria-label="Specification contents">
+          <ol class="toc">
+            <li><a href="#language"><span class="toc-number">01</span>Purpose and language</a></li>
+            <li><a href="#map"><span class="toc-number">02</span>Site map</a></li>
+            <li><a href="#files"><span class="toc-number">03</span>File structure</a></li>
+            <li><a href="#foundations"><span class="toc-number">04</span>Design foundations</a></li>
+            <li><a href="#topbar"><span class="toc-number">05</span>Shared top bar</a></li>
+            <li><a href="#index"><span class="toc-number">06</span>Main page anatomy</a></li>
+            <li><a href="#collection"><span class="toc-number">07</span>Cards and table</a></li>
+            <li><a href="#subpages"><span class="toc-number">08</span>Project subpages</a></li>
+            <li><a href="#controls"><span class="toc-number">09</span>Controls and states</a></li>
+            <li><a href="#specialized"><span class="toc-number">10</span>Specialized components</a></li>
+            <li><a href="#content"><span class="toc-number">11</span>Content model</a></li>
+            <li><a href="#behavior"><span class="toc-number">12</span>Behavior</a></li>
+            <li><a href="#accessibility"><span class="toc-number">13</span>Accessibility contract</a></li>
+            <li><a href="#responsive"><span class="toc-number">14</span>Responsive rules</a></li>
+            <li><a href="#maintenance"><span class="toc-number">15</span>Maintenance map</a></li>
+            <li><a href="#qa"><span class="toc-number">16</span>Release checklist</a></li>
+          </ol>
+        </nav>
+        <p class="spec-side-note"><strong>Use.</strong> Refer to the documented component and state when requesting a revision. The listed names and selectors identify the implementation target.</p>
+      </aside>
+
+      <article class="essay-article spec-article" id="article" tabindex="-1">
+        <section id="language" aria-labelledby="language-heading">
+          <h2 id="language-heading">Purpose and terminology</h2>
+          <p class="lead">This specification defines the current implementation and the requirements for future revisions.</p>
+          <p>It documents the website as implemented on 29 September 2026. When the code and specification differ, determine the intended behavior and update both in the same revision.</p>
+          <div class="spec-rule"><strong>Revision 2.0</strong><p>This revision establishes formal, concise titles and prose across all published projects while preserving their research, sources, interactive examples, and accessibility behavior.</p></div>
+          <div class="spec-definition-grid">
+            <article><span class="spec-term">Site</span><h3>Blandat bös</h3><p>The complete static website and its local assets.</p></article>
+            <article><span class="spec-term">Main page</span><h3>Project index</h3><p>The collection at <code>index.html</code>, available in card and table views.</p></article>
+            <article><span class="spec-term">Subpage</span><h3>Project destination</h3><p>A dedicated article, report, specification, visualization, or generic project-detail page.</p></article>
+            <article><span class="spec-term">Component</span><h3>Reusable GUI part</h3><p>A named visual and behavioral unit, such as the About disclosure.</p></article>
+            <article><span class="spec-term">Category</span><h3>Primary collection type</h3><p>The broad filterable type: currently Article, Report, Documentation, or Visualization.</p></article>
+            <article><span class="spec-term">Tag</span><h3>Optional secondary label</h3><p>Reserved for future use. No published project currently needs a secondary tag.</p></article>
+          </div>
+          <div class="spec-rule"><strong>Core rule</strong><p>Change shared parts in shared files. Use page-specific files only for content or visuals unique to one page.</p></div>
+        </section>
+
+        <section id="map" aria-labelledby="map-heading">
+          <h2 id="map-heading">Site map</h2>
+          <p>The index is the single public entry point. Every project card and project title in the table leads to a destination page. The compatibility route exists only for old links.</p>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 1 — Information architecture</strong><span>The nested list is the actual navigation hierarchy, not a screenshot.</span></figcaption>
+            <nav class="spec-sitemap" aria-label="Website map">
+              <div class="spec-sitemap__root"><span class="spec-node-index">Entry point</span><strong>Blandat bös</strong><code>index.html</code></div>
+              <ul>
+                <li><div class="spec-sitemap__node"><span>05</span><strong>Tables: History and Interface Design</strong><code>tables-history-ux.html</code><small>Article</small></div></li>
+                <li><div class="spec-sitemap__node"><span>04</span><strong>Family Tree Visualization: History and Design</strong><code>family-tree-visualization.html</code><small>Visualization</small></div></li>
+                <li><div class="spec-sitemap__node"><span>03</span><strong>Website Design and Implementation Specification</strong><code>website-specification.html</code><small>Documentation</small></div></li>
+                <li><div class="spec-sitemap__node"><span>02</span><strong>WCAG 2.2 and Medical Device Interface Safety</strong><code>wcag-medical-device-ux.html</code><small>Report</small></div></li>
+                <li><div class="spec-sitemap__node"><span>01</span><strong>Emerging Interface Models in 2026</strong><code>ux-frontier-2026.html</code><small>Article</small></div></li>
+                <li><div class="spec-sitemap__node spec-sitemap__node--support"><span>T</span><strong>Generic project template</strong><code>project.html?project=…</code><small>Supporting route</small></div></li>
+              </ul>
+              <div class="spec-sitemap__redirect"><strong>Compatibility route:</strong> <code>project-showcase.html</code> redirects to <code>index.html</code>.</div>
+            </nav>
+          </figure>
+          <ul class="spec-key">
+            <li><span>1</span><strong>Entry point</strong> — project discovery begins on the index.</li>
+            <li><span>2</span><strong>Project destination</strong> — every listed item has a real page URL.</li>
+            <li><span>3</span><strong>Article subtype</strong> — structured long-form analysis with a summary, contents navigation, references, and optional interactive examples.</li>
+            <li><span>4</span><strong>Report subtype</strong> — formal reference with explicit scope and method, findings, recommendations, references, and optional labs.</li>
+            <li><span>5</span><strong>Specification subtype</strong> — long-form visual reference using the shared reading shell.</li>
+            <li><span>6</span><strong>Support routes</strong> — generic details and compatibility links are not primary index entries.</li>
+          </ul>
+        </section>
+
+        <section id="files" aria-labelledby="files-heading">
+          <h2 id="files-heading">File structure and ownership</h2>
+          <p>There is no build step and no third-party dependency. A browser reads the HTML, CSS, and JavaScript directly. File ownership runs from broadest to narrowest: tokens → base → shared components → page-family styles → page-specific styles.</p>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 2 — Source tree</strong><span>Descriptions state the responsibility of each file.</span></figcaption>
+            <ul class="spec-file-tree" aria-label="Website file structure">
+              <li class="folder"><code>outputs/</code>
+                <ul>
+                  <li><code>index.html</code><span>Main project index</span></li>
+                  <li><code>website-specification.html</code><span>This living reference</span></li>
+                  <li><code>family-tree-visualization.html</code><span>Interactive visual-history project</span></li>
+                  <li><code>tables-history-ux.html</code><span>Historical and UX article 05</span></li>
+                  <li><code>ux-frontier-2026.html</code><span>Interface-models article 01</span></li>
+                  <li><code>wcag-medical-device-ux.html</code><span>Technical report 02</span></li>
+                  <li><code>project.html</code><span>Query-driven generic detail template</span></li>
+                  <li><code>project-showcase.html</code><span>Compatibility redirect</span></li>
+                  <li class="folder"><code>assets/css/</code>
+                    <ul>
+                      <li><code>tokens.css</code><span>Theme and page variables</span></li>
+                      <li><code>base.css</code><span>Reset, focus, links, shell, helpers</span></li>
+                      <li><code>components.css</code><span>Top bar, back, About, theme selector</span></li>
+                      <li><code>essay.css</code><span>Shared long-form reading shell; legacy filename retained</span></li>
+                      <li><code>project-index.css</code><span>Index controls, cards, table, footer</span></li>
+                      <li><code>project.css</code><span>Generic project-detail layout</span></li>
+                      <li><code>ux-frontier.css</code><span>UX article visuals</span></li>
+                      <li><code>wcag-medical.css</code><span>WCAG report visuals</span></li>
+                      <li><code>website-specification.css</code><span>This page’s diagrams and tables</span></li>
+                      <li><code>family-tree.css</code><span>Family-tree diagrams and interactive views</span></li>
+                      <li><code>tables-history.css</code><span>Table history, anatomy, and decision-guide visuals</span></li>
+                    </ul>
+                  </li>
+                  <li class="folder"><code>assets/js/</code>
+                    <ul>
+                      <li><code>theme.js</code><span>Shared saved theme state</span></li>
+                      <li><code>about.js</code><span>Shared About disclosure behavior</span></li>
+                      <li><code>project-index.js</code><span>Project data, filters, views, rendering</span></li>
+                      <li><code>project.js</code><span>Generic project data and rendering</span></li>
+                      <li><code>ux-frontier.js</code><span>UX article interactive labs</span></li>
+                      <li><code>wcag-medical.js</code><span>WCAG report interactive labs</span></li>
+                      <li><code>family-tree.js</code><span>Family views, re-rooting, and relationship paths</span></li>
+                      <li><code>tables-history.js</code><span>Sortable history and representation chooser</span></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </figure>
+          <div class="spec-layer-stack" aria-label="Stylesheet cascade order">
+            <div><span>1</span><strong>Tokens</strong><small>values</small></div>
+            <div><span>2</span><strong>Base</strong><small>global rules</small></div>
+            <div><span>3</span><strong>Components</strong><small>shared GUI</small></div>
+            <div><span>4</span><strong>Page family</strong><small>index or long-form</small></div>
+            <div><span>5</span><strong>Page-specific</strong><small>unique visuals</small></div>
+          </div>
+        </section>
+
+        <section id="foundations" aria-labelledby="foundations-heading">
+          <h2 id="foundations-heading">Design foundations</h2>
+          <h3>Layout and typography</h3>
+          <ul>
+            <li><strong>Shell:</strong> <code>.shell</code> is centered, has a maximum width of 1180px, and keeps 17px side gutters; at 590px and below the gutters become 12px.</li>
+            <li><strong>Sans serif:</strong> Trebuchet MS and Arial for interface text, headings, and buttons.</li>
+            <li><strong>Serif:</strong> Georgia and Times New Roman at 21px/1.65 for <code>.lead</code> and classless paragraphs placed directly inside long-form sections. Hero summaries use their responsive <code>.dek</code> scale; lists, cards, controls, and captions keep their own sizes.</li>
+            <li><strong>Monospace:</strong> Courier New for eyebrows, labels, status, and structural references.</li>
+            <li><strong>Shape language:</strong> cards and work surfaces use modest 7–14px corners; identity and navigation controls use pill corners; category and view controls remain rectangular.</li>
+          </ul>
+          <h3>Theme tokens</h3>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 3 — Semantic color tokens</strong><span>Surface roles are shared; accent values can identify a project.</span></figcaption>
+            <div class="spec-token-themes">
+              <div class="spec-token-theme spec-token-theme--light"><h4>Light theme</h4><div class="spec-swatches"><span class="paper">Paper<small>#f2efe8</small></span><span class="surface">Surface<small>#fffdf7</small></span><span class="surface-2">Surface 2<small>#e5e1d7</small></span><span class="ink">Ink<small>#1c2826</small></span><span class="accent">Spec accent<small>#0b5d62</small></span><span class="muted">Muted<small>#4f5b56</small></span></div></div>
+              <div class="spec-token-theme spec-token-theme--dark"><h4>Dark theme</h4><div class="spec-swatches"><span class="paper">Paper<small>#313338</small></span><span class="surface">Surface<small>#2b2d31</small></span><span class="surface-2">Surface 2<small>#1e1f22</small></span><span class="ink">Ink<small>#f2f3f5</small></span><span class="accent">Spec accent<small>#8ed6c4</small></span><span class="muted">Muted<small>#b5bac1</small></span></div></div>
+            </div>
+          </figure>
+          <p>The dark canvas, surface, and inset-surface values are shared across pages. Dark accents are page-specific: the index and interface-models article use <code>#aeb4ff</code>, the WCAG report uses <code>#8ecbff</code>, this specification uses <code>#8ed6c4</code>, the family-tree visualization uses <code>#a6d49f</code>, and the table-history article uses <code>#e7c58d</code>.</p>
+          <div class="spec-table-scroll" tabindex="0" role="region" aria-label="Foundation token reference">
+            <table class="spec-table">
+              <thead><tr><th scope="col">Token</th><th scope="col">Meaning</th><th scope="col">Typical use</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><code>--paper</code></th><td>Page canvas</td><td>Body background and inset demo backgrounds</td></tr>
+                <tr><th scope="row"><code>--surface</code></th><td>Raised surface</td><td>Cards, controls, panels, labs</td></tr>
+                <tr><th scope="row"><code>--ink</code></th><td>Primary foreground</td><td>Headings, body text, strong borders</td></tr>
+                <tr><th scope="row"><code>--muted</code></th><td>Secondary foreground</td><td>Summaries, annotations, secondary metadata</td></tr>
+                <tr><th scope="row"><code>--line</code></th><td>Structural boundary</td><td>Tables, figures, panels, dividers</td></tr>
+                <tr><th scope="row"><code>--soft-line</code></th><td>Quiet boundary</td><td>TOC rows and internal separators</td></tr>
+                <tr><th scope="row"><code>--accent</code></th><td>Page emphasis</td><td>Eyebrows, links, diagram highlights</td></tr>
+                <tr><th scope="row"><code>--control-line</code></th><td>Input boundary</td><td>Selects, demo buttons, interactive fields</td></tr>
+                <tr><th scope="row"><code>--control-border-width</code></th><td>Interactive boundary width</td><td>Buttons, selectors, cards, inputs, and segmented controls</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="spec-rule"><strong>Token rule</strong><p>Use semantic tokens for established color roles and update both themes together. The dark theme uses a cool-charcoal surface hierarchy with soft white text; page accents retain project identity and required contrast.</p></div>
+        </section>
+
+        <section id="topbar" aria-labelledby="topbar-heading">
+          <h2 id="topbar-heading">Shared top bar</h2>
+          <p>The top bar is the same component family on every real page. It has a 68px minimum height; the index uses 10px vertical padding, and compact subpages use 8px top padding. On the index, About and the theme selector are direct children of <code>.topbar--index</code>. Subpages add the All projects back link and wrap About plus the theme selector in <code>.topbar-actions</code>. There is no bottom border.</p>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 4 — Top-bar configurations</strong><span>Both variations share component sizing and alignment.</span></figcaption>
+            <div class="spec-topbar-demo" aria-hidden="true">
+              <div><span class="spec-demo-label">Index</span><div class="spec-mini-topbar spec-mini-topbar--index"><span class="spec-mini-about">About</span><span class="spec-mini-theme"><i>☀</i><i>◐</i></span></div></div>
+              <div><span class="spec-demo-label">Subpage</span><div class="spec-mini-topbar"><span class="spec-mini-back">←&nbsp;&nbsp;All projects</span><span class="spec-mini-actions"><i>About</i><b><em>☀</em><em>◐</em></b></span></div></div>
+            </div>
+            <ol class="spec-callout-key">
+              <li><code>.topbar</code> — shared maximum-width header layout.</li>
+              <li><code>.back</code> — shared pill link to <code>index.html</code>, used in subpage headers and long-form footers; minimum 48px height with a 28px arrow and 12px gap.</li>
+              <li><code>.topbar-actions</code> — subpage-only wrapper for About and theme controls with a 10px gap.</li>
+              <li><code>.about-disclosure</code> — 48px pill button using <code>aria-expanded</code>.</li>
+              <li><code>.about-panel</code> — rounded nonmodal popover anchored directly under About; at 590px and below on the index it is positioned from the top bar to remain within the viewport.</li>
+              <li><code>.theme-segment</code> — 48px pill containing two exclusive theme choices.</li>
+              <li><code>.theme-choice</code> — 42 × 38px option using <code>aria-pressed</code>, centered vertically within the 48px segmented-control container.</li>
+            </ol>
+          </figure>
+          <h3>About disclosure</h3>
+          <p>The About panel introduces Kristoffer Johansson, briefly describes his interface design work and the site's purpose, and defines “bös” in a dashed lexicon note. It opens from the button, closes from the same button, closes on outside click, and closes on Escape. Escape returns focus to About. It is a nonmodal disclosure: the rest of the page remains available and there is no focus trap.</p>
+          <h3>Theme selector</h3>
+          <p>Sun selects light mode and the solid moon selects dark mode. The selected segment is visually filled and programmatically exposed through <code>aria-pressed="true"</code>. The moon inherits the current foreground color so its appearance is consistent on every page.</p>
+        </section>
+
+        <section id="index" aria-labelledby="index-heading">
+          <h2 id="index-heading">Main page anatomy</h2>
+          <p>The index is a compact archive, not an editorial page. Its job is to identify the collection, let people narrow it, change its representation, and open a project.</p>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 5 — Main page</strong><span>Numbered regions are named in the key below.</span></figcaption>
+            <div class="spec-page-frame" aria-hidden="true">
+              <div class="spec-page-frame__bar"><span class="spec-marker">1</span><i></i><i></i></div>
+              <div class="spec-page-frame__hero"><span class="spec-marker">2</span><strong>Blandat bös</strong></div>
+              <div class="spec-page-frame__heading"><span class="spec-marker">3</span><b></b></div>
+              <div class="spec-page-frame__controls"><span class="spec-marker">4</span><i></i><i></i><span class="spec-view-mini"><b></b><b></b><em class="spec-marker">5</em></span></div>
+              <div class="spec-page-frame__results"><span class="spec-marker">6</span></div>
+              <div class="spec-page-frame__cards"><span class="spec-marker">7</span><i></i><i></i><i></i></div>
+              <div class="spec-page-frame__footer"><span class="spec-marker">8</span></div>
+            </div>
+            <ol class="spec-callout-key">
+              <li><strong>Top bar</strong> — About disclosure and theme selector.</li>
+              <li><strong>Hero</strong> — the site title, Blandat bös. “Bös” uses the accent-colored serif emphasis treatment from long-form headings.</li>
+              <li><strong>Index heading</strong> — “Project index / 2026-2026” plus a horizontal rule.</li>
+              <li><strong>Category filters</strong> — independent rectangular buttons: All categories, Articles, Reports, Documentation, Visualizations.</li>
+              <li><strong>View selector</strong> — right-aligned rectangular segmented control for card and table view, with both 38px choices centered within its 48px container.</li>
+              <li><strong>Results line</strong> — live result count and sorting description.</li>
+              <li><strong>Project collection</strong> — either the project grid or semantic data table.</li>
+              <li><strong>Footer</strong> — “Prompted by human, made by AI.” and copyright year.</li>
+            </ol>
+          </figure>
+          <h3>Control order</h3>
+          <ol>
+            <li>Category filters remain together on the left.</li>
+            <li>The card/table selector is pushed to the right with <code>margin-left: auto</code>.</li>
+            <li>The result count follows the controls and uses <code>aria-live="polite"</code>.</li>
+            <li>Only one collection view is visible; the other receives the shared <code>.hidden</code> utility.</li>
+          </ol>
+        </section>
+
+        <section id="collection" aria-labelledby="collection-heading">
+          <h2 id="collection-heading">Project cards and table</h2>
+          <h3>Card view</h3>
+          <p>The card is the primary visual representation. The whole boundary is one link, so title, summary, visual, and metadata all open the same project. With no secondary tag, the card label uses its category name.</p>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 6 — Project card anatomy</strong><span>This example uses the new specification project.</span></figcaption>
+            <div class="spec-card-anatomy">
+              <div class="spec-sample-card" aria-hidden="true">
+                <div class="spec-sample-visual"><span class="spec-marker marker-1">1</span><i class="spec-marker marker-2">2</i><b>03</b><em>Documentation</em><strong>SPEC</strong></div>
+                <div class="spec-sample-body"><span class="spec-marker marker-6">6</span><h4>Website Design and Implementation Specification</h4><p>Technical reference for the site’s structure, components, behavior, and requirements.</p><footer>Sep 2026 · Complete</footer></div>
+              </div>
+              <ol class="spec-callout-key compact">
+                <li><code>.project-card</code> — linked card boundary.</li>
+                <li><code>.project-visual</code> — color and glyph region.</li>
+                <li><code>.project-number</code> — two-digit sequence.</li>
+                <li><code>.project-type</code> — visible category label, here Documentation.</li>
+                <li><code>.visual-glyph</code> — decorative symbol marked hidden to assistive technology.</li>
+                <li><code>.project-body h3</code> — visible project name.</li>
+                <li><code>.project-body p</code> — short summary.</li>
+                <li><code>.project-footer</code> — abbreviated publication month, year, and one approved status.</li>
+                <li><code>:focus-visible</code> — focus surrounds the complete linked card.</li>
+              </ol>
+            </div>
+          </figure>
+          <h3>Table view</h3>
+          <p>The table is the compact comparison representation. It uses real column headers and the project name as each row header. Row typography mirrors the corresponding card text; only the linked project name remains underlined. Category labels reuse the card label’s raised surface background, borderless shape, padding, and typography.</p>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 7 — Table semantics</strong><span>The wrapper scrolls horizontally instead of squeezing labels on narrow screens.</span></figcaption>
+            <div class="spec-table-scroll" tabindex="0" role="region" aria-label="Example project table">
+              <table class="spec-table spec-table--project">
+                <thead><tr><th scope="col">No.</th><th scope="col">Project</th><th scope="col">Kind</th><th scope="col">Published</th><th scope="col">Status</th></tr></thead>
+                <tbody><tr><td class="spec-table-number">03</td><th scope="row" class="spec-table-title"><a href="#collection">Website Design and Implementation Specification</a></th><td class="spec-table-kind"><span>Documentation</span></td><td class="spec-table-meta">Sep 2026</td><td class="spec-table-meta">Complete</td></tr></tbody>
+              </table>
+            </div>
+          </figure>
+          <div class="spec-vocabulary">
+            <div><span>Approved statuses</span><strong>In progress</strong><strong>Complete</strong><strong>Paused</strong></div>
+            <div><span>Current categories</span><strong>Article</strong><strong>Report</strong><strong>Documentation</strong><strong>Visualization</strong></div>
+            <div><span>Category vs tag</span><p><b>Documentation</b> is sufficient for this project. Add a tag only when a future distinction provides real value.</p></div>
+          </div>
+        </section>
+
+        <section id="subpages" aria-labelledby="subpages-heading">
+          <h2 id="subpages-heading">Project subpages</h2>
+          <p>The articles, report, visualization, and this specification share the long-form page shell. The generic project template uses a shorter detail shell with the same top-bar controls and return route.</p>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 8 — Long-form subpage</strong><span>The contents rail becomes part of the reading column at smaller widths.</span></figcaption>
+            <div class="spec-essay-frame" aria-hidden="true">
+              <div class="spec-essay-top"><span class="spec-marker">1</span></div>
+              <div class="spec-essay-hero-mini"><span class="spec-marker">2</span><i></i><strong><span class="spec-marker">3</span>Page title</strong><p><span class="spec-marker">4</span></p></div>
+              <div class="spec-essay-columns"><aside><span class="spec-marker">5</span><i></i><i></i><i></i><i></i></aside><article><span class="spec-marker">6</span><h4><i class="spec-marker">7</i></h4><p></p><p></p><div class="spec-lab-mini"><span class="spec-marker">8</span></div><p></p><div class="spec-sources-mini"><span class="spec-marker">9</span></div></article></div>
+              <div class="spec-essay-footer-mini"><span class="spec-marker">10</span></div>
+            </div>
+            <ol class="spec-callout-key">
+              <li><strong>Shared top bar</strong> — back, About, and theme controls.</li>
+              <li><code>.eyebrow</code> — category, publication date, and author.</li>
+              <li><code>.essay-hero h1</code> — unique page title.</li>
+              <li><code>.dek</code> — plain-language summary.</li>
+              <li><code>.toc-wrap</code> — sticky contents navigation on wide screens.</li>
+              <li><code>.essay-article</code> — primary reading column and skip-link destination.</li>
+              <li><strong>Section heading</strong> — unique ID paired with <code>aria-labelledby</code>.</li>
+              <li><code>.lab</code> — optional interactive example with named controls and result.</li>
+              <li><code>.sources</code> and <code>.updated</code> — evidence and research boundary.</li>
+              <li><code>.footer</code> — return route and project sequence.</li>
+            </ol>
+          </figure>
+          <h3>Eyebrow pattern</h3>
+          <p>Every published project uses <strong>“Category · Published D Mon YYYY · Author: Name”</strong> in the eyebrow. Long-form heroes do not use metadata pills, separate bylines, or boxed summary and timeline strips. “Field note” and “Snapshot” are not current eyebrow terms.</p>
+          <h3>Generic project detail</h3>
+          <p><code>project.html?project=&lt;slug&gt;</code> is populated by <code>project.js</code>. It has a hero, large project visual, facts, project notes, a useful finding, and Project index/Next navigation. It remains available for future small builds and experiments, but those dormant data records are not part of the visible archive.</p>
+        </section>
+
+        <section id="controls" aria-labelledby="controls-heading">
+          <h2 id="controls-heading">Shared controls and states</h2>
+          <p>All controls use the shared one-pixel interactive boundary, have a rest state, an explicit keyboard-focus state, and a state that communicates selection or expansion in both appearance and semantics. Hover alone never reveals essential information.</p>
+          <div class="spec-table-scroll" tabindex="0" role="region" aria-label="Component state matrix">
+            <table class="spec-table spec-state-table">
+              <thead><tr><th scope="col">Component</th><th scope="col">Rest</th><th scope="col">Hover</th><th scope="col">Keyboard focus</th><th scope="col">Selected or open</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">About button</th><td><span class="spec-demo-pill">About</span></td><td><span class="spec-demo-pill spec-demo--hover">About</span></td><td><span class="spec-demo-pill spec-demo--focus">About</span></td><td><span class="spec-demo-pill spec-demo--selected">About</span></td></tr>
+                <tr><th scope="row">Theme choice</th><td><span class="spec-demo-square">☀</span></td><td><span class="spec-demo-square spec-demo--hover">☀</span></td><td><span class="spec-demo-square spec-demo--focus">☀</span></td><td><span class="spec-demo-square spec-demo--selected">☀</span></td></tr>
+                <tr><th scope="row">Category filter</th><td><span class="spec-demo-rect">Articles</span></td><td><span class="spec-demo-rect spec-demo--hover">Articles</span></td><td><span class="spec-demo-rect spec-demo--focus">Articles</span></td><td><span class="spec-demo-rect spec-demo--selected">Articles</span></td></tr>
+                <tr><th scope="row">View choice</th><td><span class="spec-demo-square">▦</span></td><td><span class="spec-demo-square spec-demo--hover">▦</span></td><td><span class="spec-demo-square spec-demo--focus">▦</span></td><td><span class="spec-demo-square spec-demo--selected">▦</span></td></tr>
+                <tr><th scope="row">Back link</th><td><span class="spec-demo-pill">← All projects</span></td><td><span class="spec-demo-pill spec-demo--selected">← All projects</span></td><td><span class="spec-demo-pill spec-demo--focus">← All projects</span></td><td>Not applicable</td></tr>
+                <tr><th scope="row">Text link</th><td><span class="spec-demo-link">Example link</span></td><td><span class="spec-demo-link spec-demo--hover">Example link</span></td><td><span class="spec-demo-link spec-demo--focus">Example link</span></td><td>Not applicable</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Required state semantics</h3>
+          <ul>
+            <li><strong>Toggle choices:</strong> use <code>aria-pressed</code>; exactly one card/table view and one theme are pressed.</li>
+            <li><strong>Disclosure:</strong> About uses <code>aria-expanded</code> and <code>aria-controls</code>.</li>
+            <li><strong>Hidden regions:</strong> use the shared <code>.hidden</code> class, which removes content from layout and the accessibility tree.</li>
+            <li><strong>Focus:</strong> the global dual white/black ring must not be removed or clipped.</li>
+            <li><strong>Dynamic result:</strong> count or lab output uses a restrained polite live region when an announcement is useful.</li>
+            <li><strong>Unavailable result:</strong> show the textual empty state “No projects are available in this category.”</li>
+          </ul>
+        </section>
+
+        <section id="specialized" aria-labelledby="specialized-heading">
+          <h2 id="specialized-heading">Specialized component inventory</h2>
+          <p>These parts are intentionally not shared because they communicate ideas unique to one project. Their foundations—type, color tokens, focus, inputs, labs, and responsive behavior—are shared.</p>
+          <div class="spec-inventory-grid">
+            <article>
+              <span class="spec-term">Generic project detail</span>
+              <h3><code>project.css</code></h3>
+              <ul>
+                <li><code>.project-hero</code>, <code>.kicker</code>, <code>.summary</code> — page introduction.</li>
+                <li><code>.detail-visual</code>, <code>.glyph</code> — large project illustration.</li>
+                <li><code>.project-content</code> — fact/story reading grid.</li>
+                <li><code>.facts</code>, <code>.fact</code> — status, time, tools, and year.</li>
+                <li><code>.story</code> — project record.</li>
+                <li><code>.lesson</code> — key finding callout.</li>
+                <li><code>.project-nav</code> — Project index and Next navigation.</li>
+                <li><code>.not-found</code> — unknown project fallback.</li>
+              </ul>
+            </article>
+            <article>
+              <span class="spec-term">Interface models article</span>
+              <h3><code>ux-frontier.css</code></h3>
+              <ul>
+                <li><code>.article-brief</code> — executive-summary framing.</li>
+                <li><code>.snapshot</code>, <code>.pullquote</code>, <code>.callout</code> — analytical emphasis.</li>
+                <li><code>.maturity</code> and status classes — maturity legend.</li>
+                <li><code>.pattern-grid</code> — emerging pattern cards.</li>
+                <li><code>.component-list</code> — proposed agency vocabulary.</li>
+                <li><code>.generated-grid</code> — composed interface cards injected by <code>ux-frontier.js</code> in the composer lab.</li>
+                <li><code>.radio-choice</code>, <code>.plan</code> — delegation lab.</li>
+                <li><code>.scene-object</code> — multimodal referent choices.</li>
+                <li><code>.distance-widget</code> — distance-aware spatial component.</li>
+                <li><code>.principles</code> — closing design principles.</li>
+              </ul>
+            </article>
+            <article>
+              <span class="spec-term">WCAG medical report</span>
+              <h3><code>wcag-medical.css</code></h3>
+              <ul>
+                <li><code>.report-findings</code>, <code>.recommendation-list</code> — formal report framing.</li>
+                <li><code>.reading-note</code>, <code>.plain-language</code>, <code>.callout</code> — scope and explanation.</li>
+                <li><code>.nine-grid</code>, <code>.criterion</code>, <code>.level</code> — WCAG 2.2 criteria.</li>
+                <li><code>.contrast-preview</code> — contrast calculator output.</li>
+                <li><code>.target-stage</code>, <code>.target-dot</code> — target-size simulator.</li>
+                <li><code>.error-preview</code>, <code>.mock-error</code> — error-feedback comparison.</li>
+                <li><code>.risk-chain</code> — accessibility-to-harm example.</li>
+                <li><code>.comparison</code> — standards comparison table.</li>
+                <li><code>.flow</code> — practical workflow sequence.</li>
+              </ul>
+            </article>
+            <article>
+              <span class="spec-term">Specification page</span>
+              <h3><code>website-specification.css</code></h3>
+              <ul>
+                <li><code>.spec-sitemap</code> — page hierarchy.</li>
+                <li><code>.spec-file-tree</code> — source ownership.</li>
+                <li><code>.spec-page-frame</code> — index anatomy.</li>
+                <li><code>.spec-card-anatomy</code> — card vocabulary.</li>
+                <li><code>.spec-essay-frame</code> — subpage anatomy.</li>
+                <li><code>.spec-state-table</code> — GUI state specimens.</li>
+                <li><code>.spec-responsive</code> — breakpoint comparison.</li>
+                <li><code>.spec-table</code> — reference and inventory tables.</li>
+              </ul>
+            </article>
+            <article>
+              <span class="spec-term">Family-tree visualization</span>
+              <h3><code>family-tree.css</code></h3>
+              <ul>
+                <li><code>.kinship-wheel</code>, <code>.living-tree</code>, <code>.genealogy-roll</code> — historical visual forms.</li>
+                <li><code>.paper-forms</code>, <code>.modern-gallery</code> — comparative format catalogues.</li>
+                <li><code>.family-stage</code> — current interactive rendering surface.</li>
+                <li><code>.ancestor-tree</code>, <code>.fan-svg</code>, <code>.timeline-chart</code>, <code>.network-svg</code> — four switchable family views.</li>
+                <li><code>.family-outline</code> — synchronized structured text equivalent.</li>
+                <li><code>.relationship-path</code> — step-by-step relationship route.</li>
+                <li><code>.family-principles</code> — inclusive visualization rules.</li>
+              </ul>
+            </article>
+            <article>
+              <span class="spec-term">Table history article</span>
+              <h3><code>tables-history.css</code></h3>
+              <ul>
+                <li><code>.evolution-grid</code> — four-stage record-to-interface illustration.</li>
+                <li><code>.milestone-list</code>, <code>.turning-point</code> — historical sequence and pivotal transitions.</li>
+                <li><code>.anatomy-table</code>, <code>.anatomy-key</code> — semantic table anatomy.</li>
+                <li><code>.interaction-shift</code>, <code>.use-grid</code>, <code>.alternatives</code> — comparison and decision guidance.</li>
+                <li><code>.history-table</code>, <code>.table-tools</code> — sortable and filterable native-table demonstration.</li>
+                <li><code>.decision-controls</code>, <code>.decision-preview</code> — representation chooser.</li>
+                <li><code>tables-history.js</code> — sorting, filtering, live status, reset, and recommendation logic.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="spec-rule"><strong>Specialization rule</strong><p>Promote a specialized component into <code>components.css</code> only when at least two page families need the same structure, appearance, and behavior.</p></div>
+        </section>
+
+        <section id="content" aria-labelledby="content-heading">
+          <h2 id="content-heading">Content model and editorial rules</h2>
+          <h3>Project data</h3>
+          <div class="spec-table-scroll" tabindex="0" role="region" aria-label="Project data field reference">
+            <table class="spec-table">
+              <thead><tr><th scope="col">Field</th><th scope="col">Required</th><th scope="col">Rule</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><code>entry</code></th><td>Yes</td><td>Stable two-digit sequence. Filtering and sorting must not renumber it.</td></tr>
+                <tr><th scope="row"><code>published</code></th><td>Yes</td><td>ISO date used for newest-first sorting and for deriving the abbreviated month-and-year label. A higher stable entry number breaks same-day ties.</td></tr>
+                <tr><th scope="row"><code>title</code></th><td>Yes</td><td>Unique, descriptive, formal project name stated without unnecessary metaphor.</td></tr>
+                <tr><th scope="row"><code>type</code></th><td>Yes</td><td>Machine value matching a category filter: <code>article</code>, <code>report</code>, <code>documentation</code>, or <code>visualization</code>.</td></tr>
+                <tr><th scope="row"><code>tag</code></th><td>No</td><td>Specific visible card label; falls back to the category label.</td></tr>
+                <tr><th scope="row"><code>href</code></th><td>Yes for custom pages</td><td>Local destination from the index.</td></tr>
+                <tr><th scope="row"><code>glyph</code></th><td>Yes</td><td>Short decorative text; keep understandable when enlarged.</td></tr>
+                <tr><th scope="row"><code>year</code></th><td>Generic detail pages only</td><td>Four-digit value used by dormant <code>project.html</code> records; the index derives month and year from <code>published</code>.</td></tr>
+                <tr><th scope="row"><code>status</code></th><td>Yes</td><td>Exactly In progress, Complete, or Paused.</td></tr>
+                <tr><th scope="row"><code>color</code></th><td>Yes</td><td>Muted visual-region color with a calm dark-theme blend.</td></tr>
+                <tr><th scope="row"><code>tilt</code></th><td>Yes</td><td>Small glyph rotation; decorative only.</td></tr>
+                <tr><th scope="row"><code>summary</code></th><td>Yes</td><td>One formal sentence stating subject and scope without promotional language.</td></tr>
+                <tr><th scope="row"><code>time</code>, <code>tools</code>, <code>detail</code></th><td>As needed</td><td>Extended fields for detail pages; currently not shown on index cards.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Naming and dates</h3>
+          <ul>
+            <li>Site title: <strong>Blandat bös</strong>.</li>
+            <li>Index range: <strong>Project index / 2026-2026</strong>.</li>
+            <li>Long-form eyebrow: <strong>Category · Published D Mon YYYY · Author: Name</strong>.</li>
+            <li>Footer authorship: <strong>Prompted by human, made by AI.</strong></li>
+            <li>Published project author: <strong>GPT-5.6 Sol Ultra</strong>.</li>
+            <li>Entry numbers are editorial and stable. Display order is publication date descending; same-day projects use the higher entry number first.</li>
+          </ul>
+          <h3>Editorial style</h3>
+          <ul>
+            <li>State the subject, scope, and conclusion directly.</li>
+            <li>Use descriptive headings and active constructions.</li>
+            <li>Remove repetition, conversational asides, and unsupported emphasis.</li>
+            <li>Retain qualifications, definitions, source links, and safety-relevant context.</li>
+            <li>Use captions and control text that describe function rather than mood.</li>
+          </ul>
+        </section>
+
+        <section id="behavior" aria-labelledby="behavior-heading">
+          <h2 id="behavior-heading">Interaction and behavior</h2>
+          <div class="spec-behavior-list">
+            <article><span>Theme</span><h3>Persisted choice</h3><p><code>theme.js</code> reads <code>field-notes-theme</code> from local storage. With no saved choice it follows the operating system at page load. Choosing light or dark saves the explicit choice across pages.</p></article>
+            <article><span>About</span><h3>Disclosure, not dialog</h3><p><code>about.js</code> toggles the panel, closes it on outside click, and closes it on Escape with focus returned to the trigger.</p></article>
+            <article><span>Filter</span><h3>Type-based collection</h3><p>Selecting a category updates <code>aria-pressed</code>, filters the trusted project data, redraws the active representation, and updates the polite result line.</p></article>
+            <article><span>View</span><h3>Card or table</h3><p>The two controls change only the representation. Filter state remains. The selection is in memory and resets to cards after reload.</p></article>
+            <article><span>Navigation</span><h3>Pages, not dialogs</h3><p>Cards and project table titles use normal links. Project content opens as a URL-addressable subpage and the browser Back action remains meaningful.</p></article>
+            <article><span>Interactive labs</span><h3>Immediate examples</h3><p>Every input has a visible label. Generated outcomes appear next to the controls and important textual changes are announced politely.</p></article>
+          </div>
+          <h3>Keyboard model</h3>
+          <ul>
+            <li><kbd>Tab</kbd> and <kbd>Shift</kbd> + <kbd>Tab</kbd> move through links and controls in document order.</li>
+            <li><kbd>Enter</kbd> activates links and focused buttons; <kbd>Space</kbd> activates buttons.</li>
+            <li><kbd>Escape</kbd> closes the About panel when open.</li>
+            <li>The skip link becomes visible on focus and moves focus to the primary page content.</li>
+            <li>Native select, radio, range, and table behavior must be preserved instead of recreated.</li>
+          </ul>
+        </section>
+
+        <section id="accessibility" aria-labelledby="accessibility-heading">
+          <h2 id="accessibility-heading">Accessibility contract</h2>
+          <p class="lead">Accessibility is a release requirement.</p>
+          <p>The published site targets <strong>WCAG 2.2 Level AA</strong> in every theme, viewport, view mode, project page, interactive example, empty state, and complete task. The preferred 44 × 44px target area is an added usability practice; the WCAG 2.2 minimum is 24 × 24px unless a documented exception applies.</p>
+          <div class="spec-contract">
+            <article><span>01</span><h3>Structure</h3><p>Use one clear <code>h1</code>, hierarchical headings, semantic landmarks, real lists, real tables, and real links or buttons for their native purpose.</p></article>
+            <article><span>02</span><h3>Keyboard</h3><p>Every operation works without pointer input. Focus order follows reading order, remains visible, and never enters hidden content.</p></article>
+            <article><span>03</span><h3>Names and state</h3><p>Icon-only controls have accessible names. Pressed, expanded, selected, error, and status information is available in text or semantics.</p></article>
+            <article><span>04</span><h3>Contrast</h3><p>Normal text targets at least 4.5:1, large text 3:1, and meaningful control boundaries and focus indicators 3:1 against adjacent colors.</p></article>
+            <article><span>05</span><h3>Targets</h3><p>Primary shared controls are at least 44px high, with 48px used for About, Back, filters, and segmented-control containers.</p></article>
+            <article><span>06</span><h3>Zoom and reflow</h3><p>Content remains usable at 200% text zoom and 400% browser zoom. Diagrams reflow; they do not shrink labels into unreadable miniatures.</p></article>
+            <article><span>07</span><h3>Motion</h3><p>Project cards do not animate. Smooth scrolling is disabled when reduced motion is requested. New animation needs a clear purpose and a reduced-motion alternative.</p></article>
+            <article><span>08</span><h3>Color independence</h3><p>Status, selection, and category never rely on hue alone. Text, shape, border, placement, or programmatic state carries the same meaning.</p></article>
+            <article><span>09</span><h3>Dynamic content</h3><p>Use polite announcements only for meaningful changes. Avoid interrupting reading, moving focus without request, or repeating visible text excessively.</p></article>
+            <article><span>10</span><h3>Illustrations</h3><p>Visual diagrams have captions and complete text keys. Decorative wireframes are hidden from assistive technology only when the adjacent key is equivalent.</p></article>
+          </div>
+          <div class="spec-rule"><strong>Minimum review</strong><p>Keyboard-only pass, visible-focus pass, light and dark contrast check, 400% reflow check, reduced-motion check, and a screen-reader spot check of navigation, toggles, tables, and dynamic results.</p></div>
+        </section>
+
+        <section id="responsive" aria-labelledby="responsive-heading">
+          <h2 id="responsive-heading">Responsive behavior</h2>
+          <p>Breakpoints respond to content pressure rather than device brands. The layout must remain understandable between the named breakpoints, not only at three screenshots.</p>
+          <figure class="spec-figure">
+            <figcaption><strong>Illustration 9 — Layout modes</strong><span>Each frame shows the number of project columns and position of the contents rail.</span></figcaption>
+            <div class="spec-responsive" aria-hidden="true">
+              <div class="spec-viewport spec-viewport--wide"><span>Wide · 861px+</span><div class="spec-viewport__top"></div><div class="spec-viewport__cards"><i></i><i></i><i></i></div><div class="spec-viewport__essay"><b></b><em></em></div></div>
+              <div class="spec-viewport spec-viewport--medium"><span>Medium · 591–860px</span><div class="spec-viewport__top"></div><div class="spec-viewport__cards"><i></i><i></i></div><div class="spec-viewport__essay"><b></b><em></em></div></div>
+              <div class="spec-viewport spec-viewport--compact"><span>Compact · ≤590px</span><div class="spec-viewport__top"></div><div class="spec-viewport__cards"><i></i></div><div class="spec-viewport__essay"><b></b><em></em></div></div>
+            </div>
+          </figure>
+          <div class="spec-table-scroll" tabindex="0" role="region" aria-label="Responsive behavior by breakpoint">
+            <table class="spec-table">
+              <thead><tr><th scope="col">Range</th><th scope="col">Project index</th><th scope="col">Long-form pages</th><th scope="col">Shared header</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">861px and above</th><td>Three card columns.</td><td>250px sticky contents rail beside article.</td><td>Subpage controls remain one row.</td></tr>
+                <tr><th scope="row">641–860px</th><td>Two card columns.</td><td>Contents moves above article and uses two columns.</td><td>Subpage controls remain one row.</td></tr>
+                <tr><th scope="row">591–640px</th><td>Two columns until 590px.</td><td>Contents above article; one column at 640px.</td><td>Back and action group become two rows at 640px.</td></tr>
+                <tr><th scope="row">590px and below</th><td>One card column; filters occupy a full row; footer stacks.</td><td>Single reading column and 12px page gutters.</td><td>Actions stay right aligned; About panel remains within viewport.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The project table keeps a 760px minimum width inside a horizontal scroll region. Columns must remain readable rather than compressing to the viewport width. The generic project template has an additional 680px layout change for its two-column content and project navigation.</p>
+        </section>
+
+        <section id="maintenance" aria-labelledby="maintenance-heading">
+          <h2 id="maintenance-heading">Maintenance map</h2>
+          <p>Use this table to locate the smallest correct change. A revision to a shared component should not be copied into every page’s custom stylesheet.</p>
+          <div class="spec-table-scroll" tabindex="0" role="region" aria-label="Component maintenance map">
+            <table class="spec-table spec-maintenance-table">
+              <thead><tr><th scope="col">Name to use</th><th scope="col">Primary selector or ID</th><th scope="col">Owned by</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Page canvas and theme</th><td><code>html[data-theme]</code>, <code>--paper</code></td><td><code>tokens.css</code>, <code>theme.js</code></td></tr>
+                <tr><th scope="row">Content shell</th><td><code>.shell</code></td><td><code>base.css</code></td></tr>
+                <tr><th scope="row">Skip link</th><td><code>.skip-link</code></td><td><code>base.css</code></td></tr>
+                <tr><th scope="row">Visibility helpers</th><td><code>.hidden</code>, <code>.visually-hidden</code>, <code>.sr-only</code></td><td><code>base.css</code></td></tr>
+                <tr><th scope="row">Monospace helper</th><td><code>.mono</code></td><td><code>base.css</code></td></tr>
+                <tr><th scope="row">Keyboard focus</th><td><code>:focus-visible</code></td><td><code>base.css</code></td></tr>
+                <tr><th scope="row">Shared top bar</th><td><code>.topbar</code></td><td><code>components.css</code></td></tr>
+                <tr><th scope="row">All projects link</th><td><code>.back</code>, <code>.back-arrow</code></td><td><code>components.css</code></td></tr>
+                <tr><th scope="row">About disclosure</th><td><code>#about-button</code>, <code>#about-panel</code></td><td><code>components.css</code>, <code>about.js</code></td></tr>
+                <tr><th scope="row">Theme selector</th><td><code>.theme-segment</code>, <code>#theme-light</code>, <code>#theme-dark</code></td><td><code>components.css</code>, <code>theme.js</code></td></tr>
+                <tr><th scope="row">Category filters</th><td><code>.filter</code>, <code>[data-filter]</code></td><td><code>project-index.css</code>, <code>project-index.js</code></td></tr>
+                <tr><th scope="row">Card/table selector</th><td><code>.view-switch</code>, <code>.view-button</code></td><td><code>project-index.css</code>, <code>project-index.js</code></td></tr>
+                <tr><th scope="row">Project card</th><td><code>.project-card</code></td><td><code>project-index.css</code>, <code>project-index.js</code></td></tr>
+                <tr><th scope="row">Project table</th><td><code>.table-view</code></td><td><code>project-index.css</code>, <code>project-index.js</code></td></tr>
+                <tr><th scope="row">Generic project facts</th><td><code>.facts</code>, <code>.fact</code></td><td><code>project.css</code>, <code>project.js</code></td></tr>
+                <tr><th scope="row">Generic project navigation</th><td><code>.project-nav</code></td><td><code>project.css</code>, <code>project.js</code></td></tr>
+                <tr><th scope="row">Long-form hero</th><td><code>.essay-hero</code>, <code>.eyebrow</code>, <code>.dek</code></td><td><code>essay.css</code></td></tr>
+                <tr><th scope="row">Contents navigation</th><td><code>.toc-wrap</code>, <code>.toc</code></td><td><code>essay.css</code></td></tr>
+                <tr><th scope="row">Interactive lab</th><td><code>.lab</code>, <code>.result</code></td><td><code>essay.css</code> plus page JS</td></tr>
+                <tr><th scope="row">Specification illustrations</th><td><code>.spec-*</code></td><td><code>website-specification.css</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Known architectural boundaries</h3>
+          <ul>
+            <li>The shared top-bar markup is duplicated in static pages. Its styling and behavior are shared, but changing its HTML requires updating each real page.</li>
+            <li>The custom article and report are hand-authored HTML. The index and generic detail page are rendered from JavaScript data.</li>
+            <li><code>project.js</code> retains dormant older project records that are not listed on the index.</li>
+            <li>Index filter and view choices are not persisted; the theme choice is persisted.</li>
+            <li>Project rendering uses trusted local data with <code>innerHTML</code>. Do not place untrusted user input in those objects without escaping it.</li>
+            <li>Page-specific token sets intentionally give long-form projects distinct accents while shared controls keep the same construction.</li>
+          </ul>
+        </section>
+
+        <section id="qa" aria-labelledby="qa-heading">
+          <h2 id="qa-heading">Release checklist</h2>
+          <p>Run the relevant checks after every revision. Run the complete list before publishing or making a new archive.</p>
+          <div class="spec-checklists">
+            <div><h3>Structure</h3><ul><li>All local <code>href</code> and <code>src</code> targets exist.</li><li>No duplicate IDs appear on a page.</li><li>HTML headings and landmarks follow a logical order.</li><li>New project data has a valid category, tag, URL, and approved status.</li><li>Main and subpage top bars use the shared markup.</li></ul></div>
+            <div><h3>Interaction</h3><ul><li>About opens, closes outside, and closes with Escape.</li><li>Theme persists while moving between pages.</li><li>Every category filter returns the expected projects and count.</li><li>Card/table switching causes no horizontal layout shift.</li><li>Every project card and table title opens its subpage.</li></ul></div>
+            <div><h3>Accessibility</h3><ul><li>Skip link works and becomes visible on focus.</li><li>All controls are keyboard operable with visible focus.</li><li>Pressed and expanded states match the visible state.</li><li>Light and dark palettes meet required contrast.</li><li>Content reflows at 400% without two-dimensional page scrolling.</li><li>Tables have scoped headers and labelled scroll regions.</li><li>Illustrations have captions and equivalent text keys.</li></ul></div>
+            <div><h3>Responsive and output</h3><ul><li>Review wide, 860px, 640px, and 590px layouts.</li><li>Long titles and labels wrap without collision.</li><li>About panel remains inside the viewport.</li><li>Reduced-motion mode removes smooth scrolling.</li><li>Print keeps reference content and readable borders.</li><li>Source and mirrored website folder contain matching files.</li></ul></div>
+          </div>
+          <p class="updated">Specification version 2.0 · Published 27 Sep 2026 · Updated 30 Sep 2026 · Update this page whenever a named component, file responsibility, breakpoint, interaction, or content rule changes.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+      <span>Project 03 · Website Design and Implementation Specification</span>
+    </div>
+  </footer>
+</body>
+</html>

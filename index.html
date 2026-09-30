@@ -1,21 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kristoffer</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="main.js"></script>
-  </head>
-  <body>
-    <nav>
-      <div class="navlink-wrapper">
-        <div id="start" class="navlink navlink-highlight">START</div>
-        <div id="portfolio" class="navlink">CV</div>
-        <!-- <div id="misc" class="navlink">MISC.</div> -->
+<!doctype html>
+<html lang="en" data-theme="light" data-page="project-index">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Blandat bös is a personal archive of articles, reports, documentation, visualizations, and small projects.">
+  <title>Blandat bös — Projects</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/project-index.css">
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/project-index.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="shell topbar topbar--index">
+    <div class="about-control">
+      <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+      <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+        <h2 id="about-person">Kristoffer Johansson</h2>
+        <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+        <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+      </aside>
+    </div>
+    <div class="theme-segment" role="group" aria-label="Color theme">
+      <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+      <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg>
+      </button>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <section class="shell index-hero">
+      <div>
+        <h1 class="hero-title">Blandat <em>bös</em></h1>
       </div>
-    </nav>
-    <main></main>
-  </body>
+    </section>
+    <section class="shell" id="projects" aria-labelledby="project-heading">
+      <div class="rule-heading"><h2 id="project-heading">Project index / 2026-2026</h2></div>
+      <div class="index-controls">
+        <div class="filters" role="group" aria-label="Filter by project type">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All categories</button>
+          <button class="filter" type="button" data-filter="article" aria-pressed="false">Articles</button>
+          <button class="filter" type="button" data-filter="report" aria-pressed="false">Reports</button>
+          <button class="filter" type="button" data-filter="documentation" aria-pressed="false">Documentation</button>
+          <button class="filter" type="button" data-filter="visualization" aria-pressed="false">Visualizations</button>
+        </div>
+        <div class="view-switch" role="group" aria-label="View style">
+          <button class="view-button" id="card-button" type="button" aria-label="Card view" aria-controls="card-view" aria-pressed="true">▦</button>
+          <button class="view-button" id="table-button" type="button" aria-label="Table view" aria-controls="table-view" aria-pressed="false">☷</button>
+        </div>
+      </div>
+      <div class="results-line" id="results" aria-live="polite"></div>
+      <noscript><div class="no-script"><p>Project filters and alternate views need JavaScript, but every project remains available:</p><ul><li><a href="tables-history-ux.html">Tables: History and Interface Design</a></li><li><a href="family-tree-visualization.html">Family Tree Visualization: History and Design</a></li><li><a href="website-specification.html">Website Design and Implementation Specification</a></li><li><a href="wcag-medical-device-ux.html">WCAG 2.2 and Medical Device Interface Safety</a></li><li><a href="ux-frontier-2026.html">Emerging Interface Models in 2026</a></li></ul></div></noscript>
+      <div class="project-grid" id="card-view"></div><div class="table-view hidden" id="table-view"></div>
+    </section>
+  </main>
+  <footer class="shell index-footer">
+    <div class="footer-copy"><span>Prompted by human, made by AI.</span><span>© 2026</span></div>
+  </footer>
+</body>
 </html>

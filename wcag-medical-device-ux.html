@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-page="wcag-medical">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A technical report on WCAG 2.2, accessibility, and use-related safety in medical device interfaces, with interactive examples.">
+  <title>WCAG 2.2 and Medical Device Interface Safety — Blandat bös</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/essay.css">
+  <link rel="stylesheet" href="assets/css/wcag-medical.css">
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/wcag-medical.js" defer></script>
+</head>
+<body class="report-page">
+  <a class="skip-link" href="#article">Skip to report</a>
+  <header class="shell topbar">
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <div class="topbar-actions">
+      <div class="about-control">
+        <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+        <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+          <h2 id="about-person">Kristoffer Johansson</h2>
+          <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+          <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+        </aside>
+      </div>
+      <div class="theme-segment" role="group" aria-label="Color theme">
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="shell essay-hero">
+      <p class="eyebrow">Technical report · Published 25 Sep 2026 · Author: GPT-5.6 Sol Ultra</p>
+      <h1>WCAG 2.2 and Medical Device Interface Safety</h1>
+      <p class="dek">WCAG addresses digital accessibility. Medical device usability engineering addresses use-related risk. Safe, accessible interfaces require both disciplines and separate evidence for each.</p>
+    </header>
+
+    <div class="shell article-layout">
+      <aside class="toc-wrap" aria-labelledby="toc-heading">
+        <h2 class="toc-title" id="toc-heading">Table of contents</h2>
+        <nav aria-label="Report contents">
+          <ol class="toc">
+            <li><a href="#summary"><span class="toc-number">01</span>Executive summary</a></li>
+            <li><a href="#method"><span class="toc-number">02</span>Scope and method</a></li>
+            <li><a href="#current"><span class="toc-number">03</span>Current WCAG standard</a></li>
+            <li><a href="#new"><span class="toc-number">04</span>Changes in WCAG 2.2</a></li>
+            <li><a href="#examples"><span class="toc-number">05</span>Interactive examples</a></li>
+            <li><a href="#safety"><span class="toc-number">06</span>Accessibility as a safety factor</a></li>
+            <li><a href="#standards"><span class="toc-number">07</span>Standards and regulatory framework</a></li>
+            <li><a href="#workflow"><span class="toc-number">08</span>Integrated workflow</a></li>
+            <li><a href="#evidence"><span class="toc-number">09</span>Evidence and traceability</a></li>
+            <li><a href="#recommendations"><span class="toc-number">10</span>Recommendations</a></li>
+            <li><a href="#limits"><span class="toc-number">11</span>Limitations</a></li>
+            <li><a href="#sources"><span class="toc-number">12</span>References</a></li>
+          </ol>
+        </nav>
+        <p class="reading-note"><strong>Scope note.</strong> This is an educational synthesis, not legal, regulatory, or conformity-assessment advice. Applicable rules depend on the device, intended use, users, market, and current cited editions.</p>
+      </aside>
+
+      <article class="essay-article" id="article" tabindex="-1">
+        <section id="summary" aria-labelledby="summary-heading">
+          <h2 id="summary-heading">Executive summary</h2>
+          <p class="lead"><strong>WCAG 2.2</strong> is the latest completed Web Content Accessibility Guidelines standard. Its testable criteria address whether digital content is perceivable, operable, understandable, and robust. It provides an appropriate accessibility baseline for web-based medical products, patient portals, clinician dashboards, electronic instructions, and connected-device applications.</p>
+          <p>WCAG is not a medical device safety standard. It neither identifies all hazardous situations nor establishes acceptable residual risk, critical tasks, or safe and effective use under realistic conditions. Those functions belong primarily to usability engineering under <a href="https://webstore.iec.ch/en/publication/67220">IEC 62366-1</a>, risk management under <a href="https://www.iso.org/standard/72704.html">ISO 14971</a>, applicable regulations, and human factors validation.</p>
+          <div class="plain-language">
+            <strong>Scope distinction</strong>
+            <p>WCAG evaluates whether disabled people can perceive, operate, and understand content and whether assistive technologies can interpret it. Medical device usability engineering evaluates whether intended users can complete safety-critical tasks without unacceptable use-related risk. The scopes overlap but remain distinct.</p>
+          </div>
+          <p>A low-contrast dose value may violate WCAG and contribute to an overdose. WCAG identifies the barrier; the medical device process connects it to the user, task, use error, hazardous situation, potential harm, risk control, and validation evidence. A missing transcript may be a serious accessibility failure without a credible safety consequence. Accessibility obligations extend beyond safety, while safety analysis must include barriers that can contribute to harm.</p>
+          <div class="report-findings" aria-labelledby="findings-heading">
+            <h3 id="findings-heading">Principal findings</h3>
+            <ol>
+              <li>Use WCAG 2.2 as the current completed web accessibility baseline. Do not base conformance claims on the WCAG 3 draft.</li>
+              <li>Assess accessibility barriers as potential contributors to use error when harm is plausible for the relevant user, task, and context.</li>
+              <li>Maintain separate accessibility and usability engineering claims connected through shared requirements and traceability.</li>
+              <li>Validate safety-critical interactions with representative users under realistic conditions. Automated tests and criterion-level verification are insufficient.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="method" aria-labelledby="method-heading">
+          <h2 id="method-heading">Scope and method</h2>
+          <p>This report provides an educational synthesis for teams designing web-based or software-mediated medical device interfaces. Its scope includes patient portals, clinician dashboards, connected-device applications, electronic instructions for use, and similar interfaces in which accessibility barriers may affect task completion or safety.</p>
+          <p>The analysis used four steps:</p>
+          <ol>
+            <li><strong>Establish the accessibility baseline.</strong> Review WCAG 2.2, its conformance model, relevant W3C guidance, and its ISO publication.</li>
+            <li><strong>Map related obligations.</strong> Compare WCAG with medical device usability engineering, risk management, human-centred design, regulatory guidance, and software accessibility standards.</li>
+            <li><strong>Trace barriers to risk.</strong> Determine whether an accessibility barrier could contribute to a foreseeable use error, hazardous situation, or harm in a defined context.</li>
+            <li><strong>Define an integrated practice.</strong> Establish a workflow and evidence model that connects accessibility and safety without treating them as equivalent.</li>
+          </ol>
+          <p>Sources consist primarily of standards, regulatory documents, and official guidance available through 25 September 2026. This report is not a systematic review, device assessment, or conformity determination.</p>
+        </section>
+
+        <section id="current" aria-labelledby="current-heading">
+          <h2 id="current-heading">Current WCAG standard</h2>
+          <p>As of 25 September 2026, <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2</a>, dated 12 December 2024, is the latest completed W3C Recommendation. WCAG 3 remains a <a href="https://www.w3.org/TR/wcag-3.0/">Working Draft</a> and is not a basis for conformance claims. W3C recommends applying WCAG 2.2.</p>
+          <p>Its thirteen guidelines are organized under four principles:</p>
+          <ul>
+            <li><strong>Perceivable:</strong> information is available through suitable sensory channels and formats, including text alternatives, captions, semantic structure, adaptable layouts, and sufficient contrast.</li>
+            <li><strong>Operable:</strong> navigation and actions support relevant input methods, focus, timing, motion, gestures, and target sizes.</li>
+            <li><strong>Understandable:</strong> content and behavior are readable, predictable, and supported by clear input and authentication guidance.</li>
+            <li><strong>Robust:</strong> browsers and assistive technologies receive reliable names, roles, values, and status information.</li>
+          </ul>
+          <p>WCAG defines three conformance levels. Level A is the minimum baseline; Level AA includes all A and AA criteria and is the level most policies apply; Level AAA includes all three levels. W3C does not recommend requiring whole-site AAA conformance because some content cannot satisfy every AAA criterion.</p>
+          <p>Conformance applies to complete pages and every view within a complete process, such as registration, device pairing, configuration, review, and confirmation. Automated tools identify some patterns, but evaluation requires human judgment. Assistive technology testing and participation by disabled users identify issues that automated rules cannot.</p>
+          <div class="callout">
+            <h3>Edition details matter</h3>
+            <p>W3C reports that ISO/IEC 40500:2025 is identical to the October 2023 WCAG 2.2 publication. Contracts and regulatory records should identify the edition, date, conformance level, scope, and relied-upon technologies rather than state only “WCAG compliant.”</p>
+          </div>
+        </section>
+
+        <section id="new" aria-labelledby="new-heading">
+          <h2 id="new-heading">Changes in WCAG 2.2</h2>
+          <p>WCAG 2.2 added nine success criteria addressing cognitive and learning disabilities, low vision, and limited fine-motor control. It also removed the obsolete 4.1.1 Parsing criterion.</p>
+          <div class="nine-grid">
+            <article class="criterion"><span class="level">AA</span><h3>2.4.11 Focus Not Obscured</h3><p>Author-created content must not fully obscure a keyboard-focused component.</p></article>
+            <article class="criterion"><span class="level">AAA</span><h3>2.4.12 Focus Not Obscured</h3><p>The enhanced criterion requires the complete focused component to remain visible.</p></article>
+            <article class="criterion"><span class="level">AAA</span><h3>2.4.13 Focus Appearance</h3><p>Focus indicators must meet defined minimum area and contrast-change requirements.</p></article>
+            <article class="criterion"><span class="level">AA</span><h3>2.5.7 Dragging Movements</h3><p>Dragging requires a single-pointer alternative unless it is essential or provided by the user agent.</p></article>
+            <article class="criterion"><span class="level">AA</span><h3>2.5.8 Target Size</h3><p>Pointer targets generally require a minimum size of 24 × 24 CSS pixels or sufficient spacing, subject to defined exceptions.</p></article>
+            <article class="criterion"><span class="level">A</span><h3>3.2.6 Consistent Help</h3><p>Repeated help mechanisms must retain the same relative order across a set of pages.</p></article>
+            <article class="criterion"><span class="level">A</span><h3>3.3.7 Redundant Entry</h3><p>Previously supplied information must be populated or selectable, subject to essential, security, and validity exceptions.</p></article>
+            <article class="criterion"><span class="level">AA</span><h3>3.3.8 Accessible Authentication</h3><p>Authentication must not rely solely on a cognitive-function test unless an allowed alternative or assistance mechanism is available.</p></article>
+            <article class="criterion"><span class="level">AAA</span><h3>3.3.9 Accessible Authentication</h3><p>The enhanced criterion removes the object-recognition and personal-content exceptions available at Level AA.</p></article>
+          </div>
+          <p>Two distinctions are important. Level AA does not universally require 44 × 44 pixel controls: its target-size criterion specifies 24 × 24 CSS pixels or sufficient spacing, with exceptions. The 44 × 44 requirement applies at Level AAA. Accessible authentication also does not prohibit passwords; it permits password managers, paste, or an alternative method that avoids a cognitive test.</p>
+        </section>
+
+        <section id="examples" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Interactive examples</h2>
+          <p>These four demonstrations explain relationships between accessibility properties and possible safety consequences. They do not constitute clinical validation. All operative controls remain keyboard accessible and adequately sized.</p>
+
+          <div class="lab" aria-labelledby="contrast-title">
+            <p class="lab-kicker">Lab 01 · Perceivable</p>
+            <h3 id="contrast-title">Contrast is measurable</h3>
+            <p class="lab-intro">Select colors for a simulated dose display. Level AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text. Meaningful graphical objects and interface component boundaries generally require 3:1.</p>
+            <div class="lab-controls">
+              <label class="control" for="foreground">Text color<input id="foreground" type="color" value="#f0eadf"></label>
+              <label class="control" for="background">Background color<input id="background" type="color" value="#171916"></label>
+              <div class="button-row" role="group" aria-label="Contrast presets">
+                <button class="demo-button contrast-preset" type="button" data-fg="#f0eadf" data-bg="#171916">Calm dark</button>
+                <button class="demo-button contrast-preset" type="button" data-fg="#8f938d" data-bg="#6c716b">Low contrast</button>
+              </div>
+            </div>
+            <div class="contrast-preview" id="contrast-preview" role="img" aria-label="Dose readout color preview"><span>2.5 mg</span></div>
+            <div class="result" id="contrast-result" aria-live="polite"></div>
+            <p class="demo-caption">Safety relevance: a misread dose, alarm state, or unit requires analysis of the resulting use error and potential harm. Conforming contrast is design evidence, not proof of safe clinical use.</p>
+          </div>
+
+          <div class="lab" aria-labelledby="target-title">
+            <p class="lab-kicker">Lab 02 · Operable</p>
+            <h3 id="target-title">Minimum and appropriate target sizes differ</h3>
+            <p class="lab-intro">Adjust the illustrated target from 16 to 60 CSS pixels. The illustration is not an operative control; the slider remains appropriately sized.</p>
+            <label class="control" for="target-size">Illustrated target size: <output id="target-size-output" for="target-size">24 px</output>
+              <input id="target-size" type="range" min="16" max="60" step="1" value="24">
+            </label>
+            <div class="target-stage" aria-hidden="true"><div class="target-shell"><div class="target-dot" id="target-dot">24</div></div></div>
+            <div class="result" id="target-result" aria-live="polite"></div>
+            <p class="demo-caption">Medical context: tremor, neuropathy, gloves, vibration, fatigue, urgency, and one-handed use can make a conforming target difficult to operate. WCAG defines a baseline; context-of-use research determines the appropriate size.</p>
+          </div>
+
+          <div class="lab" aria-labelledby="error-title">
+            <p class="lab-kicker">Lab 03 · Understandable</p>
+            <h3 id="error-title">Errors require location, cause, and recovery</h3>
+            <p class="lab-intro">Compare a color-only signal with an explicit message. The weak state is a labeled visual simulation, not an inaccessible live form.</p>
+            <div class="button-row" role="group" aria-label="Error-feedback version">
+              <button class="demo-button error-mode" type="button" data-mode="weak" aria-pressed="false">Color only</button>
+              <button class="demo-button error-mode" type="button" data-mode="clear" aria-pressed="true">Clear feedback</button>
+            </div>
+            <div class="error-preview" aria-hidden="true">
+              <div><span class="mock-label">Medication dose</span><div class="mock-input">10O mg</div></div>
+              <span class="mock-button">Continue</span>
+              <p class="mock-error" id="mock-error"><span class="error-icon">!</span><span>Use digits only. Check whether “10O” should be “100”, then try again.</span></p>
+            </div>
+            <div class="result" id="error-result" aria-live="polite"></div>
+            <p class="demo-caption">Color may support recognition but must not communicate the error alone. A product must verify field association, programmatic status, wording, recovery, and subsequent dose checks.</p>
+          </div>
+
+          <div class="lab" aria-labelledby="risk-title">
+            <p class="lab-kicker">Lab 04 · From barrier to harm</p>
+            <h3 id="risk-title">Trace the safety chain</h3>
+            <p class="lab-intro">Select an accessibility barrier to view a plausible risk chain. The examples support analysis; they do not establish conclusions.</p>
+            <label class="control" for="risk-select">Accessibility barrier
+              <select id="risk-select">
+                <option value="contrast">Low-contrast dose value</option>
+                <option value="focus">Keyboard focus hidden by sticky content</option>
+                <option value="target">Small confirmation target</option>
+                <option value="drag">Drag-only medication ordering</option>
+                <option value="auth">Memory puzzle blocks authentication</option>
+              </select>
+            </label>
+            <ol class="risk-chain" id="risk-chain" aria-live="polite"></ol>
+            <p class="demo-caption">Researchers and risk owners must justify each link using intended users, foreseeable use, context, severity, and evidence.</p>
+          </div>
+        </section>
+
+        <section id="safety" aria-labelledby="safety-heading">
+          <h2 id="safety-heading">Accessibility as a safety factor</h2>
+          <p>Disability is part of the intended-use context. Users may have permanent visual, auditory, motor, speech, or cognitive disabilities. Injury, medication, stress, low light, noise, personal protective equipment, and illness may also create temporary or situational limitations. Aging and comorbidities may combine several constraints.</p>
+          <p>IEC 62366-1 addresses safety in normal use, including correct use and use error. ISO 14971 provides the broader life-cycle risk management process. Identifying an accessibility failure is therefore insufficient: the team must determine whether it can contribute to a hazardous situation or harm, define controls, and verify their effectiveness.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-labelledby="comparison-caption">
+            <table class="comparison">
+              <caption id="comparison-caption">Comparison of accessibility and medical device safety scopes.</caption>
+              <thead><tr><th scope="col">Question</th><th scope="col">Accessibility lens</th><th scope="col">Safety/usability lens</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Primary outcome</th><td>Equivalent access to digital content and functions.</td><td>Safe and effective use with controlled use-related risk.</td></tr>
+                <tr><th scope="row">Unit of analysis</th><td>Pages, views, components, content, and complete processes.</td><td>Users, tasks, interfaces, environments, use errors, hazardous situations, and harms.</td></tr>
+                <tr><th scope="row">Evidence</th><td>Inspection, manual testing, automated support, assistive technology, and research with disabled users.</td><td>Use specification, risk analysis, formative evaluation, verification, human factors validation, and post-market data.</td></tr>
+                <tr><th scope="row">Limit of evidence</th><td>WCAG conformance does not establish acceptable medical risk.</td><td>Human factors validation does not establish WCAG conformance or equivalent access.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Risk controls should prioritize inherently clear interactions, such as unambiguous values, alternatives to dragging, and persistent confirmation summaries. These controls are generally stronger than warnings or training that depend on memory. Trade-offs remain: authentication must balance access and unauthorized use, timeouts and stale data, and audible cues and alarm burden. ISO 14971 provides the process for assessing these competing risks.</p>
+        </section>
+
+        <section id="standards" aria-labelledby="standards-heading">
+          <h2 id="standards-heading">Standards and regulatory framework</h2>
+          <p>No single document covers accessibility, human factors, software quality, electrical safety, labeling, and market-specific law. The relevant framework has four layers.</p>
+          <h3>1. Accessibility requirements</h3>
+          <p>WCAG 2.2 is normative for web content. <a href="https://www.w3.org/TR/wcag2ict-22/">WCAG2ICT</a> explains how Level A and AA criteria may apply to non-web documents and software. It is an informative W3C Group Note, does not establish non-web WCAG conformance, and excludes hardware. <a href="https://www.iso.org/standard/86308.html">ISO 9241-171:2025</a> provides broader software accessibility requirements. EN 301 549 extends accessibility requirements to ICT products and services beyond WCAG.</p>
+          <h3>2. Human-centred and safety-related usability</h3>
+          <p><a href="https://www.iso.org/standard/77520.html">ISO 9241-210:2019</a> structures human-centred design across the life cycle but does not address health and safety in detail. <a href="https://webstore.iec.ch/en/publication/67220">IEC 62366-1:2015+A1:2020</a> defines safety-focused medical device usability engineering. <a href="https://webstore.iec.ch/en/publication/67381">IEC 60601-1-6</a> applies that process to medical electrical equipment and basic safety or essential performance.</p>
+          <h3>3. Risk, quality, and product life cycle</h3>
+          <p><a href="https://www.iso.org/standard/72704.html">ISO 14971:2019</a> governs medical device risk management across the life cycle. ISO 13485 places design and development within the quality management system. IEC 62304 addresses medical device software life-cycle processes, while IEC 82304-1 addresses health software product safety. None replaces an accessibility specification.</p>
+          <h3>4. Regulatory and market context</h3>
+          <p>Annex I of the EU Medical Device Regulation requires manufacturers to reduce use-error risks related to ergonomic features and intended use environments. It also requires consideration of intended users’ knowledge, experience, training, and medical or physical conditions, including disability. FDA’s August 2026 <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/applying-human-factors-and-usability-engineering-medical-devices">human factors guidance</a> similarly addresses intended users, uses, environments, critical tasks, and realistic validation. Although guidance is not a binding standard, it informs expected evidence.</p>
+          <div class="callout">
+            <h3>European citation status</h3>
+            <p>EN 301 549 V4.1.1, published in September 2026, adopts WCAG 2.2 for relevant web, document, and software content. As of 25 September 2026, it had not been cited in the EU Official Journal. For public-sector websites and mobile applications under Directive (EU) 2016/2102, Commission Implementing Decision (EU) 2021/1339 still cited V3.2.1. The European Accessibility Act follows a separate harmonized-standards process; V4.1.1 did not automatically establish a presumption of conformity.</p>
+          </div>
+          <p>The European Accessibility Act applies to specified consumer products and services from 28 June 2025; it is not a general medical device rule. An EU harmonized standard provides presumption of conformity only for cited requirements and editions. Each product, channel, and market therefore requires a scope and legal-status assessment.</p>
+        </section>
+
+        <section id="workflow" aria-labelledby="workflow-heading">
+          <h2 id="workflow-heading">Integrated workflow</h2>
+          <p>Accessibility should be incorporated into the same traceable development system as safety and quality.</p>
+          <ol class="flow">
+            <li><strong>Define the context.</strong><span>Document intended users, disabilities, aging, temporary limitations, assistive technologies, health literacy, languages, stress, lighting, noise, personal protective equipment, connectivity, and the physical environment.</span></li>
+            <li><strong>Establish connected requirements.</strong><span>Convert applicable WCAG, EN 301 549, and ISO 9241-171 provisions into verifiable design inputs traceable to components, views, content, and complete processes.</span></li>
+            <li><strong>Include safety-relevant barriers in risk analysis.</strong><span>Trace each plausible barrier from user and task to use error, hazardous situation, and harm. Identify hazard-related use scenarios and critical tasks under IEC 62366-1 and ISO 14971.</span></li>
+            <li><strong>Prioritize interface controls.</strong><span>Prefer designs that prevent errors or make them apparent. Use labels, warnings, and training as supporting controls rather than substitutes for correctable interface defects.</span></li>
+            <li><strong>Conduct formative evaluation.</strong><span>Study representative disabled users with relevant assistive technologies. Include interruptions, degraded conditions, setup, recovery, maintenance, and uncommon critical paths.</span></li>
+            <li><strong>Verify accessibility.</strong><span>Combine automated tools, manual keyboard testing, zoom and reflow review, assistive technology testing, content review, and complete-process inspection. Record scope, version, methods, findings, exceptions, and remediation.</span></li>
+            <li><strong>Validate safety-critical use separately.</strong><span>Use representative intended users, the final interface, realistic conditions, and all critical tasks. Accessibility verification informs but does not replace validation.</span></li>
+            <li><strong>Monitor after release.</strong><span>Incorporate accessibility defects, support data, use errors, complaints, and field signals into production and post-production monitoring, corrective and preventive action, change control, and the risk file.</span></li>
+          </ol>
+        </section>
+
+        <section id="evidence" aria-labelledby="evidence-heading">
+          <h2 id="evidence-heading">Evidence and traceability</h2>
+          <p>Research, design inputs, and defect data may be shared while supporting distinct claims. The accessibility record identifies evaluated content and functions, applicable requirements, technologies, and methods. The usability engineering file documents use specifications, known or foreseeable hazards, hazard-related use scenarios, interface specifications, formative evaluation, validation, and post-market findings.</p>
+          <p>Traceability connects the records. For example, a requirement that every dose-adjustment action provide keyboard and single-pointer alternatives may map to WCAG 2.1.1 and 2.5.7, an interface design input, risk controls, verification cases, formative observations, and a validation scenario. Shared evidence may support several decisions, but the resulting claims remain separate.</p>
+          <div class="plain-language">
+            <strong>Review question</strong>
+            <p>Can the team identify who depends on a requirement, for which task and environment, the consequences of failure, and how the associated risk is controlled and monitored?</p>
+          </div>
+          <p>Representative participation is essential. A screen reader check by a sighted developer supports verification but does not replace research with experienced screen reader users. A laboratory task performed by a healthy employee is not representative solely because the device is complete. Sampling should reflect intended-user characteristics that can affect interaction.</p>
+        </section>
+
+        <section id="recommendations" aria-labelledby="recommendations-heading">
+          <h2 id="recommendations-heading">Recommendations</h2>
+          <ol class="recommendation-list">
+            <li><strong>Adopt WCAG 2.2 AA as the named baseline when web content is in scope.</strong><span>Define included products, views, complete processes, technologies, exceptions, and required evidence.</span></li>
+            <li><strong>Include accessibility characteristics in the use specification.</strong><span>Record relevant sensory, physical, and cognitive characteristics, assistive technologies, environmental constraints, and foreseeable adaptations.</span></li>
+            <li><strong>Assess accessibility barriers in use-related risk analysis.</strong><span>Include a barrier when a credible chain connects it to a use error, hazardous situation, or harm. Do not classify every accessibility defect as a safety issue.</span></li>
+            <li><strong>Define shared, testable design inputs.</strong><span>Translate applicable WCAG criteria and risk controls into verifiable and traceable interface requirements.</span></li>
+            <li><strong>Evaluate complete processes with representative disabled users.</strong><span>Combine manual accessibility evaluation, formative research, and separate validation of safety-critical tasks under realistic conditions.</span></li>
+            <li><strong>Maintain distinct, connected evidence records.</strong><span>Connect accessibility records and the usability engineering file through requirements, defects, risk controls, verification, and change control.</span></li>
+            <li><strong>Review external requirements throughout the life cycle.</strong><span>Record editions and jurisdictional status, and reassess them during design changes, release planning, and post-market monitoring.</span></li>
+          </ol>
+        </section>
+
+        <section id="limits" aria-labelledby="limits-heading">
+          <h2 id="limits-heading">Limitations</h2>
+          <ul>
+            <li><strong>Avoid “WCAG-certified” without a defined certification scheme.</strong> A defensible conformance claim identifies the WCAG version, level, date, scope, and relied-upon technologies.</li>
+            <li><strong>Do not equate conformance with usability.</strong> A conforming process may still be confusing, inefficient, clinically inappropriate, or unsafe.</li>
+            <li><strong>Do not equate validation with accessibility.</strong> A human factors validation study may omit systematic barriers and does not assess every WCAG criterion or complete process.</li>
+            <li><strong>Do not rely solely on automation.</strong> Tools cannot reliably assess meaning, all reading-order cases, alternative quality, error clarity, or interaction quality with assistive technology.</li>
+            <li><strong>Do not use participants to confirm known defects.</strong> Correct objective failures before research and use participant time to study context, strategies, trade-offs, and residual uncertainty.</li>
+            <li><strong>Maintain the standards map.</strong> Record edition dates and citation status because standards, regulatory guidance, and legal references change independently.</li>
+          </ul>
+          <p>WCAG provides precise terminology and testable requirements for accessibility barriers. Medical device usability engineering adds the traceable relationship among user, task, use error, hazardous situation, harm, control, and evidence. Applying both disciplines produces stronger accessibility and safety claims without conflating them.</p>
+        </section>
+
+        <section id="sources" aria-labelledby="sources-heading">
+          <h2 id="sources-heading">References</h2>
+          <ol class="sources">
+            <li><a href="https://www.w3.org/TR/WCAG22/">W3C — Web Content Accessibility Guidelines (WCAG) 2.2</a>, Recommendation, 12 December 2024.</li>
+            <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">W3C WAI — What’s New in WCAG 2.2</a>.</li>
+            <li><a href="https://www.w3.org/TR/WCAG22/#conformance">W3C — WCAG 2.2 Conformance</a>.</li>
+            <li><a href="https://www.w3.org/press-releases/2025/wcag22-iso-pas/">W3C — WCAG 2.2 approved as ISO/IEC 40500:2025</a>.</li>
+            <li><a href="https://www.w3.org/TR/wcag-3.0/">W3C — WCAG 3.0 Working Draft</a>, 10 September 2026.</li>
+            <li><a href="https://www.w3.org/TR/wcag2ict-22/">W3C — Guidance on Applying WCAG 2 to Non-Web ICT</a>, Group Note, updated 11 December 2025.</li>
+            <li><a href="https://webstore.iec.ch/en/publication/67220">IEC 62366-1:2015+A1:2020</a>, application of usability engineering to medical devices.</li>
+            <li><a href="https://www.iso.org/standard/72704.html">ISO 14971:2019</a>, application of risk management to medical devices.</li>
+            <li><a href="https://webstore.iec.ch/en/publication/67381">IEC 60601-1-6:2010+A1:2013+A2:2020</a>, usability collateral standard for medical electrical equipment.</li>
+            <li><a href="https://www.iso.org/standard/77520.html">ISO 9241-210:2019</a>, human-centred design for interactive systems.</li>
+            <li><a href="https://www.iso.org/standard/86308.html">ISO 9241-171:2025</a>, software accessibility.</li>
+            <li><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/applying-human-factors-and-usability-engineering-medical-devices">U.S. FDA — Applying Human Factors and Usability Engineering to Medical Devices</a>, August 2026.</li>
+            <li><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/content-human-factors-information-medical-device-marketing-submissions">U.S. FDA — Content of Human Factors Information in Medical Device Marketing Submissions</a>, May 2026.</li>
+            <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A02017R0745-20260719">Regulation (EU) 2017/745 on medical devices</a>, consolidated 19 July 2026.</li>
+            <li><a href="https://www.etsi.org/deliver/etsi_EN/301500_301599/301549/04.01.01_60/en_301549v040101p.pdf">ETSI — EN 301 549 V4.1.1</a>, September 2026.</li>
+            <li><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/european-accessibility-standard-en-301-549-has-been-updated-2026-09-07_en">European Commission AccessibleEU — EN 301 549 update and citation status</a>, September 2026.</li>
+            <li><a href="https://eur-lex.europa.eu/eli/dec_impl/2021/1339">Commission Implementing Decision (EU) 2021/1339</a>, harmonized standard for Directive (EU) 2016/2102.</li>
+            <li><a href="https://eur-lex.europa.eu/eli/dir/2019/882">Directive (EU) 2019/882 — European Accessibility Act</a>.</li>
+          </ol>
+          <p class="updated">Research checked 25 September 2026. Standards may be amended, replaced, or cited differently by jurisdiction. Confirm the current official source before applying this report to a regulated project.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+      <span>Technical report · Project 02</span>
+    </div>
+  </footer>
+</body>
+</html>

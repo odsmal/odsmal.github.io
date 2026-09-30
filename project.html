@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-page="project-detail">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project — Blandat bös</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/project.css">
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/project.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#project-content">Skip to project</a>
+  <header class="shell topbar">
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <div class="topbar-actions">
+      <div class="about-control">
+        <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+        <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+          <h2 id="about-person">Kristoffer Johansson</h2>
+          <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+          <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+        </aside>
+      </div>
+      <div class="theme-segment" role="group" aria-label="Color theme">
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <main id="project-content" tabindex="-1"></main>
+</body>
+</html>

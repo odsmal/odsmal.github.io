@@ -1,0 +1,294 @@
+:root {
+  color-scheme: light;
+  --font-sans: "Trebuchet MS", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-mono: "Courier New", ui-monospace, monospace;
+  --paper: #f2efe8;
+  --surface: #fffdf7;
+  --surface-2: #e5e1d7;
+  --paper-2: var(--surface);
+  --ink: #1c2826;
+  --muted: #4f5b56;
+  --line: #566660;
+  --soft-line: rgba(28, 40, 38, .14);
+  --control-line: #807b72;
+  --control-border-width: 1px;
+  --orange: #c94325;
+  --blue: #0b5d62;
+  --yellow: #f2b93b;
+  --accent: var(--blue);
+  --note-accent: var(--yellow);
+  --link-color: var(--ink);
+  --body-font: var(--font-sans);
+  --about-copy-font: var(--font-serif);
+  --shell-width: 1180px;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #313338;
+  --surface: #2b2d31;
+  --surface-2: #1e1f22;
+  --paper-2: var(--surface);
+  --ink: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #797c84;
+  --soft-line: rgba(255, 255, 255, .12);
+  --control-line: #949ba4;
+  --orange: #f28b82;
+  --blue: #aeb4ff;
+  --yellow: #f0c36d;
+  --accent: var(--blue);
+  --note-accent: var(--yellow);
+}
+
+html[data-page="project-detail"] {
+  --paper: #dedacb;
+  --surface: #f0ecdd;
+  --surface-2: #e5e1d7;
+  --ink: #1c2826;
+  --muted: #4f5b56;
+  --line: #566660;
+  --control-line: #807b72;
+  --orange: #c94325;
+  --blue: #0b5d62;
+  --yellow: #f2b93b;
+  --link-color: var(--ink);
+  --shell-width: 980px;
+}
+
+html[data-theme="dark"][data-page="project-detail"] {
+  --paper: #313338;
+  --surface: #2b2d31;
+  --surface-2: #1e1f22;
+  --ink: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #797c84;
+  --control-line: #949ba4;
+  --orange: #f28b82;
+  --blue: #aeb4ff;
+  --yellow: #f0c36d;
+}
+
+html[data-page="ux-frontier"] {
+  --paper: #f2efe8;
+  --surface: #fffdf7;
+  --surface-2: #e5e1d7;
+  --ink: #20221f;
+  --muted: #595b54;
+  --line: #8b8980;
+  --soft-line: #d0ccc1;
+  --control-line: #747269;
+  --accent: #4849ae;
+  --note-accent: #d4d967;
+  --link-color: var(--accent);
+  --about-copy-font: var(--font-sans);
+  --shipping: #146b48;
+  --preview: #8a4c00;
+  --emerging: #3d55a5;
+  --proposal: #75508f;
+  --essay-hero-bottom: 52px;
+  --essay-title-max: 1040px;
+  --essay-title-size: clamp(45px, 8.4vw, 94px);
+  --essay-title-line: .91;
+  --essay-title-tracking: -.058em;
+  --essay-dek-max: 825px;
+  --essay-dek-margin: 28px;
+  --essay-article-width: 770px;
+  --essay-layout-bottom: 90px;
+  --essay-section-bottom: 57px;
+  --essay-section-top: 5px;
+}
+
+html[data-theme="dark"][data-page="ux-frontier"] {
+  --paper: #313338;
+  --surface: #2b2d31;
+  --surface-2: #1e1f22;
+  --ink: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #797c84;
+  --soft-line: rgba(255, 255, 255, .12);
+  --control-line: #949ba4;
+  --accent: #aeb4ff;
+  --note-accent: #f0c36d;
+  --shipping: #8ed6c4;
+  --preview: #f0c36d;
+  --emerging: #aeb4ff;
+  --proposal: #d7a8f0;
+}
+
+html[data-page="wcag-medical"] {
+  --paper: #f5f0e6;
+  --surface: #fffaf0;
+  --surface-2: #ebe5d9;
+  --ink: #1d201f;
+  --muted: #5e5b54;
+  --line: #aaa397;
+  --soft-line: #d4cdc0;
+  --control-line: #807b72;
+  --accent: #2859b7;
+  --orange: #bd3d25;
+  --note-accent: #e5ba37;
+  --good: #176b4b;
+  --link-color: var(--accent);
+  --about-copy-font: var(--font-sans);
+  --essay-hero-bottom: clamp(42px, 6vw, 68px);
+  --essay-title-max: 1010px;
+  --essay-title-size: clamp(43px, 8vw, 88px);
+  --essay-title-line: .94;
+  --essay-title-tracking: -.055em;
+  --essay-dek-max: 790px;
+  --essay-dek-margin: 26px;
+  --essay-article-width: 760px;
+  --essay-layout-bottom: 88px;
+  --essay-section-bottom: 56px;
+  --essay-section-top: 6px;
+}
+
+html[data-theme="dark"][data-page="wcag-medical"] {
+  --paper: #313338;
+  --surface: #2b2d31;
+  --surface-2: #1e1f22;
+  --ink: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #797c84;
+  --soft-line: rgba(255, 255, 255, .12);
+  --control-line: #949ba4;
+  --accent: #8ecbff;
+  --orange: #f28b82;
+  --note-accent: #f0c36d;
+  --good: #8ed6c4;
+}
+
+html[data-page="website-specification"] {
+  --paper: #f2efe8;
+  --surface: #fffdf7;
+  --surface-2: #e5e1d7;
+  --ink: #1c2826;
+  --muted: #4f5b56;
+  --line: #566660;
+  --soft-line: #d0ccc1;
+  --control-line: #807b72;
+  --accent: #0b5d62;
+  --note-accent: #d8a72f;
+  --spec-accent-2: #b8442c;
+  --link-color: var(--accent);
+  --about-copy-font: var(--font-sans);
+  --essay-hero-bottom: 56px;
+  --essay-title-max: 1000px;
+  --essay-title-size: clamp(46px, 8vw, 90px);
+  --essay-title-line: .92;
+  --essay-title-tracking: -.055em;
+  --essay-dek-max: 800px;
+  --essay-dek-margin: 26px;
+  --essay-article-width: 790px;
+  --essay-layout-bottom: 90px;
+  --essay-section-bottom: 58px;
+  --essay-section-top: 6px;
+}
+
+html[data-theme="dark"][data-page="website-specification"] {
+  --paper: #313338;
+  --surface: #2b2d31;
+  --surface-2: #1e1f22;
+  --ink: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #797c84;
+  --soft-line: rgba(255, 255, 255, .12);
+  --control-line: #949ba4;
+  --accent: #8ed6c4;
+  --note-accent: #f0c36d;
+  --spec-accent-2: #f28b82;
+}
+
+html[data-page="family-tree"] {
+  --paper: #f1eee5;
+  --surface: #fffaf0;
+  --surface-2: #e3dfd2;
+  --ink: #202822;
+  --muted: #535d54;
+  --line: #647064;
+  --soft-line: #cecabc;
+  --control-line: #757d72;
+  --accent: #33633f;
+  --note-accent: #c69b3e;
+  --family-plum: #795064;
+  --family-rust: #9b5139;
+  --family-blue: #3f6472;
+  --family-leaf: #73854d;
+  --link-color: var(--accent);
+  --about-copy-font: var(--font-sans);
+  --essay-hero-bottom: 56px;
+  --essay-title-max: 970px;
+  --essay-title-size: clamp(45px, 8vw, 90px);
+  --essay-title-line: .92;
+  --essay-title-tracking: -.055em;
+  --essay-dek-max: 820px;
+  --essay-dek-margin: 26px;
+  --essay-article-width: 790px;
+  --essay-layout-bottom: 90px;
+  --essay-section-bottom: 60px;
+  --essay-section-top: 6px;
+}
+
+html[data-theme="dark"][data-page="family-tree"] {
+  --paper: #313338;
+  --surface: #2b2d31;
+  --surface-2: #1e1f22;
+  --ink: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #797c84;
+  --soft-line: rgba(255, 255, 255, .12);
+  --control-line: #949ba4;
+  --accent: #a6d49f;
+  --note-accent: #f0c36d;
+  --family-plum: #d6a5c0;
+  --family-rust: #f0997f;
+  --family-blue: #8ecbff;
+  --family-leaf: #a6d49f;
+}
+
+html[data-page="tables-history"] {
+  --paper: #f2efe8;
+  --surface: #fffdf7;
+  --surface-2: #e5e1d7;
+  --ink: #202822;
+  --muted: #535d54;
+  --line: #647064;
+  --soft-line: #cecabc;
+  --control-line: #757d72;
+  --accent: #6e4e2e;
+  --note-accent: #c49638;
+  --table-rust: #945139;
+  --table-blue: #3f6472;
+  --table-leaf: #5c7141;
+  --link-color: var(--accent);
+  --about-copy-font: var(--font-sans);
+  --essay-hero-bottom: 56px;
+  --essay-title-max: 1000px;
+  --essay-title-size: clamp(45px, 8vw, 90px);
+  --essay-title-line: .92;
+  --essay-title-tracking: -.055em;
+  --essay-dek-max: 820px;
+  --essay-dek-margin: 26px;
+  --essay-article-width: 790px;
+  --essay-layout-bottom: 90px;
+  --essay-section-bottom: 60px;
+  --essay-section-top: 6px;
+}
+
+html[data-theme="dark"][data-page="tables-history"] {
+  --paper: #313338;
+  --surface: #2b2d31;
+  --surface-2: #1e1f22;
+  --ink: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #797c84;
+  --soft-line: rgba(255, 255, 255, .12);
+  --control-line: #949ba4;
+  --accent: #e7c58d;
+  --note-accent: #f0c36d;
+  --table-rust: #f0997f;
+  --table-blue: #8ecbff;
+  --table-leaf: #a6d49f;
+}

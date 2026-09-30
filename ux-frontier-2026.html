@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-page="ux-frontier">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An evidence-based review of generative interfaces, visible agents, multimodal input, spatial computing, and emerging GUI patterns in 2026.">
+  <title>Emerging Interface Models in 2026 — Blandat bös</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/essay.css">
+  <link rel="stylesheet" href="assets/css/ux-frontier.css">
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/ux-frontier.js" defer></script>
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="shell topbar">
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <div class="topbar-actions">
+      <div class="about-control">
+        <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+        <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+          <h2 id="about-person">Kristoffer Johansson</h2>
+          <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+          <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+        </aside>
+      </div>
+      <div class="theme-segment" role="group" aria-label="Color theme">
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="shell essay-hero">
+      <p class="eyebrow">Article · Published 25 Sep 2026 · Author: GPT-5.6 Sol Ultra</p>
+      <h1>Emerging Interface Models in <em>2026</em></h1>
+      <p class="dek">A review of generative interfaces, visible agents, multimodal input, spatial computing, and emerging GUI components.</p>
+    </header>
+
+    <div class="shell article-layout">
+      <aside class="toc-wrap" aria-labelledby="toc-heading">
+        <h2 class="toc-title" id="toc-heading">Table of contents</h2>
+        <nav aria-label="Article contents">
+          <ol class="toc">
+            <li><a href="#frontier"><span class="toc-number">01</span>Scope and maturity</a></li>
+            <li><a href="#negotiated"><span class="toc-number">02</span>Adaptive interfaces</a></li>
+            <li><a href="#conversation"><span class="toc-number">03</span>Generative controls</a></li>
+            <li><a href="#agents"><span class="toc-number">04</span>Visible agent state</a></li>
+            <li><a href="#multimodal"><span class="toc-number">05</span>Multimodal interaction</a></li>
+            <li><a href="#space"><span class="toc-number">06</span>Spatial interfaces</a></li>
+            <li><a href="#visual"><span class="toc-number">07</span>Visual systems</a></li>
+            <li><a href="#web"><span class="toc-number">08</span>Native web controls</a></li>
+            <li><a href="#components"><span class="toc-number">09</span>Components for delegation</a></li>
+            <li><a href="#labs"><span class="toc-number">10</span>Interaction examples</a></li>
+            <li><a href="#principles"><span class="toc-number">11</span>Design principles</a></li>
+            <li><a href="#sources"><span class="toc-number">12</span>Sources and further reading</a></li>
+          </ol>
+        </nav>
+        <p class="snapshot"><strong>Scope.</strong> This article distinguishes released products, previews, emerging standards, and design proposals as of 25 September 2026. Availability may change.</p>
+      </aside>
+
+      <article class="essay-article" id="article" tabindex="-1">
+        <section id="frontier" aria-labelledby="frontier-heading">
+          <h2 id="frontier-heading">Scope and maturity</h2>
+          <p class="lead">Interfaces are becoming adaptive, multimodal, and capable of continuing delegated work without continuous user input.</p>
+          <aside class="article-brief" aria-labelledby="quick-read-heading">
+            <h3 id="quick-read-heading">Summary</h3>
+            <ul>
+              <li>Fixed screens are giving way to task-specific interfaces assembled around user intent.</li>
+              <li>Agent interfaces require visible state, limited authority, deliberate approval, and recovery controls.</li>
+              <li>Voice, vision, gaze, gesture, muscle signals, and spatial input should share a consistent focus and feedback model.</li>
+              <li>Trusted components can support dynamic composition while preserving semantics and safety.</li>
+            </ul>
+          </aside>
+          <p>A travel request may begin through smart glasses, expand into a comparison view on a laptop, and end with an agent preparing a booking. The interface should stop at the payment boundary, describe the proposed transaction, request approval, and provide a receipt with recovery options.</p>
+          <p>These capabilities already exist at different levels of maturity. This review separates released products from previews, emerging standards, and design proposals.</p>
+          <div class="maturity" aria-label="Maturity labels used in this article">
+            <div><strong class="shipping"><span class="dot" aria-hidden="true"></span>Released</strong><span>Available in a released product or stable implementation, subject to platform and regional limits.</span></div>
+            <div><strong class="preview"><span class="dot" aria-hidden="true"></span>Preview</strong><span>Announced, in beta, in developer preview, or being introduced gradually.</span></div>
+            <div><strong class="emerging"><span class="dot" aria-hidden="true"></span>Emerging standard</strong><span>Implemented across an ecosystem, but still subject to technical and adoption changes.</span></div>
+            <div><strong class="proposal"><span class="dot" aria-hidden="true"></span>Design proposal</strong><span>A component or principle proposed in this article rather than an established standard.</span></div>
+          </div>
+          <p class="pullquote">An effective adaptive interface remains understandable when its inference is incorrect.</p>
+        </section>
+
+        <section id="negotiated" aria-labelledby="negotiated-heading">
+          <h2 id="negotiated-heading">From fixed to adaptive interfaces</h2>
+          <p>Traditional graphical interfaces require users to learn a predefined information architecture. Current systems are changing this model in three ways:</p>
+          <ul>
+            <li><strong>Intent can replace navigation.</strong> Users describe an outcome without first locating the appropriate tool.</li>
+            <li><strong>Commands can become delegation.</strong> Software plans and completes several steps, then returns when a decision is required.</li>
+            <li><strong>Context extends beyond the screen.</strong> Voice, cameras, gaze, hands, wearables, and the physical environment supplement conventional input.</li>
+          </ul>
+          <p>Visual interfaces remain necessary. Text is inefficient for comparison, precise adjustment, spatial relationships, monitoring, and consequential review. Conversation may establish intent, while a table, map, timeline, form, or editor supports inspection and revision.</p>
+          <div class="callout"><strong>Core requirement</strong><p>When an interface changes between tasks, semantics, consent, system state, permissions, focus, feedback, and recovery must remain consistent.</p></div>
+        </section>
+
+        <section id="conversation" aria-labelledby="conversation-heading">
+          <h2 id="conversation-heading">Controlled generative interfaces</h2>
+          <p>A controlled generative interface allows an agent to request a task-specific arrangement while the host application retains control of the component catalog, visual system, and execution boundary.</p>
+          <p><a href="https://developers.googleblog.com/a2ui-v0-9-generative-ui/">Google’s A2UI v0.9</a>, released in April 2026, represents interface intent in a framework-independent format. The client maps that description to approved components and can update them as the conversation changes. The agent does not produce arbitrary executable code. In September 2026, the <a href="https://a2ui.org/roadmap/">roadmap</a> listed v0.9.1 as stable and v1.0 as a candidate; A2UI therefore remained an evolving open project rather than a universal standard.</p>
+          <p><a href="https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/">MCP Apps</a>, introduced in January 2026, allows tools to return sandboxed forms, dashboards, viewers, and workflows within an agent conversation. The host manages communication, theme, and permissions. OpenAI’s Apps SDK and interface guidance follow the same model: established controls and workspaces appear within the conversation when required.</p>
+          <div class="pattern-grid">
+            <article class="pattern"><span class="status-label emerging"><span class="dot" aria-hidden="true"></span>Emerging</span><h3>Declarative composition</h3><p>The agent provides a specification; the host renders trusted components with established semantics and styling.</p></article>
+            <article class="pattern"><span class="status-label shipping"><span class="dot" aria-hidden="true"></span>Released</span><h3>Conversation-hosted applications</h3><p>A tool returns a bounded interactive workspace without requiring a separate application.</p></article>
+            <article class="pattern"><span class="status-label proposal"><span class="dot" aria-hidden="true"></span>Design proposal</span><h3>Interface compiler</h3><p>Intent, context, policy, and preferences produce a temporary, inspectable task interface.</p></article>
+            <article class="pattern"><span class="status-label proposal"><span class="dot" aria-hidden="true"></span>Design requirement</span><h3>Stable properties</h3><p>Generated layouts preserve labels, reading order, user settings, exit paths, and a consistent action model.</p></article>
+          </div>
+          <p>A curated component catalog can preserve keyboard operation, semantics, focus, target size, and contrast more reliably than unrestricted generated HTML. It does not guarantee accessibility. Every state, focus transition, announcement, and complete task still requires testing.</p>
+        </section>
+
+        <section id="agents" aria-labelledby="agents-heading">
+          <h2 id="agents-heading">Visible state for delegated work</h2>
+          <p>A loading indicator is insufficient for work that may continue for minutes or hours, divide into subtasks, wait for information, cross applications, or approach a consequential action.</p>
+          <p><a href="https://blog.google/products-and-platforms/platforms/android/android-halo/">Android Halo</a>, previewed in May 2026, proposed a persistent area that indicates whether an agent is working, operating in a live mode, or requesting attention. Its principal contribution is continuity: agent state remains visible across navigation.</p>
+          <p>Other systems for long-running work expose plans, checkpoints, questions, approvals, editable artifacts, and progress. This shifts UX from response presentation to <strong>delegation design</strong>. The interface should answer:</p>
+          <ul>
+            <li>What goal did the system infer, and what remains unresolved?</li>
+            <li>What is happening now, what has finished, and what is waiting?</li>
+            <li>Which accounts, data, and tools are in scope?</li>
+            <li>Which actions are reversible, and which require approval?</li>
+            <li>How can the user pause, direct, correct, stop, or recover the work?</li>
+          </ul>
+          <p>Frequent confirmation creates approval fatigue. A safer pattern combines a limited technical sandbox, a visible plan, and checkpoints at consequential boundaries. Each approval should state what will change, where, for whom, which data will be used, and whether the action is reversible.</p>
+        </section>
+
+        <section id="multimodal" aria-labelledby="multimodal-heading">
+          <h2 id="multimodal-heading">Multimodal reference and input</h2>
+          <p>Multimodal systems combine speech with a shared screen, camera view, recent selection, or spatial focus. <a href="https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-vision-with-microsoft-copilot">Microsoft Copilot Vision</a>, for example, allows a user to share an application, page, screen, or camera feed and discuss it by voice.</p>
+          <p>A central capability is <strong>deictic reference</strong>: resolving terms such as “this,” “there,” or “the second one” through shared attention. The system should identify the selected referent. If pointer, gaze, speech, and recent context conflict, the interface should expose the uncertainty rather than make an invisible assumption.</p>
+          <p>The interface should clearly identify the observed surface, indicate active sensing, provide an immediate stop control, and state when context is discarded. Essential functions also require alternatives to gaze, custom gestures, and voice.</p>
+          <h3>Muscle signals and assistive input</h3>
+          <p>Meta’s Neural Band uses surface electromyography at the wrist to translate muscle activity into actions such as selection and scrolling. It is muscle-signal input rather than mind reading, and it requires conventional alternatives when recognition, fit, mobility, or availability differs.</p>
+          <p>Apple’s Brain Computer Interface protocol allows specialist third-party hardware to send switch, keyboard, pointer, focus, and BCI-specific events to Apple platforms. It is an interoperability layer for assistive devices, not a general neural interface. New input methods become useful when they share the same focus, action, feedback, and fallback model as established input.</p>
+        </section>
+
+        <section id="space" aria-labelledby="space-heading">
+          <h2 id="space-heading">Spatial interface requirements</h2>
+          <p>Spatial computing adds distance, depth, scale, comfort, and social visibility to interface design. Apple’s visionOS uses eyes and hands as primary input while supporting keyboards, trackpads, and accessibility hardware. Android XR guidance covers hand and eye tracking, voice, controllers, keyboards, mice, panels, orbiters, and spatial elevation. In September 2026, Compose for XR was in beta, while the glasses-focused Glimmer and Projected APIs remained in alpha.</p>
+          <p>A <strong>spatial panel</strong> presents two-dimensional content in space. An <strong>orbiter</strong> places a limited set of controls beside a panel. <strong>Distance-aware detail</strong> reduces information as viewing distance increases. An <strong>attention-safe overlay</strong> limits its visual field and avoids obscuring the environment.</p>
+          <p>visionOS guidance demonstrates that distance-aware components require more than proportional scaling: nearby widgets may expose detail and actions, while distant widgets retain only essential information. Android cautions against excessive orbiters, complex gestures, uncomfortable postures, and dependence on a single input method. Spatial design should prioritize legibility and comfort over immersion.</p>
+        </section>
+
+        <section id="visual" aria-labelledby="visual-heading">
+          <h2 id="visual-heading">Integrated visual systems</h2>
+          <p>Apple’s <a href="https://developer.apple.com/documentation/technologyoverviews/liquid-glass">Liquid Glass</a> and Google’s <a href="https://blog.google/products-and-platforms/platforms/android/material-3-expressive-android-wearos-launch/">Material 3 Expressive</a> use different visual conventions, but both integrate appearance, motion, feedback, and device form.</p>
+          <p>Liquid Glass applies a dynamic material to controls and navigation, adapting tint and separation to underlying content and changing as controls change state. Material 3 Expressive combines responsive components, stronger typography, dynamic color, spring motion, haptic feedback, live updates, and shapes adapted to round displays.</p>
+          <p>The significant development is <strong>perceptual feedback as structure</strong>. Motion communicates continuity, haptics confirm state changes, materials distinguish controls from content, and shape responds to the device. These systems still require restraint: transparency may reduce contrast, motion may distract or cause discomfort, and visual expression requires a stable hierarchy.</p>
+        </section>
+
+        <section id="web" aria-labelledby="web-heading">
+          <h2 id="web-heading">Native web interface controls</h2>
+          <p>The web platform now supports interaction patterns previously implemented through custom JavaScript. Popovers use the top layer, support dismissal, and participate in focus management. CSS anchor positioning connects menus and tooltips to their triggers and provides alternatives near viewport edges. Declarative commands can control dialogs. Customizable native <code>&lt;select&gt;</code> elements support richer content while retaining form semantics and progressive fallback.</p>
+          <p>Safari 27 added customizable select support in September 2026 after Chromium’s implementation. Chrome’s 2026 interface update also documented element-scoped view transitions, state-preserving DOM moves, automatic contrast selection, experimental HTML in canvas, and proposed gesture-driven regions. These features remain at different levels of maturity.</p>
+          <p>Native platform support can improve the reliability of focus relationships, dismissal, positioning, semantics, state, adaptation, and interruption-safe movement. New capabilities should be introduced selectively and with progressive enhancement.</p>
+        </section>
+
+        <section id="components" aria-labelledby="components-heading">
+          <h2 id="components-heading">Components for delegated work</h2>
+          <p>The following proposed components are not standardized controls. They identify recurring requirements when software infers intent or acts over time.</p>
+          <ol class="component-list">
+            <li data-mark="I"><strong>Intent summary</strong><span>An editable statement of the system’s interpretation of the request.</span></li>
+            <li data-mark="?"><strong>Ambiguity indicator</strong><span>An unresolved assumption about date, recipient, scope, or meaning that can be corrected directly.</span></li>
+            <li data-mark="D"><strong>Delegation level</strong><span>A persistent choice between suggesting, preparing, and acting within stated limits.</span></li>
+            <li data-mark="P"><strong>Plan preview</strong><span>The proposed steps, tools, data scope, checkpoints, and outputs shown before work begins.</span></li>
+            <li data-mark="•"><strong>Activity indicator</strong><span>A persistent status for working, waiting, paused, failed, complete, or requiring attention.</span></li>
+            <li data-mark="!"><strong>Approval gate</strong><span>A decision point placed immediately before a consequential action.</span></li>
+            <li data-mark="R"><strong>Action receipt</strong><span>A record of the change, location, time, inputs, provenance, and result.</span></li>
+            <li data-mark="↶"><strong>Recovery controls</strong><span>Nearby options to pause, correct, undo, restore, retry, or request support.</span></li>
+          </ol>
+          <p>An agent interface should communicate state, authority, uncertainty, and recovery rather than rely on visual personification.</p>
+        </section>
+
+        <section id="labs" aria-labelledby="labs-heading">
+          <h2 id="labs-heading">Interaction examples</h2>
+          <p>These deterministic simulations demonstrate individual interaction patterns. They do not use a model, microphone, camera, account, or external action.</p>
+
+          <div class="lab" aria-labelledby="composer-title">
+            <p class="lab-kicker">Example 01 · Intent-based composition</p>
+            <h3 id="composer-title">Compose an interface from intent</h3>
+            <p class="lab-intro">Select a goal and constraints. A trusted component catalog produces a bounded task view.</p>
+            <div class="lab-controls">
+              <label class="control" for="goal-select">Goal
+                <select id="goal-select"><option value="compare">Compare three options</option><option value="plan">Create a short plan</option><option value="explain">Explain a complex topic</option><option value="review">Review a proposed change</option></select>
+              </label>
+              <div><span class="control" id="constraint-label">Constraints</span><div class="button-row" role="group" aria-labelledby="constraint-label">
+                <button class="demo-button constraint-button" type="button" data-constraint="fast" aria-pressed="true">Fast</button>
+                <button class="demo-button constraint-button" type="button" data-constraint="low-risk" aria-pressed="false">Low risk</button>
+                <button class="demo-button constraint-button" type="button" data-constraint="accessible" aria-pressed="true">Accessible</button>
+              </div></div>
+            </div>
+            <div class="demo-stage" id="composer-stage" aria-live="polite"></div>
+            <div class="result"><strong>Principle</strong><p>Compose layouts from approved components, and keep the inferred goal and constraints visible and editable.</p></div>
+          </div>
+
+          <div class="lab" aria-labelledby="delegation-title">
+            <p class="lab-kicker">Example 02 · Bounded delegation</p>
+            <h3 id="delegation-title">Define the permitted level of action</h3>
+            <p class="lab-intro">The delegation level changes the plan and the controls required to govern it.</p>
+            <fieldset><legend>Delegation level</legend><div class="radio-row">
+              <label class="radio-choice"><input type="radio" name="delegation" value="suggest" checked><span>Provide suggestions</span></label>
+              <label class="radio-choice"><input type="radio" name="delegation" value="draft"><span>Prepare a draft</span></label>
+              <label class="radio-choice"><input type="radio" name="delegation" value="approve"><span>Act after approval</span></label>
+            </div></fieldset>
+            <div class="demo-stage" id="delegation-stage" aria-live="polite"></div>
+            <div class="result"><strong>Principle</strong><p>Authority should be a visible interface state rather than an assumption contained in a prompt or settings page.</p></div>
+          </div>
+
+          <div class="lab" aria-labelledby="referent-title">
+            <p class="lab-kicker">Example 03 · Shared attention</p>
+            <h3 id="referent-title">Resolve an ambiguous reference</h3>
+            <p class="lab-intro">Select an object and a phrase. The interface identifies the resolved referent and supporting context.</p>
+            <div class="scene" role="group" aria-label="Objects in the simulated scene">
+              <button class="scene-object" type="button" data-object="blue notebook" aria-pressed="true"><span class="scene-glyph" aria-hidden="true">▤</span>Blue notebook</button>
+              <button class="scene-object" type="button" data-object="desk lamp" aria-pressed="false"><span class="scene-glyph" aria-hidden="true">◒</span>Desk lamp</button>
+              <button class="scene-object" type="button" data-object="red mug" aria-pressed="false"><span class="scene-glyph" aria-hidden="true">◉</span>Red mug</button>
+            </div>
+            <label class="control" for="phrase-select" style="margin-top:15px">Phrase
+              <select id="phrase-select"><option value="tell">Tell me about that</option><option value="move">Move that beside the lamp</option><option value="compare">Compare that with the notebook</option></select>
+            </label>
+            <div class="result" id="referent-result" aria-live="polite"></div>
+          </div>
+
+          <div class="lab" aria-labelledby="distance-title">
+            <p class="lab-kicker">Example 04 · Distance-aware component</p>
+            <h3 id="distance-title">Adapt detail to viewing distance</h3>
+            <p class="lab-intro">Move a status widget through three viewing distances. Secondary detail is reduced while the essential state remains visible.</p>
+            <label class="control" for="distance-range">Viewing distance: <output id="distance-output" for="distance-range">Near</output>
+              <input id="distance-range" type="range" min="0" max="2" step="1" value="0">
+            </label>
+            <div class="distance-stage" aria-hidden="true"><div class="distance-widget" id="distance-widget" data-distance="near"><h4>Train · on time</h4><p class="detail">Platform 4 · departs 18:42 · carriage 6</p><div class="minor-actions"><span>Route</span><span>Ticket</span><span>Share</span></div></div></div>
+            <p class="sr-only">Complete widget summary: The train is on time. It departs from platform 4 at 18:42. The assigned carriage is 6. Available actions are Route, Ticket, and Share.</p>
+            <div class="result" id="distance-result" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section id="principles" aria-labelledby="principles-heading">
+          <h2 id="principles-heading">Design principles</h2>
+          <p>Adaptive interfaces should be assessed through coherence, control, and reliability rather than novelty.</p>
+          <ol class="principles">
+            <li><strong>Generate arrangements rather than arbitrary behavior.</strong> Models may compose trusted components, while the host retains control of execution and semantics.</li>
+            <li><strong>Make inferred intent editable.</strong> Present the system’s interpretation before converting it into a plan.</li>
+            <li><strong>Keep agent activity visible and unobtrusive.</strong> State should persist without continuously demanding attention.</li>
+            <li><strong>Request approval at consequential boundaries.</strong> Combine technical limits with risk-based approval rather than repeated confirmation.</li>
+            <li><strong>Represent uncertainty explicitly.</strong> Expose relevant referents, assumptions, sources, and confidence.</li>
+            <li><strong>Provide consistent recovery.</strong> Pause, correction, undo, restoration, and receipts are primary controls.</li>
+            <li><strong>Provide equivalent input methods.</strong> Gaze, gesture, voice, haptics, and spatial placement should expand access rather than restrict it.</li>
+            <li><strong>Account for the physical environment.</strong> Consider bystanders, privacy, safety, social visibility, lighting, noise, and divided attention.</li>
+          </ol>
+          <p class="pullquote">The quality of an adaptive interface depends on how clearly it communicates its behavior.</p>
+        </section>
+
+        <section id="sources" aria-labelledby="sources-heading">
+          <h2 id="sources-heading">Sources and further reading</h2>
+          <ol class="sources">
+            <li><a href="https://developers.googleblog.com/a2ui-v0-9-generative-ui/">Google Developers — A2UI v0.9</a>, 17 April 2026.</li>
+            <li><a href="https://a2ui.org/roadmap/">A2UI project — protocol and renderer roadmap</a>, current status checked 25 September 2026.</li>
+            <li><a href="https://developers.googleblog.com/introducing-a2ui-an-open-project-for-agent-driven-interfaces/">Google Developers — Introducing A2UI</a>, 15 December 2025.</li>
+            <li><a href="https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/">Model Context Protocol — MCP Apps official extension</a>, 26 January 2026.</li>
+            <li><a href="https://openai.com/index/introducing-apps-in-chatgpt/">OpenAI — Introducing apps in ChatGPT and the Apps SDK</a>, 6 October 2025.</li>
+            <li><a href="https://developers.openai.com/plugins/concepts/ui-guidelines">OpenAI Developers — Chat-native UI guidelines</a>.</li>
+            <li><a href="https://blog.google/products-and-platforms/platforms/android/android-halo/">Google — Android Halo preview</a>, 19 May 2026.</li>
+            <li><a href="https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-vision-with-microsoft-copilot">Microsoft — Using Copilot Vision</a>.</li>
+            <li><a href="https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-glasses-emg-wristband/">Meta — Ray-Ban Display and surface-EMG Neural Band</a>, September 2025.</li>
+            <li><a href="https://developer.apple.com/documentation/accessibility/brain-computer-interface-hid-reference-for-connecting-to-apple-platforms">Apple Developer — BCI HID reference for assistive hardware</a>.</li>
+            <li><a href="https://developer.android.com/design/ui/xr/guides/considerations">Android Developers — XR interaction and comfort considerations</a>.</li>
+            <li><a href="https://developer.android.com/design/ui/xr/guides/spatial-ui">Android Developers — Spatial panels, orbiters, and elevation</a>.</li>
+            <li><a href="https://developer.android.com/jetpack/androidx/releases/xr-compose">Android Developers — Compose for XR release notes</a>.</li>
+            <li><a href="https://developer.android.com/jetpack/androidx/releases/xr-glimmer">Android Developers — Compose Glimmer release notes</a>.</li>
+            <li><a href="https://developer.android.com/jetpack/androidx/releases/xr-projected">Android Developers — XR Projected release notes</a>.</li>
+            <li><a href="https://developer.apple.com/visionos/get-started/">Apple Developer — visionOS interaction foundations</a>.</li>
+            <li><a href="https://developer.apple.com/videos/play/wwdc2025/278/">Apple Developer — What’s new in widgets, including distance-aware visionOS widgets</a>.</li>
+            <li><a href="https://developer.apple.com/documentation/technologyoverviews/liquid-glass">Apple Developer — Liquid Glass</a>.</li>
+            <li><a href="https://blog.google/products-and-platforms/platforms/android/material-3-expressive-android-wearos-launch/">Google — Material 3 Expressive for Android and Wear OS</a>, 13 May 2025.</li>
+            <li><a href="https://developer.chrome.com/blog/new-in-web-ui-io26">Chrome Developers — What’s new in web UI</a>, 1 July 2026.</li>
+            <li><a href="https://developer.chrome.com/blog/a-customizable-select">Chrome Developers — Customizable native select</a>, 24 March 2025.</li>
+            <li><a href="https://webkit.org/blog/18325/webkit-features-for-safari-27-0/">WebKit — Safari 27 platform updates</a>, 17 September 2026.</li>
+            <li><a href="https://developer.apple.com/videos/play/wwdc2026/220/">Apple Developer — Refine accessibility for custom controls</a>, WWDC26.</li>
+          </ol>
+          <p class="updated">Research checked 25 September 2026. Availability varies by platform, region, device, release status, and browser support.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+      <span>Article · Project 01</span>
+    </div>
+  </footer>
+</body>
+</html>

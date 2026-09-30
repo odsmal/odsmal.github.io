@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-page="tables-history">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A history of tables and a practical guide to their use in graphical interfaces, from early accounting to interactive data grids.">
+  <title>Tables: History and Interface Design — Blandat bös</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/essay.css">
+  <link rel="stylesheet" href="assets/css/tables-history.css">
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/tables-history.js" defer></script>
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="shell topbar">
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <div class="topbar-actions">
+      <div class="about-control">
+        <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+        <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+          <h2 id="about-person">Kristoffer Johansson</h2>
+          <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+          <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+        </aside>
+      </div>
+      <div class="theme-segment" role="group" aria-label="Color theme">
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="shell essay-hero">
+      <p class="eyebrow">Article · Published 29 Sep 2026 · Author: GPT-5.6 Sol Ultra</p>
+      <h1>Tables: <em>History and Interface Design</em></h1>
+      <p class="dek">A history of tabular information and practical guidance for designing tables in graphical interfaces.</p>
+    </header>
+
+    <div class="shell article-layout">
+      <aside class="toc-wrap" aria-labelledby="toc-heading">
+        <h2 class="toc-title" id="toc-heading">Table of contents</h2>
+        <nav aria-label="Article contents">
+          <ol class="toc">
+            <li><a href="#seeing"><span class="toc-number">01</span>Purpose and structure</a></li>
+            <li><a href="#origins"><span class="toc-number">02</span>Historical origins</a></li>
+            <li><a href="#calculation"><span class="toc-number">03</span>Calculation and publication</a></li>
+            <li><a href="#statistics"><span class="toc-number">04</span>Statistical administration</a></li>
+            <li><a href="#spreadsheet"><span class="toc-number">05</span>Interactive spreadsheets</a></li>
+            <li><a href="#web"><span class="toc-number">06</span>Web tables and data grids</a></li>
+            <li><a href="#anatomy"><span class="toc-number">07</span>Semantic structure</a></li>
+            <li><a href="#interaction"><span class="toc-number">08</span>Effects of interaction</a></li>
+            <li><a href="#when"><span class="toc-number">09</span>Appropriate use</a></li>
+            <li><a href="#labs"><span class="toc-number">10</span>Interactive examples</a></li>
+            <li><a href="#principles"><span class="toc-number">11</span>Design requirements</a></li>
+            <li><a href="#sources"><span class="toc-number">12</span>Sources</a></li>
+          </ol>
+        </nav>
+          <p class="snapshot"><strong>Scope.</strong> This article distinguishes visual data tables, mathematical lookup tables, spreadsheets, database relations, and interactive data grids.</p>
+      </aside>
+
+      <article class="essay-article" id="article" tabindex="-1">
+        <section id="seeing" aria-labelledby="seeing-heading">
+          <h2 id="seeing-heading">Purpose and structure</h2>
+          <p class="lead">A table organizes repeated attributes so that readers can locate records and compare exact values.</p>
+          <aside class="table-brief" aria-labelledby="quick-read-heading">
+            <h3 id="quick-read-heading">Executive summary</h3>
+            <ul>
+              <li>Tables developed independently in response to accounting, calculation, comparison, and administrative needs.</li>
+              <li>Print enabled distribution, machinery enabled tabulation, spreadsheets enabled recalculation, and graphical interfaces enabled direct manipulation.</li>
+              <li>Use tables for exact comparison across repeated fields. Use other formats for narrative, trends, hierarchy, spatial relationships, or heterogeneous content.</li>
+              <li>Interactive tables still require captions, headers, units, provenance, keyboard access, and explicit view state.</li>
+            </ul>
+          </aside>
+          <p>A cell derives meaning from its row and column headers. Shared headers reduce repetition and support comparison across many records.</p>
+          <p>This efficiency depends on valid categories. Rows imply comparable records, columns imply consistent measurement, and blank cells require defined meanings. Visual regularity does not guarantee data quality or neutrality.</p>
+          <p class="history-thesis">The principal historical change was operational: tables progressed from authored records to lookup instruments, machine-processed datasets, recalculating models, and interactive views.</p>
+          <figure class="evolution-figure">
+            <figcaption><strong>Illustration 1 — Four stages of tabular use</strong><span>Each medium changes both the representation and the available operations.</span></figcaption>
+            <div class="evolution-grid" aria-label="A visual progression from clay accounting to an interactive screen table">
+              <article class="evolution-card"><span class="era-label">Record</span><div class="era-visual era-visual--clay" aria-hidden="true"></div><h3>Clay account</h3><p>Rows preserve transactions and quantities.</p></article>
+              <article class="evolution-card"><span class="era-label">Lookup</span><div class="era-visual era-visual--print" aria-hidden="true"><span>Day</span><span>☉</span><span>☽</span><span>♄</span><span>12</span><span>23</span><span>41</span><span>08</span><span>13</span><span>24</span><span>43</span><span>09</span><span>14</span><span>26</span><span>44</span><span>11</span></div><h3>Printed table</h3><p>Identical copies let readers reuse calculation.</p></article>
+              <article class="evolution-card"><span class="era-label">Process</span><div class="era-visual era-visual--punch" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><h3>Machine record</h3><p>Encoded rows can be counted and cross-tabulated.</p></article>
+              <article class="evolution-card"><span class="era-label">Interact</span><div class="era-visual era-visual--screen" aria-hidden="true"><span></span><span>A</span><span>B</span><span>C</span><span>1</span><span>14</span><span>8</span><span>22</span><span>2</span><span>19</span><span>5</span><span>24</span><span>3</span><span>21</span><span>7</span><span>28</span></div><h3>Live grid</h3><p>Users edit, sort, filter, and recalculate the view.</p></article>
+            </div>
+          </figure>
+        </section>
+
+        <section id="origins" aria-labelledby="origins-heading">
+          <h2 id="origins-heading">Historical origins</h2>
+          <p>Proto-cuneiform tablets from late fourth-millennium BCE Mesopotamia recorded commodities and quantities. They are early evidence of tabulation, although preservation strongly favors clay over perishable media. Claims should therefore refer to the earliest surviving examples, not a single invention.</p>
+          <p>By the third millennium BCE, Mesopotamian scribes used rows and columns for administration and calculation. Tabular methods were later developed, abandoned, and rediscovered in several mathematical and astronomical traditions. The <a href="https://academic.oup.com/book/4975?searchresult=1">Oxford history of mathematical tables</a> identifies a Sumerian example from Shuruppag as the oldest known mathematical table, while the <a href="https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/calculating-devices/tables">Whipple Museum</a> documents early record keeping.</p>
+          <p>The Chinese <a href="https://www.tsinghua.edu.cn/en/info/1253/2378.htm"><em>Suanbiao</em></a>, reconstructed from 21 bamboo slips and dated to approximately 305 BCE, is a decimal multiplication matrix. It demonstrates that tabular calculation developed through more than one historical tradition.</p>
+          <div class="turning-point"><strong>Structural distinction</strong><p>A list records a sequence. A table adds a second axis, allowing each value to be interpreted by both record and attribute.</p></div>
+        </section>
+
+        <section id="calculation" aria-labelledby="calculation-heading">
+          <h2 id="calculation-heading">Calculation and publication</h2>
+          <p>Numerical tables functioned as calculating instruments. Navigators, astronomers, surveyors, administrators, and engineers used prepared values to replace complex calculations with lookup, interpolation, and limited arithmetic.</p>
+          <ol class="milestone-list">
+            <li><time>7th c. BCE</time><div><strong>Reciprocal and astronomical clay tables</strong><span>A <a href="https://www.britishmuseum.org/collection/object/W_K-2069">British Museum tablet</a> preserves a Neo-Assyrian reciprocal table; other surviving tablets organized observations and predictions.</span></div></li>
+            <li><time>c. 150 CE</time><div><strong>Ptolemy’s astronomical tables</strong><span>The <em>Almagest</em> and later <em>Handy Tables</em> made recurring celestial calculations reusable.</span></div></li>
+            <li><time>1263–1272</time><div><strong>Alfonsine Tables</strong><span>Compiled in Castile, copied across Europe, and eventually printed, they supported the calculation of planetary positions. The <a href="https://www.loc.gov/resource/gdcwdl.wdl_07326/?sp=2&amp;st=list">Library of Congress</a> provides a digitized copy and history.</span></div></li>
+            <li><time>1474–1492</time><div><strong>The printed lookup book</strong><span>Regiomontanus’s <em>Ephemerides</em> and printed editions of the Alfonsine tradition made substantial numerical tables reproducible at scale.</span></div></li>
+            <li><time>1614</time><div><strong>Napier’s logarithms</strong><span>Log tables turned multiplication and division into addition, subtraction, and lookup. The <a href="https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/calculating-devices/tables">Whipple Museum</a> treats them as paper calculating instruments.</span></div></li>
+          </ol>
+          <p>Printing increased access but also reproduced errors. In 1821 Charles Babbage began designing Difference Engine No. 1 to calculate and print tables automatically. The <a href="https://www.computerhistory.org/babbage/engines">Computer History Museum</a> identifies printing as an integral part of the design.</p>
+          <p>The production of reliable numerical tables was therefore an important early objective of automated computation.</p>
+        </section>
+
+        <section id="statistics" aria-labelledby="statistics-heading">
+          <h2 id="statistics-heading">Statistical administration</h2>
+          <p>Statistical tables classify events and populations. London’s Bills of Mortality recorded parish burials and causes of death. John Graunt’s 1662 <a href="https://wellcomecollection.org/works/sds578rr"><em>Natural and Political Observations</em></a> summarized these records and supported demographic inference. Edmond Halley’s 1693 Breslau analysis used age-at-death data for survivorship and annuity calculations.</p>
+          <p>National statistical systems expanded this method. Sweden’s Tabellverket began a continuous population series in 1749, and censuses represented people through standardized attributes. These systems enabled comparison but also formalized institutional definitions of households, occupations, disability, race, citizenship, and other categories.</p>
+          <p>Manual processing did not scale. Herman Hollerith represented each person on a punched card and used electrical tabulation for the 1890 United States census. The <a href="https://www.census.gov/about/history/bureau-history/census-innovations/technology/hollerith-machine.html">U.S. Census Bureau</a> reports that later versions remained in use until computers replaced them in the 1950s.</p>
+          <p>Machine-readable records separated stored data from published tables. E. F. Codd’s <a href="https://research.ibm.com/publications/a-relational-model-of-data-for-large-shared-data-banks">1970 relational model</a> formalized data as logical relations independent of a particular visual arrangement.</p>
+          <div class="turning-point"><strong>Classification is a design decision</strong><p>Headers, inclusion rules, missing-data codes, and totals determine how records are interpreted. These decisions should be explicit.</p></div>
+        </section>
+
+        <section id="spreadsheet" aria-labelledby="spreadsheet-heading">
+          <h2 id="spreadsheet-heading">Interactive spreadsheets</h2>
+          <p>VisiCalc, developed by Dan Bricklin and Bob Frankston for the Apple II and released in 1979, made the grid a recalculating model. Editing one value could update dependent formulas immediately.</p>
+          <p>The <a href="https://www.computerhistory.org/timeline/software-languages/">Computer History Museum</a> describes this as “what if?” analysis: a financial model became an interactive system rather than a fixed result. The Smithsonian identifies VisiCalc as one of the earliest commercially distributed spreadsheets for microcomputers.</p>
+          <p>This behavior reflects <a href="https://www.cs.umd.edu/~ben/publications.html">direct manipulation</a>: objects remain visible, actions use direct controls, and results appear rapidly and reversibly.</p>
+          <div class="interaction-shift">
+            <article><span>01</span><h3>Cell becomes state</h3><p>A value can be an input, a formula, a reference, or an error—not merely printed content.</p></article>
+            <article><span>02</span><h3>Edit becomes propagation</h3><p>One local change can recalculate a network of dependent cells immediately.</p></article>
+            <article><span>03</span><h3>Copy becomes behavior</h3><p>Filling a formula repeats a rule while adjusting relative references.</p></article>
+            <article><span>04</span><h3>View becomes a model</h3><p>Sorting, hiding, and formatting change the presentation without necessarily changing the underlying data.</p></article>
+          </div>
+          <p>A spreadsheet is an open calculation environment. A GUI data table usually presents externally defined records and supports bounded operations such as inspection, sorting, filtering, selection, permitted editing, and row actions. Products that add formulas, arbitrary cell editing, scripts, and dependent sheets require spreadsheet-level interaction and governance.</p>
+        </section>
+
+        <section id="web" aria-labelledby="web-heading">
+          <h2 id="web-heading">Web tables and data grids</h2>
+          <p>HTML did not initially include tables. Proposals in HTML+ and the HTML 3.0 draft preceded their standardization in HTML 3.2 in January 1997.</p>
+          <p>Before CSS layout matured, authors also used tables for page layout. This practice disrupted document order, accessibility, maintenance, and responsive behavior. The <a href="https://www.w3.org/WAI/tutorials/tables/">WAI tables tutorial</a> limits table markup to data with logical row-and-column relationships.</p>
+          <p>An interactive web table should retain native structure: a caption, scoped headers, and data cells. Sorting should use buttons in headers and expose the active direction with <code>aria-sort</code>. Filtering should report the resulting record count. Embedded links, checkboxes, menus, and inputs should remain standard controls.</p>
+          <p>The <a href="https://www.w3.org/WAI/ARIA/apg/patterns/grid/">ARIA grid pattern</a> is a composite widget with arrow-key navigation among cells. It can support dense editing while reducing tab stops, but it requires complete keyboard, focus, selection, and editing behavior. Use a grid only when the task requires that interaction model.</p>
+        </section>
+
+        <section id="anatomy" aria-labelledby="anatomy-heading">
+          <h2 id="anatomy-heading">Semantic structure</h2>
+          <p>A table must identify its dataset, define each value, and disclose operations that change the visible view.</p>
+          <figure class="anatomy-figure">
+            <figcaption><strong>Illustration 2 — Semantic anatomy</strong><span>The callouts identify information roles rather than visual decoration.</span></figcaption>
+            <div class="anatomy-scroll" tabindex="0" role="region" aria-label="Annotated example table">
+              <table class="anatomy-table">
+                <caption>Workshop energy tests <span class="anatomy-mark" aria-hidden="true">1</span></caption>
+                <thead><tr><th scope="col">Prototype <span class="anatomy-mark" aria-hidden="true">2</span></th><th scope="col" class="numeric">Run time (min) <span class="anatomy-mark" aria-hidden="true">3</span></th><th scope="col" class="numeric">Distance (m)</th><th scope="col">Result</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Wide panel <span class="anatomy-mark" aria-hidden="true">4</span></th><td class="numeric">42</td><td class="numeric">118 <span class="anatomy-mark" aria-hidden="true">5</span></td><td>Stable</td></tr>
+                  <tr><th scope="row">Light panel</th><td class="numeric">35</td><td class="numeric">132</td><td>Fast drain</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="anatomy-key">
+              <div><strong>01 Caption</strong>Names the dataset and purpose.</div>
+              <div><strong>02 Column header</strong>Defines the repeated attribute.</div>
+              <div><strong>03 Unit</strong>Lives with the header, not every cell.</div>
+              <div><strong>04 Row header</strong>Names the record being compared.</div>
+              <div><strong>05 Data cell</strong>Inherits meaning from both headers.</div>
+              <div><strong>Note/source</strong>States provenance, update time, and exceptions.</div>
+            </div>
+          </figure>
+          <p>Use specific headers, place units in headers, align quantitative values consistently, and give the first column sufficient identity. In left-to-right languages, align extended text to the left.</p>
+          <p>Define missing values. Distinguish zero, unavailable, not applicable, suppressed, and pending when these states affect decisions. Identify estimated, generated, stale, or filtered data near the table.</p>
+        </section>
+
+        <section id="interaction" aria-labelledby="interaction-heading">
+          <h2 id="interaction-heading">Effects of interaction</h2>
+          <p>Interactive tables allow users to sort, filter, compare, edit, select, and export records instead of relying on a fixed editorial sequence.</p>
+          <p>IBM’s Query by Example introduced relation-shaped input in 1975. VisiCalc made cells part of a live model in 1979. Dynamic queries and the 1994 Table Lens later supported immediate filtering and focus-plus-context views for larger datasets.</p>
+          <p>Common table tasks are finding matching records, comparing values, inspecting or editing a record, and acting on selected records. Interaction is justified when it improves one of these tasks.</p>
+          <div class="interaction-shift">
+            <article><span>Sort</span><h3>Changes sequence</h3><p>State the active column and direction. Use a stable sort, preserve ties predictably, and never rely on an arrow shape alone.</p></article>
+            <article><span>Filter</span><h3>Changes membership</h3><p>Keep active filters visible, announce the remaining count, and provide a clear reset. “No rows” needs an explanation.</p></article>
+            <article><span>Select</span><h3>Changes scope</h3><p>Make selection distinct from focus and navigation. Describe exactly which rows a batch action will affect.</p></article>
+            <article><span>Edit</span><h3>Changes the data</h3><p>Separate display from edit mode, validate near the cell, expose save state, and make cancellation or undo dependable.</p></article>
+          </div>
+          <p>Interaction can also remove context. Sorting changes sequence, filtering excludes records, pagination separates comparisons, sticky columns reduce available width, and virtualization may remove rows from the document. The interface must state the current view.</p>
+          <div class="turning-point"><strong>Progressive enhancement</strong><p>Begin with native table semantics for reading and comparison. Add only required controls. Use an ARIA grid for cell-level navigation or editing, and test its complete keyboard model with assistive technology.</p></div>
+        </section>
+
+        <section id="when" aria-labelledby="when-heading">
+          <h2 id="when-heading">Appropriate use</h2>
+          <p>Use a table when users must compare repeated attributes across several records. The choice should follow the task, not a preferred visual style.</p>
+          <div class="use-grid">
+            <article class="use-card"><h3>Use a table when</h3><ul><li>records share meaningful fields;</li><li>exact values are required;</li><li>comparison across rows or columns is central;</li><li>density supports efficient scanning;</li><li>sorting or filtering serves a defined task;</li><li>the dataset has a clear caption.</li></ul></article>
+            <article class="use-card use-card--avoid"><h3>Use another format when</h3><ul><li>items have different structures or depend on imagery;</li><li>the primary message is a trend, distribution, or spatial pattern;</li><li>the content is narrative or sequential;</li><li>relationships are hierarchical or networked;</li><li>there are too few values to justify headers;</li><li>the table is used only for page layout.</li></ul></article>
+          </div>
+          <div class="alternatives" aria-label="Alternatives to tables">
+            <div class="alternative"><strong>List</strong><span>Best for sequence, a single dominant attribute, or a simple set of links.</span></div>
+            <div class="alternative"><strong>Cards</strong><span>Best for heterogeneous items, imagery, summaries, and browsing by recognition.</span></div>
+            <div class="alternative"><strong>Chart</strong><span>Best for pattern, trend, proportion, outliers, and approximate comparison.</span></div>
+            <div class="alternative"><strong>Tree or map</strong><span>Best for hierarchy, ancestry, routes, topology, and spatial relationships.</span></div>
+          </div>
+          <p>Formats may be combined. A chart can show a trend while a linked table provides exact values. Cards can support discovery while a table supports final comparison.</p>
+        </section>
+
+        <section id="labs" aria-labelledby="labs-heading">
+          <h2 id="labs-heading">Interactive examples</h2>
+          <p>These examples retain semantic content without JavaScript and report changes made through interaction.</p>
+
+          <div class="lab" aria-labelledby="history-lab-title">
+            <p class="lab-kicker">Example 01 · Sorting and filtering</p>
+            <h3 id="history-lab-title">Query the historical timeline</h3>
+            <p class="lab-intro">The active sort is shown in the header. Filtering preserves the records and announces the result count.</p>
+            <div class="table-tools lab-controls history-js-control">
+              <label class="control" for="era-filter">Show medium
+                <select id="era-filter"><option value="all">All media</option><option value="record">Clay and manuscript</option><option value="print">Print</option><option value="machine">Machine-readable</option><option value="screen">Interactive screen</option></select>
+              </label>
+              <button class="demo-button" id="history-reset" type="button">Reset view</button>
+            </div>
+            <div class="example-table-wrap" tabindex="0" role="region" aria-label="Sortable history milestones table">
+              <table class="history-table" id="history-table">
+                <caption>Selected milestones in tabular history</caption>
+                <thead><tr>
+                  <th scope="col" aria-sort="ascending"><button type="button" data-sort="date" disabled>Date <span class="sort-mark" aria-hidden="true">▲</span></button></th>
+                  <th scope="col"><button type="button" data-sort="milestone" disabled>Milestone <span class="sort-mark" aria-hidden="true">◇</span></button></th>
+                  <th scope="col"><button type="button" data-sort="medium" disabled>Medium <span class="sort-mark" aria-hidden="true">◇</span></button></th>
+                  <th scope="col">What changed</th>
+                </tr></thead>
+                <tbody>
+                  <tr data-era="record" data-sort-date="-2600" data-sort-milestone="Mesopotamian mathematical tables" data-sort-medium="Clay"><th scope="row">c. 2600 BCE</th><td>Mesopotamian mathematical tables</td><td>Clay</td><td>Repeated calculation becomes reusable lookup.</td></tr>
+                  <tr data-era="print" data-sort-date="1492" data-sort-milestone="Printed Alfonsine Tables" data-sort-medium="Print"><th scope="row">1492</th><td>Printed Alfonsine Tables</td><td>Print</td><td>Astronomical values travel in reproducible editions.</td></tr>
+                  <tr data-era="print" data-sort-date="1614" data-sort-milestone="Napier publishes logarithms" data-sort-medium="Print"><th scope="row">1614</th><td>Napier publishes logarithms</td><td>Print</td><td>Difficult arithmetic becomes addition plus lookup.</td></tr>
+                  <tr data-era="machine" data-sort-date="1821" data-sort-milestone="Babbage designs Difference Engine" data-sort-medium="Machine"><th scope="row">1821</th><td>Babbage designs Difference Engine</td><td>Machine</td><td>Calculation and table printing become one mechanism.</td></tr>
+                  <tr data-era="machine" data-sort-date="1890" data-sort-milestone="Hollerith census tabulation" data-sort-medium="Punched card"><th scope="row">1890</th><td>Hollerith census tabulation</td><td>Punched card</td><td>Records can be regrouped and cross-tabulated mechanically.</td></tr>
+                  <tr data-era="screen" data-sort-date="1979" data-sort-milestone="VisiCalc" data-sort-medium="Screen"><th scope="row">1979</th><td>VisiCalc</td><td>Screen</td><td>Editing a cell recalculates the visible model.</td></tr>
+                  <tr data-era="screen" data-sort-date="1997" data-sort-milestone="HTML 3.2" data-sort-medium="Web"><th scope="row">1997</th><td>HTML 3.2</td><td>Web</td><td>Tabular structure becomes interoperable web markup.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-status" id="history-status" aria-live="polite">7 milestones shown · sorted by date, ascending.</p>
+          </div>
+
+          <div class="lab" aria-labelledby="chooser-title">
+            <p class="lab-kicker">Example 02 · Representation selection</p>
+            <h3 id="chooser-title">Select an appropriate component</h3>
+            <p class="lab-intro">Choose the primary task and content structure to receive a representation recommendation.</p>
+            <div class="decision-controls history-js-control">
+              <label class="control" for="task-select">Primary task
+                <select id="task-select"><option value="compare">Compare exact values</option><option value="find">Find one matching record</option><option value="trend">Understand a trend or distribution</option><option value="explain">Read explanations or stories</option><option value="edit">Edit many repeated fields</option><option value="hierarchy">Understand a hierarchy</option></select>
+              </label>
+              <label class="control" for="shape-select">Content shape
+                <select id="shape-select"><option value="repeated">Every item shares the same fields</option><option value="mixed">Items have different structures</option><option value="tiny">Only one or two comparisons</option></select>
+              </label>
+            </div>
+            <div class="decision-preview" id="decision-result" aria-live="polite"><span class="decision-icon" aria-hidden="true">▦</span><div><strong>Use a data table</strong><p>Repeated fields and exact comparison are the table’s strongest case.</p></div></div>
+          </div>
+        </section>
+
+        <section id="principles" aria-labelledby="principles-heading">
+          <h2 id="principles-heading">Design requirements</h2>
+          <ol class="design-checklist">
+            <li><div><strong>Define the comparison.</strong> State the user question before choosing columns or interactions.</div></li>
+            <li><div><strong>Keep identity and headers recoverable.</strong> Long tables need persistent context, but sticky regions must not consume the viewport or obscure zoomed content.</div></li>
+            <li><div><strong>Make view state explicit.</strong> Show active sort, filters, hidden columns, selected rows, result count, and whether totals reflect the filtered set.</div></li>
+            <li><div><strong>Set density by task.</strong> Compact rows support expert scanning; larger rows support touch and mixed content. Maintain usable target sizes.</div></li>
+            <li><div><strong>Format for the data.</strong> Align quantitative values, keep units with headers, use consistent precision, and avoid formatting identifiers as quantities.</div></li>
+            <li><div><strong>Separate actions.</strong> Selection, navigation, expansion, and editing require distinct controls and behavior.</div></li>
+            <li><div><strong>Choose a responsive strategy.</strong> Horizontal scroll preserves comparison; priority columns preserve the core task; stacked rows favor directory-style reading. Test with real content.</div></li>
+            <li><div><strong>Prefer native semantics.</strong> Use <code>caption</code>, <code>th</code>, <code>td</code>, and <code>scope</code>. Add ARIA to communicate dynamic state, not to recreate HTML unnecessarily.</div></li>
+            <li><div><strong>Justify the grid pattern.</strong> Use arrow-key cell navigation for dense editing or composite widgets, not ordinary read-only comparison.</div></li>
+            <li><div><strong>Preserve provenance.</strong> State source, freshness, definitions, missing-data rules, and whether values are measured, estimated, derived, or generated.</div></li>
+          </ol>
+          <p class="history-thesis">A well-designed table reduces repetition while preserving context. Interaction should extend the available questions without obscuring the underlying data.</p>
+        </section>
+
+        <section id="sources" aria-labelledby="sources-heading">
+          <h2 id="sources-heading">Sources and further reading</h2>
+          <ol class="sources">
+            <li><a href="https://academic.oup.com/book/4975?searchresult=1">Oxford Academic — <em>The History of Mathematical Tables: From Sumer to Spreadsheets</em></a>.</li>
+            <li><a href="https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/calculating-devices/tables">Whipple Museum, University of Cambridge — Tables as calculating instruments</a>.</li>
+            <li><a href="https://www.metmuseum.org/art/collection/search/327384">The Metropolitan Museum of Art — Proto-cuneiform accounting tablet</a>.</li>
+            <li><a href="https://www.britishmuseum.org/collection/object/W_K-2069">British Museum — Neo-Assyrian mathematical table of reciprocals</a>.</li>
+            <li><a href="https://www.tsinghua.edu.cn/en/info/1253/2378.htm">Tsinghua University — The decimal multiplication table on bamboo slips</a>.</li>
+            <li><a href="https://www.loc.gov/resource/gdcwdl.wdl_07326/?sp=2&amp;st=list">Library of Congress — Book of the Alfonsine Tables</a>.</li>
+            <li><a href="https://library.si.edu/digital-library/book/mirificilogarit00napi">Smithsonian Libraries — Napier’s <em>Mirifici logarithmorum canonis descriptio</em>, 1614</a>.</li>
+            <li><a href="https://wellcomecollection.org/works/sds578rr">Wellcome Collection — John Graunt’s <em>Observations upon the Bills of Mortality</em>, 1662</a>.</li>
+            <li><a href="https://makingscience.royalsociety.org/items/clp_21_45/paper-of-the-breslau-bills-of-mortality-by-edmond-halley">Royal Society — Halley’s paper on the Breslau bills of mortality</a>.</li>
+            <li><a href="https://www.computerhistory.org/babbage/engines">Computer History Museum — Babbage’s calculating engines</a>.</li>
+            <li><a href="https://www.census.gov/about/history/bureau-history/census-innovations/technology/hollerith-machine.html">U.S. Census Bureau — The Hollerith machine</a>.</li>
+            <li><a href="https://research.ibm.com/publications/a-relational-model-of-data-for-large-shared-data-banks">IBM Research — E. F. Codd, “A Relational Model of Data for Large Shared Data Banks,” 1970</a>.</li>
+            <li><a href="https://research.ibm.com/publications/query-by-example">IBM Research — Moshé Zloof, “Query by Example,” 1975</a>.</li>
+            <li><a href="https://americanhistory.si.edu/collections/object/nmah_1303669">Smithsonian National Museum of American History — VisiCalc software and documentation</a>.</li>
+            <li><a href="https://www.computerhistory.org/timeline/software-languages/">Computer History Museum — VisiCalc and the “what if?” spreadsheet</a>.</li>
+            <li><a href="https://www.cs.umd.edu/~ben/papers/Shneiderman1983Direct.pdf">Ben Shneiderman — “Direct Manipulation: A Step Beyond Programming Languages,” 1983</a>.</li>
+            <li><a href="https://www.cs.umd.edu/users/ben/papers/Ahlberg1992Dynamic.pdf">Ahlberg, Williamson, and Shneiderman — “Dynamic Queries for Information Exploration,” 1992</a>.</li>
+            <li><a href="https://www.cs.umd.edu/class/spring2001/cmsc838b/papers/rao-tablelens-chi1994.pdf">Rao and Card — “The Table Lens,” 1994</a>.</li>
+            <li><a href="https://www.w3.org/MarkUp/historical">W3C — Early ideas for HTML</a>.</li>
+            <li><a href="https://www.w3.org/TR/1997/REC-html32-970113/">W3C — HTML 3.2 Recommendation, 1997</a>.</li>
+            <li><a href="https://www.w3.org/WAI/tutorials/tables/">W3C WAI — Tables tutorial</a>.</li>
+            <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/table/examples/sortable-table/">W3C ARIA APG — Sortable table example</a>.</li>
+            <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/grid/">W3C ARIA APG — Grid pattern and keyboard interaction</a>.</li>
+            <li><a href="https://design-system.service.gov.uk/components/table/">GOV.UK Design System — Table component</a>.</li>
+            <li><a href="https://designsystem.digital.gov/components/table/">U.S. Web Design System — Responsive and sortable table guidance</a>.</li>
+            <li><a href="https://www.nngroup.com/articles/data-tables/">Nielsen Norman Group — Data Tables: Four Major User Tasks</a>.</li>
+            <li><a href="https://carbondesignsystem.com/components/data-table/usage/">Carbon Design System — Data table usage and variants</a>.</li>
+          </ol>
+          <p class="updated">Research checked 29 September 2026. Historical “firsts” are qualified because surviving evidence is incomplete and the terms table, spreadsheet, relation, and grid describe related but distinct forms. Interactive demonstrations use original HTML, CSS, and JavaScript.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+      <span>Article · Project 05</span>
+    </div>
+  </footer>
+</body>
+</html>

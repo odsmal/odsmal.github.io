@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-page="family-tree">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A historical and practical analysis of family-tree visualization, from medieval kinship diagrams to modern interactive genealogical systems.">
+  <title>Family Tree Visualization: History and Design — Blandat bös</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/essay.css">
+  <link rel="stylesheet" href="assets/css/family-tree.css">
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/family-tree.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="shell topbar">
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <div class="topbar-actions">
+      <div class="about-control">
+        <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+        <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+          <h2 id="about-person">Kristoffer Johansson</h2>
+          <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+          <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+        </aside>
+      </div>
+      <div class="theme-segment" role="group" aria-label="Color theme">
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="shell essay-hero family-hero">
+      <p class="eyebrow">Visualization · Published 27 Sep 2026 · Author: GPT-5.6 Sol Ultra</p>
+      <h1>Family Tree Visualization: History and Design</h1>
+      <p class="dek">An analysis of how legal diagrams, dynastic records, standardized charts, and interactive systems have represented family relationships.</p>
+    </header>
+
+    <div class="shell article-layout">
+      <aside class="toc-wrap" aria-labelledby="toc-heading">
+        <h2 class="toc-title" id="toc-heading">Table of contents</h2>
+        <nav aria-label="Article contents">
+          <ol class="toc">
+            <li><a href="#projection"><span class="toc-number">01</span>Family trees as projections</a></li>
+            <li><a href="#wheel"><span class="toc-number">02</span>Kinship wheels</a></li>
+            <li><a href="#root"><span class="toc-number">03</span>The tree metaphor</a></li>
+            <li><a href="#roll"><span class="toc-number">04</span>Genealogical rolls</a></li>
+            <li><a href="#system"><span class="toc-number">05</span>Numbering systems</a></li>
+            <li><a href="#paper"><span class="toc-number">06</span>Common chart forms</a></li>
+            <li><a href="#redrawn"><span class="toc-number">07</span>Digital representations</a></li>
+            <li><a href="#data"><span class="toc-number">08</span>Structured genealogical data</a></li>
+            <li><a href="#explorer"><span class="toc-number">09</span>Interactive family explorer</a></li>
+            <li><a href="#paths"><span class="toc-number">10</span>Relationship paths</a></li>
+            <li><a href="#principles"><span class="toc-number">11</span>Design principles</a></li>
+            <li><a href="#sources"><span class="toc-number">12</span>Sources</a></li>
+          </ol>
+        </nav>
+        <p class="family-note"><strong>Demonstration data.</strong> The exhibits use a fictional Vale family. Historical forms are interpretive reconstructions, not artifact facsimiles.</p>
+      </aside>
+
+      <article class="essay-article family-article" id="article" tabindex="-1">
+        <section id="projection" aria-labelledby="projection-heading">
+          <h2 id="projection-heading">Family trees are projections</h2>
+          <p class="lead">A family tree is a selective representation of relationships, organized around a specific person, question, or purpose.</p>
+          <p>A monarch-centered diagram can assert political legitimacy. A couple-centered chart records shared ancestry. A child-centered view can show ancestors or descendants, while a timeline emphasizes overlapping lives rather than generations.</p>
+          <p>Legal scholars, religious artists, chroniclers, genealogists, archivists, and software designers developed distinct forms for distinct purposes. The history of family visualization is therefore a sequence of representational choices rather than a single line of technical progress.</p>
+          <div class="family-thesis"><span>One dataset</span><strong>Multiple valid representations</strong><p>The same fictional family is shown in several forms to identify what each representation reveals and omits.</p></div>
+        </section>
+
+        <section id="wheel" aria-labelledby="wheel-heading">
+          <h2 id="wheel-heading">Kinship wheels</h2>
+          <p>Medieval tables of consanguinity placed an <em>Ego</em>—the person from whose viewpoint kinship was measured—at the center and arranged relatives by degree. These diagrams supported legal decisions about marriage and inheritance.</p>
+          <p>A late-twelfth-century example at the <a href="https://art.thewalters.org/object/W.73.9R/">Walters Art Museum</a> uses six concentric circles for six degrees of relationship. A c. 1280 table discussed by <a href="https://www.cambridge.org/core/books/middle-ages-in-50-objects/leaf-excised-from-henry-of-segusios-summa-aurea-table-of-consanguinity-c-1280-france-paris-ink-tempera-and-gold-on-parchment-4420-2750-cm-17-38-10-1316-inches/61FC3097DBEE4B3A45432571D181AA73">Cambridge University Press</a> combines roundels, kinship terms, and numbers around a central figure. Its geometry answers how closely two people are related, not who came first.</p>
+          <figure class="history-figure">
+            <figcaption><strong>Kinship wheel</strong><span>Interpretive reconstruction of a degree-based legal diagram.</span></figcaption>
+            <div class="kinship-wheel" aria-hidden="true">
+              <div class="kinship-ring ring-4"><span>Fourth degree</span></div>
+              <div class="kinship-ring ring-3"><span>Third degree</span></div>
+              <div class="kinship-ring ring-2"><span>Second degree</span></div>
+              <div class="kinship-ring ring-1"><span>First degree</span></div>
+              <div class="kinship-ego"><b>Ego</b><small>the viewpoint</small></div>
+              <i class="kinship-label label-parent">parent</i><i class="kinship-label label-child">child</i><i class="kinship-label label-sibling">sibling</i><i class="kinship-label label-cousin">cousin</i>
+            </div>
+            <div class="figure-reading"><strong>Interpretation</strong><p>The center identifies the point of reference, not the oldest person. Distance represents the degree of kinship. Modern interactive trees apply the same principle when users change the focal person.</p></div>
+          </figure>
+          <p>The form reduces complex relationships to legal distance. It supports calculation but provides little personal or historical context.</p>
+        </section>
+
+        <section id="root" aria-labelledby="root-heading">
+          <h2 id="root-heading">The tree metaphor</h2>
+          <p>The tree metaphor assigned meaning to form: roots indicated origin, the trunk continuity, branches expansion, and leaves or fruit descendants. In the Tree of Jesse tradition, a vine rises from Jesse and carries the ancestry of Christ. The <a href="https://www.metmuseum.org/art/collection/search/466377">Metropolitan Museum of Art’s German stained-glass example from 1280–1300</a> places Jesse at the base, David above him, and scenes from Christ’s life higher in the composition.</p>
+          <p>The form presented lineage as sacred and immediately legible. Dynastic trees later used the same natural metaphor to represent succession and political legitimacy as an organic order.</p>
+          <figure class="history-figure history-figure--dark">
+            <figcaption><strong>Living-tree form</strong><span>A fictional lineage presented in a medieval visual convention.</span></figcaption>
+            <div class="living-tree" aria-hidden="true">
+              <div class="tree-crown"></div>
+              <div class="tree-branch branch-left"></div><div class="tree-branch branch-right"></div>
+              <div class="tree-person tree-person--top"><span>Mira</span><small>1988–</small></div>
+              <div class="tree-person tree-person--left"><span>Sofia</span><small>1955–</small></div>
+              <div class="tree-person tree-person--right"><span>Kenji</span><small>1953–</small></div>
+              <div class="tree-person tree-person--root"><span>Leona</span><small>1927–2012</small></div>
+              <div class="tree-trunk"></div>
+              <div class="tree-ground"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="figure-reading"><strong>Emphasis and omission</strong><p>The form emphasizes continuity, origin, and one ascending lineage. It omits siblings, partners, adoption, conflicting records, and unrelated branches.</p></div>
+          </figure>
+          <p>Wheels, tables, linear genealogies, and vegetal forms coexisted for centuries. The tree was therefore not a single point of invention. Its significance lies in how the metaphor defines family as origin, continuity, and branching descent.</p>
+        </section>
+
+        <section id="roll" aria-labelledby="roll-heading">
+          <h2 id="roll-heading">Genealogical rolls</h2>
+          <p>Genealogical rolls represented time as a continuous route. Peter of Poitiers’s thirteenth-century <em>Compendium</em> organized universal history on long scrolls with connected circles. Royal genealogies later placed rulers in portrait roundels and used sequence as political argument. The Met describes a <a href="https://www.metmuseum.org/art/collection/search/811798">1466–67 Yorkist genealogical chronicle</a> produced to support Edward IV’s claim.</p>
+          <figure class="history-figure">
+            <figcaption><strong>Genealogical roll</strong><span>A sequential representation of five generations.</span></figcaption>
+            <div class="roll-window" tabindex="0" role="region" aria-label="Interpretive genealogical roll showing five generations">
+              <div class="genealogy-roll" aria-hidden="true">
+                <span class="roll-flourish">✦</span>
+                <div class="roll-person"><i>I</i><strong>Alva Nyberg</strong><small>1878–1959 · Visby</small></div>
+                <b class="roll-line"></b>
+                <div class="roll-person"><i>II</i><strong>Ruth Vale</strong><small>1902–1987 · Gothenburg</small></div>
+                <b class="roll-line"></b>
+                <div class="roll-person"><i>III</i><strong>Leona Haddad Vale</strong><small>1927–2012 · Gothenburg</small></div>
+                <b class="roll-line"></b>
+                <div class="roll-person"><i>IV</i><strong>Sofia Okafor Vale</strong><small>1955– · Malmö</small></div>
+                <b class="roll-line"></b>
+                <div class="roll-person"><i>V</i><strong>Mira Vale</strong><small>1988– · Vinga</small></div>
+                <span class="roll-flourish">✦</span>
+              </div>
+            </div>
+            <div class="figure-reading"><strong>Selective scope</strong><p>The roll makes succession easy to follow by excluding siblings, partners, and parallel descendants that do not belong to the selected line.</p></div>
+          </figure>
+          <p>A genealogy can be accurate within a limited scope. Omission can improve clarity, provided the selected lineage is not presented as the complete family structure.</p>
+        </section>
+
+        <section id="system" aria-labelledby="system-heading">
+          <h2 id="system-heading">Numbering systems</h2>
+          <p>Printing encouraged standardized rows, positions, and numerical references. In 1590, Michaël Eytzinger published a five-generation ancestry of Henry III of France using the numbering logic now associated with the Ahnentafel. Jerónimo de Sosa applied the method in 1676, and Stephan Kekulé von Stradonitz popularized it in the late nineteenth century.</p>
+          <p>The scheme begins with person 1. Historically, the father of person <em>n</em> is <em>2n</em>, and the mother is <em>2n + 1</em>. <a href="https://gramps-project.org/wiki/index.php/Genealogical_Numbering_Systems">Gramps documents the calculation</a> in its modern genealogy manual.</p>
+          <figure class="history-figure">
+            <figcaption><strong>Ahnentafel ancestor table</strong><span>A numbered alternative to a branching diagram.</span></figcaption>
+            <div class="ahnentafel-demo">
+              <div class="formula-card"><span>Start</span><strong>1 = focal person</strong><code>n</code></div>
+              <div class="formula-card"><span>First parent</span><strong>2 = parent</strong><code>2n</code></div>
+              <div class="formula-card"><span>Second parent</span><strong>3 = parent</strong><code>2n + 1</code></div>
+            </div>
+            <ol class="numbered-ancestors" aria-label="Ahnentafel-style example">
+              <li><span>1</span><strong>Mira Vale</strong><small>focal person</small></li>
+              <li><span>2</span><strong>Sofia Okafor Vale</strong><small>parent position A</small></li>
+              <li><span>3</span><strong>Kenji Mori</strong><small>parent position B</small></li>
+              <li><span>4</span><strong>Leona Haddad Vale</strong><small>parent of 2</small></li>
+              <li><span>5</span><strong>Theo Okafor</strong><small>parent of 2</small></li>
+            </ol>
+          </figure>
+          <p>Numbering supports compact references across print and digital records. Its traditional form, however, assumes two ordered parent positions and direct ancestry. Modern systems should store explicit relationship types rather than infer gender, biology, or social roles from position.</p>
+        </section>
+
+        <section id="paper" aria-labelledby="paper-heading">
+          <h2 id="paper-heading">Common chart forms</h2>
+          <p>Modern genealogy uses several established chart types. The <a href="https://guides.loc.gov/family-history-for-kids/charts">Library of Congress</a> identifies pedigree charts and family group sheets as basic research tools, supported by tables for detailed analysis. Each format serves a distinct purpose.</p>
+          <div class="paper-forms">
+            <article><div class="paper-icon pedigree-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Ancestors</span><h3>Pedigree chart</h3><p>Traces direct ancestry from one person. Siblings and descendants are generally excluded.</p></article>
+            <article><div class="paper-icon descendant-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Descendants</span><h3>Descendant chart</h3><p>Expands outward from one ancestor. Branches remain clear until the chart becomes too wide.</p></article>
+            <article><div class="paper-icon group-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span>Household</span><h3>Family group sheet</h3><p>Records dates, places, partners, children, and sources for one household. It provides detail but limited structural context.</p></article>
+            <article><div class="paper-icon fan-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><span>Compression</span><h3>Fan chart</h3><p>Arranges generations radially to display many ancestors in limited space. Long labels are difficult to accommodate.</p></article>
+            <article><div class="paper-icon hourglass-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><span>Context</span><h3>Hourglass chart</h3><p>Places ancestors above and descendants below a focal person. Immediate context is clear, but collateral branches remain limited.</p></article>
+            <article><div class="paper-icon genogram-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Patterns</span><h3>Genogram</h3><p>Encodes relationship, health, or psychosocial information. It requires a clear legend and appropriate context.</p></article>
+          </div>
+          <p>No single form addresses every task. Effective systems preserve a common dataset while allowing users to select the representation appropriate to their question.</p>
+        </section>
+
+        <section id="redrawn" aria-labelledby="redrawn-heading">
+          <h2 id="redrawn-heading">Digital representations</h2>
+          <p>Digital systems retain established chart forms while making it practical to switch between them. FamilySearch offers landscape, portrait, fan, descendancy, and first-ancestor views; its <a href="https://www.familysearch.org/en/help/helpcenter/article/how-do-i-use-the-fan-chart-view-in-family-tree">fan view supports variable generation depth and a new focal person</a>. Research systems also connect family structure with time, geography, evidence, and other dimensions.</p>
+          <div class="modern-gallery">
+            <article><div class="modern-mini mini-tree" aria-hidden="true"><b>M</b><i></i><span>S</span><span>K</span><em></em><small>L</small><small>T</small></div><h3>Branch tree</h3><p><strong>Purpose:</strong> show direct connections and generational structure.</p><span class="tradeoff">Limitation · width and crossings</span></article>
+            <article><div class="modern-mini mini-fan" aria-hidden="true"><b>M</b><i></i><i></i><i></i><i></i><i></i><i></i></div><h3>Ancestor fan</h3><p><strong>Purpose:</strong> show ancestry coverage and missing lines.</p><span class="tradeoff">Limitation · label space</span></article>
+            <article><div class="modern-mini mini-hourglass" aria-hidden="true"><i></i><i></i><b>M</b><span></span><span></span></div><h3>Hourglass</h3><p><strong>Purpose:</strong> place ancestors and descendants around one focal person.</p><span class="tradeoff">Limitation · collateral branches</span></article>
+            <article><div class="modern-mini mini-timeline" aria-hidden="true"><span style="--start:4;--length:58"></span><span style="--start:19;--length:61"></span><span style="--start:42;--length:48"></span><span style="--start:70;--length:27"></span></div><h3>Lifeline timeline</h3><p><strong>Purpose:</strong> show overlapping lives and historical context.</p><span class="tradeoff">Limitation · reduced kinship detail</span></article>
+            <article><div class="modern-mini mini-map" aria-hidden="true"><span>Visby</span><i></i><span>Gothenburg</span><i></i><span>Malmö</span><i></i><span>Vinga</span></div><h3>Migration map</h3><p><strong>Purpose:</strong> show movement and geographic relationships.</p><span class="tradeoff">Limitation · geographic emphasis</span></article>
+            <article><div class="modern-mini mini-network" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><i></i><i></i><i></i><i></i></div><h3>Relationship network</h3><p><strong>Purpose:</strong> represent partners, adoption, and repeated ancestors through typed connections.</p><span class="tradeoff">Limitation · reduced generational clarity</span></article>
+          </div>
+          <p>Research on <a href="https://pure.etsmtl.ca/en/publications/interactive-visualization-of-genealogical-graphs/">interactive genealogical graphs</a> addresses the difficulty of displaying large families through dual-tree views, animated transitions, framing, and expandable subtrees. Related work recommends temporal and family-centered views because person-centered trees can underrepresent households, communities, and historical context.</p>
+        </section>
+
+        <section id="data" aria-labelledby="data-heading">
+          <h2 id="data-heading">Structured genealogical data</h2>
+          <p>In a structured system, a diagram is one rendering of the underlying records rather than the archive itself. GEDCOM was introduced in 1984 to exchange genealogical information between systems. The current <a href="https://gedcom.io/specifications/FamilySearchGEDCOMv7.html">FamilySearch GEDCOM 7 specification</a> represents people, relationships, events, sources, repositories, citations, rights, and media references.</p>
+          <figure class="data-figure">
+            <figcaption><strong>One relationship model, multiple views</strong><span>Representations can change without altering the source records.</span></figcaption>
+            <div class="data-pipeline" aria-label="Flow from records to views">
+              <div><span>Records</span><strong>People · events · places · sources</strong></div><i aria-hidden="true">→</i>
+              <div><span>Relationship model</span><strong>Persons · typed connections · evidence</strong></div><i aria-hidden="true">→</i>
+              <div class="view-stack"><span>Views</span><strong>Tree</strong><strong>Fan</strong><strong>Timeline</strong><strong>Network</strong></div>
+            </div>
+          </figure>
+          <p>This separation requires interfaces to link claims to evidence, distinguish unknown from absent information, represent relationship types without assigning value, and protect the data of living people. Visual clarity does not establish historical accuracy.</p>
+        </section>
+
+        <section id="explorer" aria-labelledby="explorer-heading">
+          <h2 id="explorer-heading">Interactive family exploration</h2>
+          <p class="lead">Interactive controls allow users to change the focal person, generation depth, and representation without altering the underlying family data.</p>
+          <div class="lab family-lab">
+            <p class="lab-kicker">Interactive exhibit 01</p>
+            <h3>Vale family explorer</h3>
+            <p class="lab-intro">The exhibit uses fictional people. Select a person in the branch view to make that person the new center. A synchronized text outline describes every visual state.</p>
+            <div class="view-choices" role="group" aria-label="Family visualization">
+              <button class="tree-view-choice" type="button" data-view="tree" aria-pressed="true"><span>Branch tree</span><small>Connections</small></button>
+              <button class="tree-view-choice" type="button" data-view="fan" aria-pressed="false"><span>Fan</span><small>Ancestors</small></button>
+              <button class="tree-view-choice" type="button" data-view="timeline" aria-pressed="false"><span>Timeline</span><small>Life spans</small></button>
+              <button class="tree-view-choice" type="button" data-view="network" aria-pressed="false"><span>Network</span><small>Relationship types</small></button>
+            </div>
+            <div class="lab-controls family-controls">
+              <label class="control" for="family-focus">Center on
+                <select id="family-focus"></select>
+              </label>
+              <label class="control generation-control" for="generation-depth">Generations: <output id="generation-output" for="generation-depth">4</output>
+                <input id="generation-depth" type="range" min="2" max="5" value="4" step="1">
+              </label>
+            </div>
+            <p class="family-legend"><span><i class="line-sample line-birth" aria-hidden="true"></i>Birth parentage</span><span><i class="line-sample line-adoptive" aria-hidden="true"></i>Adoptive parentage</span><span><i class="line-sample line-partner" aria-hidden="true"></i>Partnership</span></p>
+            <div id="family-stage" class="family-stage"></div>
+            <p id="family-status" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+            <details class="family-outline"><summary>Read the current view as text</summary><div id="family-outline"></div></details>
+          </div>
+          <div class="interaction-notes">
+            <article><span>Re-center</span><h3>Make the viewpoint explicit</h3><p>A static tree assumes one focal person. An interactive tree exposes that choice as a control.</p></article>
+            <article><span>Depth</span><h3>Manage information density</h3><p>Limiting visible generations improves readability without removing records from the dataset.</p></article>
+            <article><span>Representation</span><h3>Match the view to the task</h3><p>No single view can emphasize structure, time, and relationship type equally.</p></article>
+          </div>
+        </section>
+
+        <section id="paths" aria-labelledby="paths-heading">
+          <h2 id="paths-heading">Relationship paths</h2>
+          <p>An explicit path can be more useful than a complete network. Interfaces should show each step and connection type rather than rely on a potentially ambiguous kinship label. The shortest graph path may not represent the relationship a family considers most significant.</p>
+          <div class="lab relationship-lab">
+            <p class="lab-kicker">Interactive exhibit 02</p>
+            <h3>Trace a relationship</h3>
+            <p class="lab-intro">Select two people to identify a short path through parentage and partnerships. Each connection is described in plain language.</p>
+            <div class="lab-controls">
+              <label class="control" for="path-from">Start person<select id="path-from"></select></label>
+              <label class="control" for="path-to">End person<select id="path-to"></select></label>
+              <button class="demo-button path-button" id="show-path" type="button">Show relationship</button>
+            </div>
+            <div class="relationship-result result" id="relationship-result" aria-live="polite" aria-atomic="true"></div>
+          </div>
+          <p>For <strong>Mira Vale → Edda Torres Vale</strong>, the path passes through Ruth Vale and Samir Haddad. For <strong>Liv Reed Vale → Alva Nyberg</strong>, the result preserves the adoptive relationship rather than recoding it as biological.</p>
+        </section>
+
+        <section id="principles" aria-labelledby="principles-heading">
+          <h2 id="principles-heading">Design principles</h2>
+          <p>The tree remains useful because it is compact and familiar. It should be treated as one representation, not as a complete or inherently hierarchical model of every family.</p>
+          <ol class="family-principles">
+            <li><strong>Identify the focal person.</strong><span>Use “focal person” or “center,” rather than “head of the family.”</span></li>
+            <li><strong>Specify relationship types.</strong><span>Represent birth, adoption, guardianship, partnership, and chosen family explicitly.</span></li>
+            <li><strong>Represent uncertainty.</strong><span>Mark unknown, disputed, approximate, and inferred relationships and provide supporting sources.</span></li>
+            <li><strong>Do not infer identity.</strong><span>Do not derive gender, pronouns, or parental roles from names, order, or color.</span></li>
+            <li><strong>Provide text equivalents.</strong><span>Complex diagrams require structured descriptions. Essential information must not depend on SVG, hover, or color alone.</span></li>
+            <li><strong>Make interaction optional.</strong><span>Re-centering, depth, and path controls should use keyboard-operable inputs. Meaning must not depend on dragging or pinching.</span></li>
+            <li><strong>Protect living people.</strong><span>Use consent, privacy boundaries, and conservative defaults when handling real family data.</span></li>
+            <li><strong>Preserve evidence.</strong><span>Every visual connection represents a claim and should link to its supporting records.</span></li>
+          </ol>
+          <p class="closing-line">Effective family visualization supports specific questions without presenting one diagram as the definitive structure of a family.</p>
+        </section>
+
+        <section id="sources" aria-labelledby="sources-heading">
+          <h2 id="sources-heading">Sources and further reading</h2>
+          <ul class="sources">
+            <li><a href="https://art.thewalters.org/object/W.73.9R/">Walters Art Museum — Table of Consanguinity</a>: six-ring legal kinship diagram from the late twelfth century.</li>
+            <li><a href="https://www.cambridge.org/core/books/middle-ages-in-50-objects/leaf-excised-from-henry-of-segusios-summa-aurea-table-of-consanguinity-c-1280-france-paris-ink-tempera-and-gold-on-parchment-4420-2750-cm-17-38-10-1316-inches/61FC3097DBEE4B3A45432571D181AA73">Cambridge University Press — Table of Consanguinity, c. 1280</a>: roundels, kinship degrees, Ego, and vegetal imagery.</li>
+            <li><a href="https://www.metmuseum.org/art/collection/search/466377">The Met — Tree of Jesse Window, 1280–1300</a>: sacred ancestry organized along a vertical trunk.</li>
+            <li><a href="https://www.metmuseum.org/art/collection/search/474852">The Met — Peter of Poitiers’s Compendium, c. 1230</a>: history organized genealogically through connected roundels.</li>
+            <li><a href="https://www.metmuseum.org/art/collection/search/811798">The Met — Genealogical Chronicle of the English Kings, 1466–67</a>: royal lineage presented as political argument.</li>
+            <li><a href="https://www.digitale-sammlungen.de/en/details/bsb11682781">Bavarian State Library — Eytzinger, 1590</a>: early publication of the ancestor-numbering method.</li>
+            <li><a href="https://gramps-project.org/wiki/index.php/Genealogical_Numbering_Systems">Gramps — Genealogical Numbering Systems</a>: explanation of Ahnentafel and descendant numbering.</li>
+            <li><a href="https://guides.loc.gov/family-history-for-kids/charts">Library of Congress — Charts and Forms</a>: uses of pedigree, family-group, fan, and research charts.</li>
+            <li><a href="https://gedcom.io/about/">FamilySearch GEDCOM — About</a> and <a href="https://gedcom.io/specifications/FamilySearchGEDCOMv7.html">GEDCOM 7 specification</a>: a portable model for structured genealogical data.</li>
+            <li><a href="https://www.familysearch.org/en/blog/updates-to-portrait-view-in-family-tree">FamilySearch — Portrait view updates</a> and <a href="https://www.familysearch.org/en/help/helpcenter/article/how-do-i-use-the-fan-chart-view-in-family-tree">Fan chart view</a>: switchable and re-centerable family views.</li>
+            <li><a href="https://pure.etsmtl.ca/en/publications/interactive-visualization-of-genealogical-graphs/">McGuffin &amp; Balakrishnan — Interactive Visualization of Genealogical Graphs</a>: dual trees, transitions, framing, and expandable subtrees.</li>
+            <li><a href="https://journals.sagepub.com/doi/10.1177/1473871615621592">Robert Ball — Visualizing genealogy through a family-centric perspective</a>: temporal context and limitations of person-centered trees.</li>
+            <li><a href="https://www.w3.org/WAI/tutorials/images/complex/">W3C WAI — Complex images</a>: text alternatives for diagrams; see also <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color">Use of Color</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements">Dragging Movements</a>.</li>
+          </ul>
+          <p class="updated">Research reviewed 27 Sep 2026. Historical examples are based on museum, library, scholarly, and official project sources. Interactive demonstrations use fictional people and original HTML, CSS, and SVG illustrations.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+      <span>Project 04 · Family Tree Visualization: History and Design</span>
+    </div>
+  </footer>
+</body>
+</html>
