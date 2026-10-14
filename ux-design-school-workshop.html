@@ -17,7 +17,7 @@
 <body class="workshop-page">
   <a class="skip-link" href="#workshop">Skip to project</a>
   <header class="shell topbar">
-    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>Back</span></a>
     <div class="topbar-actions">
       <div class="about-control">
         <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
@@ -36,16 +36,26 @@
 
   <main id="workshop" tabindex="-1">
     <header class="shell essay-hero">
-      <p class="eyebrow">Workshop · Published 14 Oct 2026 · Author: Kristoffer Johansson</p>
+      <p class="eyebrow">Workshop · Published 14 Oct 2026 · Author: GPT-6.1 Sol Ultra</p>
       <h1>UX Design Workshop <em>at School</em></h1>
       <p class="dek">An introduction to UX design through interviews and a remote-control design exercise.</p>
     </header>
 
     <div class="shell workshop-content">
       <div class="workshop-story">
-        <p>I visited a class of nine-year-olds at a school in Sweden to explain my work as a UX designer. After a short presentation, the children interviewed a classmate about what they wanted from a remote control and what they found difficult to use. They then drew a remote control for that person, using the interview to decide which buttons it needed and how they should work.</p>
+        <p>I visited a class of nine-year-olds at a school in Sweden to explain my work as a UX designer. After a short presentation and a demonstration in Figma, the children interviewed a classmate about what they wanted from a remote control and what they found difficult to use. They then drew a remote control for that person, using the interview to decide which buttons it needed and how they should work.</p>
         <p>The exercise gave them a small experience of the profession: listening to someone, understanding their needs, and turning what they learned into a design. The presentation and worksheet below are the Swedish materials I used during the visit.</p>
       </div>
+
+      <section class="workshop-section" aria-labelledby="figma-heading">
+        <h2 id="figma-heading">Design demonstration in Figma</h2>
+        <p class="workshop-explanation">Before the children began the exercise, I showed them how I graphically design a GUI in Figma and describe how its controls work. This annotated remote-control example was the result.</p>
+        <figure class="figma-example">
+          <a class="figma-example__canvas" href="assets/media/school-workshop/figma-remote-control.png" target="_blank" rel="noopener" aria-label="Open the annotated Figma remote-control design at full size in a new tab"><img src="assets/media/school-workshop/figma-remote-control.png" alt="A remote-control GUI with a red power button, numeric keypad, circular navigation controls, and app shortcuts. Arrows point to Swedish labels describing each group." width="932" height="956" loading="lazy"></a>
+          <figcaption>The remote-control GUI drawn and annotated during the demonstration. <a href="assets/media/school-workshop/figma-remote-control.png" target="_blank" rel="noopener">Open full-size image<span class="sr-only"> in a new tab</span></a></figcaption>
+        </figure>
+        <details class="slide-text figma-description"><summary>Read the diagram description</summary><div><p>The gray remote contains a red power button at the top, the digits 0–9, a circular navigation control, and app shortcuts at the bottom. Arrows connect these groups to labels explaining their functions.</p><ul><li><span lang="sv">Stäng av/Sätt på</span> — switch off or on.</li><li><span lang="sv">Knappsats</span> — numeric keypad.</li><li><span lang="sv">Navigering</span> — navigation controls.</li><li><span lang="sv">Appar</span> — app shortcuts.</li></ul></div></details>
+      </section>
 
       <section class="workshop-section" aria-labelledby="photos-heading">
         <h2 id="photos-heading">From the visit</h2>
@@ -87,7 +97,7 @@
             <figure class="slide-card" id="presentation-slide-4" data-slide-title="Hur man jobbar">
               <img src="assets/media/school-workshop/presentation-04.webp" width="1600" height="900" alt="Hur man jobbar. Kristoffer visar i separat mjukvara." lang="sv" loading="lazy">
               <figcaption><span>04</span><span lang="sv">Hur man jobbar</span></figcaption>
-              <details class="slide-text"><summary>Read slide description</summary><div><p lang="sv">Hur man jobbar<br>Kristoffer visar i separat mjukvara</p><p>How the work is done. This slide introduced a demonstration in separate software during the visit. That demonstration is not part of the slide deck.</p></div></details>
+              <details class="slide-text"><summary>Read slide description</summary><div><p lang="sv">Hur man jobbar<br>Kristoffer visar i separat mjukvara</p><p>How the work is done. This slide introduced the live demonstration in Figma. The resulting annotated remote-control GUI appears in the demonstration section above.</p></div></details>
             </figure>
             <figure class="slide-card" id="presentation-slide-5" data-slide-title="The design process">
               <img src="assets/media/school-workshop/presentation-05.webp" width="1600" height="900" alt="A repeating design process: talk to the people who will use the product, design it, and let them try it." loading="lazy">
@@ -135,6 +145,6 @@
     </div>
   </main>
 
-  <footer class="footer"><div class="shell footer-inner"><a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a><span>Workshop · Project 07</span></div></footer>
+  <footer class="footer"><div class="shell footer-inner"><a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>Back</span></a><span>Workshop · Project 07</span></div></footer>
 </body>
 </html>

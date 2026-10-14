@@ -16,7 +16,7 @@
 <body>
   <a class="skip-link" href="#article">Skip to specification</a>
   <header class="shell topbar">
-    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>Back</span></a>
     <div class="topbar-actions">
       <div class="about-control">
         <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
@@ -167,6 +167,7 @@
                     <ul>
                       <li><code>presentation-01.webp</code> through <code>presentation-06.webp</code><span>Rendered Swedish presentation slides</span></li>
                       <li><code>classroom.webp</code>, <code>workshop-faces-censored.webp</code>, <code>designs-faces-censored.webp</code><span>Visit photographs with opaque masks over every visible face</span></li>
+                      <li><code>figma-remote-control.png</code><span>Annotated remote-control design demonstrated in Figma</span></li>
                       <li><code>worksheet-01.webp</code> onward<span>Rendered Swedish interview worksheet pages</span></li>
                     </ul>
                   </li>
@@ -223,12 +224,12 @@
 
         <section id="topbar" aria-labelledby="topbar-heading">
           <h2 id="topbar-heading">Shared top bar</h2>
-          <p>The top bar is the same component family on every real page. It has a 68px minimum height; the index uses 10px vertical padding, and compact subpages use 8px top padding. On the index, About and the theme selector are direct children of <code>.topbar--index</code>. Subpages add the All projects back link and wrap About plus the theme selector in <code>.topbar-actions</code>. There is no bottom border.</p>
+          <p>The top bar is the same component family on every real page. It has a 68px minimum height; the index uses 10px vertical padding, and compact subpages use 8px top padding. On the index, About and the theme selector are direct children of <code>.topbar--index</code>. Every subpage header adds a return link labelled “Back” and wraps About plus the theme selector in <code>.topbar-actions</code>. Header and footer return links both use “Back” and lead to <code>index.html</code>. There is no bottom border.</p>
           <figure class="spec-figure">
             <figcaption><strong>Illustration 4 — Top-bar configurations</strong><span>Both variations share component sizing and alignment.</span></figcaption>
             <div class="spec-topbar-demo" aria-hidden="true">
               <div><span class="spec-demo-label">Index</span><div class="spec-mini-topbar spec-mini-topbar--index"><span class="spec-mini-about">About</span><span class="spec-mini-theme"><i>☀</i><i>◐</i></span></div></div>
-              <div><span class="spec-demo-label">Subpage</span><div class="spec-mini-topbar"><span class="spec-mini-back">←&nbsp;&nbsp;All projects</span><span class="spec-mini-actions"><i>About</i><b><em>☀</em><em>◐</em></b></span></div></div>
+              <div><span class="spec-demo-label">Subpage</span><div class="spec-mini-topbar"><span class="spec-mini-back">←&nbsp;&nbsp;Back</span><span class="spec-mini-actions"><i>About</i><b><em>☀</em><em>◐</em></b></span></div></div>
             </div>
             <ol class="spec-callout-key">
               <li><code>.topbar</code> — shared maximum-width header layout.</li>
@@ -363,7 +364,7 @@
                 <tr><th scope="row">Theme choice</th><td><span class="spec-demo-square">☀</span></td><td><span class="spec-demo-square spec-demo--hover">☀</span></td><td><span class="spec-demo-square spec-demo--focus">☀</span></td><td><span class="spec-demo-square spec-demo--selected">☀</span></td></tr>
                 <tr><th scope="row">Category filter</th><td><span class="spec-demo-rect">Articles</span></td><td><span class="spec-demo-rect spec-demo--hover">Articles</span></td><td><span class="spec-demo-rect spec-demo--focus">Articles</span></td><td><span class="spec-demo-rect spec-demo--selected">Articles</span></td></tr>
                 <tr><th scope="row">View choice</th><td><span class="spec-demo-square">▦</span></td><td><span class="spec-demo-square spec-demo--hover">▦</span></td><td><span class="spec-demo-square spec-demo--focus">▦</span></td><td><span class="spec-demo-square spec-demo--selected">▦</span></td></tr>
-                <tr><th scope="row">Back link</th><td><span class="spec-demo-pill">← All projects</span></td><td><span class="spec-demo-pill spec-demo--selected">← All projects</span></td><td><span class="spec-demo-pill spec-demo--focus">← All projects</span></td><td>Not applicable</td></tr>
+                <tr><th scope="row">Header Back link</th><td><span class="spec-demo-pill">← Back</span></td><td><span class="spec-demo-pill spec-demo--selected">← Back</span></td><td><span class="spec-demo-pill spec-demo--focus">← Back</span></td><td>Not applicable</td></tr>
                 <tr><th scope="row">Text link</th><td><span class="spec-demo-link">Example link</span></td><td><span class="spec-demo-link spec-demo--hover">Example link</span></td><td><span class="spec-demo-link spec-demo--focus">Example link</span></td><td>Not applicable</td></tr>
               </tbody>
             </table>
@@ -491,9 +492,11 @@
                 <li><code>.slide-controls</code> — native Previous and Next buttons with current position text.</li>
                 <li><code>.slide-thumbnails</code> — native buttons for direct slide selection.</li>
                 <li><code>.slide-text</code> — native <code>details</code> disclosure containing an equivalent text transcript.</li>
+                <li><code>.figma-example</code>, <code>.figma-example__canvas</code> — annotated remote-control illustration presented before the visit photographs.</li>
+                <li><code>.figma-description</code> — native <code>details</code> disclosure describing the Figma example in text.</li>
                 <li><code>.workshop-gallery</code> — three photographs with captions and full-size image links. Face masks are flattened into published image pixels, and uncensored photos are not included in the site.</li>
                 <li><code>school-workshop.js</code> — manual navigation, thumbnail selection, and arrow-key controls within the viewer. Slides do not advance automatically.</li>
-                <li><code>assets/media/school-workshop/</code> — local slide and worksheet images; the viewer has no third-party dependency.</li>
+                <li><code>assets/media/school-workshop/</code> — local presentation, worksheet, Figma illustration, and censored visit photographs; the viewer has no third-party dependency.</li>
               </ul>
             </article>
           </div>
@@ -528,7 +531,7 @@
             <li>Site title: <strong>Blandat bös</strong>.</li>
             <li>Index heading: <strong>Project index</strong>.</li>
             <li>Long-form eyebrow: <strong>Category · Published D Mon YYYY · Author: Name</strong>.</li>
-            <li>Credit the author appropriate to each project. Existing research articles retain <strong>GPT-5.6 Sol Ultra</strong>; the firsthand school workshop credits <strong>Kristoffer Johansson</strong>.</li>
+            <li>Credit the author appropriate to each project. Existing research articles retain <strong>GPT-5.6 Sol Ultra</strong>; the school workshop credits <strong>GPT-6.1 Sol Ultra</strong>.</li>
             <li>Entry numbers are editorial and stable. Display order is publication date descending; same-day projects use the higher entry number first.</li>
           </ul>
           <h3>Editorial style</h3>
@@ -619,7 +622,7 @@
                 <tr><th scope="row">Monospace helper</th><td><code>.mono</code></td><td><code>base.css</code></td></tr>
                 <tr><th scope="row">Keyboard focus</th><td><code>:focus-visible</code></td><td><code>base.css</code></td></tr>
                 <tr><th scope="row">Shared top bar</th><td><code>.topbar</code></td><td><code>components.css</code></td></tr>
-                <tr><th scope="row">All projects link</th><td><code>.back</code>, <code>.back-arrow</code></td><td><code>components.css</code></td></tr>
+                <tr><th scope="row">Return link: Back in headers and footers</th><td><code>.back</code>, <code>.back-arrow</code></td><td><code>components.css</code></td></tr>
                 <tr><th scope="row">About disclosure</th><td><code>#about-button</code>, <code>#about-panel</code></td><td><code>components.css</code>, <code>about.js</code></td></tr>
                 <tr><th scope="row">Theme selector</th><td><code>.theme-segment</code>, <code>#theme-light</code>, <code>#theme-dark</code></td><td><code>components.css</code>, <code>theme.js</code></td></tr>
                 <tr><th scope="row">Category filters</th><td><code>.filter</code>, <code>[data-filter]</code></td><td><code>project-index.css</code>, <code>project-index.js</code></td></tr>
@@ -663,7 +666,7 @@
 
   <footer class="footer">
     <div class="shell footer-inner">
-      <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+      <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>Back</span></a>
       <span>Project 03 · Website Design and Implementation Specification</span>
     </div>
   </footer>

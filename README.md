@@ -23,7 +23,7 @@ Open `index.html` to view the site. No build command is required.
 - `assets/js/tables-history.js` — sortable and filterable table history plus the representation chooser.
 - `assets/js/gestalt-principles.js` — toolbar, table, workflow, and common-fate demonstrations.
 - `assets/js/school-workshop.js` — slide navigation, thumbnail selection, and keyboard controls.
-- `assets/media/school-workshop/` — WebP images of the six presentation slides, interview worksheet pages, and visit photographs. Visible faces are permanently covered in the published images; original attachments are kept outside the website.
+- `assets/media/school-workshop/` — WebP images of the six presentation slides, interview worksheet pages, and visit photographs, plus the original annotated Figma remote-control PNG. Visible faces are permanently covered in the published photographs; uncensored originals are kept outside the website.
 
 `project-showcase.html` remains as a compatibility redirect to `index.html`.
 

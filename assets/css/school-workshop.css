@@ -29,6 +29,41 @@
   letter-spacing: -.03em;
 }
 
+.workshop-explanation {
+  max-width: 800px;
+  margin: 0 0 24px;
+  font: 21px/1.65 var(--font-serif);
+}
+
+.figma-example {
+  max-width: 932px;
+  margin: 0;
+}
+
+.figma-example__canvas {
+  display: block;
+  padding: clamp(12px, 2.5vw, 24px);
+  background: #101114;
+  border-radius: 12px;
+}
+
+.figma-example img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figma-example figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.figma-description {
+  max-width: 932px;
+}
+
 .material-heading {
   display: flex;
   flex-wrap: wrap;
