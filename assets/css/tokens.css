@@ -345,3 +345,20 @@ html[data-theme="dark"][data-page="gestalt-principles"] {
   --gestalt-mint: #29483f;
   --gestalt-scrim: rgba(10, 11, 14, .72);
 }
+
+html[data-page="school-workshop"] {
+  --accent: #17627b;
+  --link-color: var(--accent);
+  --about-copy-font: var(--font-sans);
+  --essay-hero-bottom: 38px;
+  --essay-title-max: 1040px;
+  --essay-title-size: clamp(42px, 7.8vw, 88px);
+  --essay-title-line: .94;
+  --essay-title-tracking: -.055em;
+  --essay-dek-max: 790px;
+  --essay-dek-margin: 26px;
+}
+
+html[data-theme="dark"][data-page="school-workshop"] {
+  --accent: #8ecbff;
+}

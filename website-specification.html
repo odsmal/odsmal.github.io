@@ -70,14 +70,14 @@
         <section id="language" aria-labelledby="language-heading">
           <h2 id="language-heading">Purpose and terminology</h2>
           <p class="lead">This specification defines the current implementation and the requirements for future revisions.</p>
-          <p>It documents the website as implemented on 30 September 2026. When the code and specification differ, determine the intended behavior and update both in the same revision.</p>
-          <div class="spec-rule"><strong>Revision 2.0</strong><p>This revision establishes formal, concise titles and prose across all published projects while preserving their research, sources, interactive examples, and accessibility behavior.</p></div>
+          <p>It documents the website as implemented on 14 October 2026. When the code and specification differ, determine the intended behavior and update both in the same revision.</p>
+          <div class="spec-rule"><strong>Revision 2.1</strong><p>This revision adds the Workshop category and a document slide viewer with manual navigation, image enlargement, and text transcripts. Existing projects retain their original authors.</p></div>
           <div class="spec-definition-grid">
             <article><span class="spec-term">Site</span><h3>Blandat bös</h3><p>The complete static website and its local assets.</p></article>
             <article><span class="spec-term">Main page</span><h3>Project index</h3><p>The collection at <code>index.html</code>, available in card and table views.</p></article>
-            <article><span class="spec-term">Subpage</span><h3>Project destination</h3><p>A dedicated article, report, specification, visualization, or generic project-detail page.</p></article>
+            <article><span class="spec-term">Subpage</span><h3>Project destination</h3><p>A dedicated article, report, specification, visualization, workshop, or generic project-detail page.</p></article>
             <article><span class="spec-term">Component</span><h3>Reusable GUI part</h3><p>A named visual and behavioral unit, such as the About disclosure.</p></article>
-            <article><span class="spec-term">Category</span><h3>Primary collection type</h3><p>The broad filterable type: currently Article, Report, Documentation, or Visualization.</p></article>
+            <article><span class="spec-term">Category</span><h3>Primary collection type</h3><p>The broad filterable type: currently Article, Report, Documentation, Visualization, or Workshop.</p></article>
             <article><span class="spec-term">Tag</span><h3>Optional secondary label</h3><p>Reserved for future use. No published project currently needs a secondary tag.</p></article>
           </div>
           <div class="spec-rule"><strong>Core rule</strong><p>Change shared parts in shared files. Use page-specific files only for content or visuals unique to one page.</p></div>
@@ -91,6 +91,7 @@
             <nav class="spec-sitemap" aria-label="Website map">
               <div class="spec-sitemap__root"><span class="spec-node-index">Entry point</span><strong>Blandat bös</strong><code>index.html</code></div>
               <ul>
+                <li><div class="spec-sitemap__node"><span>07</span><strong>UX Design Workshop at School</strong><code>ux-design-school-workshop.html</code><small>Workshop</small></div></li>
                 <li><div class="spec-sitemap__node"><span>06</span><strong>Gestalt Principles in Graphical User Interfaces</strong><code>gestalt-principles-gui.html</code><small>Article</small></div></li>
                 <li><div class="spec-sitemap__node"><span>05</span><strong>Tables: History and Interface Design</strong><code>tables-history-ux.html</code><small>Article</small></div></li>
                 <li><div class="spec-sitemap__node"><span>04</span><strong>Family Tree Visualization: History and Design</strong><code>family-tree-visualization.html</code><small>Visualization</small></div></li>
@@ -108,7 +109,8 @@
             <li><span>3</span><strong>Article subtype</strong> — structured long-form analysis with a summary, contents navigation, references, and optional interactive examples.</li>
             <li><span>4</span><strong>Report subtype</strong> — formal reference with explicit scope and method, findings, recommendations, references, and optional labs.</li>
             <li><span>5</span><strong>Specification subtype</strong> — long-form visual reference using the shared reading shell.</li>
-            <li><span>6</span><strong>Support routes</strong> — generic details and compatibility links are not primary index entries.</li>
+            <li><span>6</span><strong>Workshop subtype</strong> — a short account of a practical session with viewable materials.</li>
+            <li><span>7</span><strong>Support routes</strong> — generic details and compatibility links are not primary index entries.</li>
           </ul>
         </section>
 
@@ -121,6 +123,7 @@
               <li class="folder"><code>outputs/</code>
                 <ul>
                   <li><code>index.html</code><span>Main project index</span></li>
+                  <li><code>ux-design-school-workshop.html</code><span>Classroom UX workshop 07 and document slides</span></li>
                   <li><code>gestalt-principles-gui.html</code><span>Gestalt and interface-design article 06</span></li>
                   <li><code>website-specification.html</code><span>This living reference</span></li>
                   <li><code>family-tree-visualization.html</code><span>Interactive visual-history project</span></li>
@@ -143,6 +146,7 @@
                       <li><code>family-tree.css</code><span>Family-tree diagrams and interactive views</span></li>
                       <li><code>tables-history.css</code><span>Table history, anatomy, and decision-guide visuals</span></li>
                       <li><code>gestalt-principles.css</code><span>Perceptual-grouping comparisons and interactive diagrams</span></li>
+                      <li><code>school-workshop.css</code><span>Workshop layout, slide stage, controls, thumbnails, and transcripts</span></li>
                     </ul>
                   </li>
                   <li class="folder"><code>assets/js/</code>
@@ -156,6 +160,14 @@
                       <li><code>family-tree.js</code><span>Family views, re-rooting, and relationship paths</span></li>
                       <li><code>tables-history.js</code><span>Sortable history and representation chooser</span></li>
                       <li><code>gestalt-principles.js</code><span>Grouping, comparison-path, routing, and common-fate demonstrations</span></li>
+                      <li><code>school-workshop.js</code><span>Manual slide navigation, thumbnails, and keyboard controls</span></li>
+                    </ul>
+                  </li>
+                  <li class="folder"><code>assets/media/school-workshop/</code>
+                    <ul>
+                      <li><code>presentation-01.webp</code> through <code>presentation-06.webp</code><span>Rendered Swedish presentation slides</span></li>
+                      <li><code>classroom.webp</code>, <code>workshop-faces-censored.webp</code>, <code>designs-faces-censored.webp</code><span>Visit photographs with opaque masks over every visible face</span></li>
+                      <li><code>worksheet-01.webp</code> onward<span>Rendered Swedish interview worksheet pages</span></li>
                     </ul>
                   </li>
                 </ul>
@@ -252,7 +264,7 @@
               <li><strong>Top bar</strong> — About disclosure and theme selector.</li>
               <li><strong>Hero</strong> — the site title, Blandat bös. “Bös” uses the accent-colored serif emphasis treatment from long-form headings.</li>
               <li><strong>Index heading</strong> — “Project index” plus a horizontal rule.</li>
-              <li><strong>Category filters</strong> — independent rectangular buttons: All categories, Articles, Reports, Documentation, Visualizations.</li>
+              <li><strong>Category filters</strong> — independent rectangular buttons: All categories, Articles, Reports, Documentation, Visualizations, Workshops.</li>
               <li><strong>View selector</strong> — right-aligned rectangular segmented control for card and table view, with both 38px choices centered within its 48px container.</li>
               <li><strong>Results line</strong> — live result count and sorting description.</li>
               <li><strong>Project collection</strong> — either the project grid or semantic data table.</li>
@@ -305,14 +317,14 @@
           </figure>
           <div class="spec-vocabulary">
             <div><span>Approved statuses</span><strong>In progress</strong><strong>Complete</strong><strong>Paused</strong></div>
-            <div><span>Current categories</span><strong>Article</strong><strong>Report</strong><strong>Documentation</strong><strong>Visualization</strong></div>
+            <div><span>Current categories</span><strong>Article</strong><strong>Report</strong><strong>Documentation</strong><strong>Visualization</strong><strong>Workshop</strong></div>
             <div><span>Category vs tag</span><p><b>Documentation</b> is sufficient for this project. Add a tag only when a future distinction provides real value.</p></div>
           </div>
         </section>
 
         <section id="subpages" aria-labelledby="subpages-heading">
           <h2 id="subpages-heading">Project subpages</h2>
-          <p>The articles, report, visualization, and this specification share the long-form page shell. The generic project template uses a shorter detail shell with the same top-bar controls and return route.</p>
+          <p>The articles, report, visualization, and this specification share the long-form page shell. The workshop uses the same typography and navigation with a shorter account and document slide viewers. The generic project template uses a shorter detail shell with the same top-bar controls and return route.</p>
           <figure class="spec-figure">
             <figcaption><strong>Illustration 8 — Long-form subpage</strong><span>The contents rail becomes part of the reading column at smaller widths.</span></figcaption>
             <div class="spec-essay-frame" aria-hidden="true">
@@ -470,6 +482,20 @@
                 <li><code>gestalt-principles.js</code> — mutually exclusive example states, live explanations, and motion triggers.</li>
               </ul>
             </article>
+            <article>
+              <span class="spec-term">School workshop</span>
+              <h3><code>school-workshop.css</code></h3>
+              <ul>
+                <li><code>.slide-viewer</code> — one named document viewer with independent state.</li>
+                <li><code>.slide-stage</code> — responsive slide image and an image enlargement link.</li>
+                <li><code>.slide-controls</code> — native Previous and Next buttons with current position text.</li>
+                <li><code>.slide-thumbnails</code> — native buttons for direct slide selection.</li>
+                <li><code>.slide-text</code> — native <code>details</code> disclosure containing an equivalent text transcript.</li>
+                <li><code>.workshop-gallery</code> — three photographs with captions and full-size image links. Face masks are flattened into published image pixels, and uncensored photos are not included in the site.</li>
+                <li><code>school-workshop.js</code> — manual navigation, thumbnail selection, and arrow-key controls within the viewer. Slides do not advance automatically.</li>
+                <li><code>assets/media/school-workshop/</code> — local slide and worksheet images; the viewer has no third-party dependency.</li>
+              </ul>
+            </article>
           </div>
           <div class="spec-rule"><strong>Specialization rule</strong><p>Promote a specialized component into <code>components.css</code> only when at least two page families need the same structure, appearance, and behavior.</p></div>
         </section>
@@ -484,7 +510,7 @@
                 <tr><th scope="row"><code>entry</code></th><td>Yes</td><td>Stable two-digit sequence. Filtering and sorting must not renumber it.</td></tr>
                 <tr><th scope="row"><code>published</code></th><td>Yes</td><td>ISO date used for newest-first sorting and for deriving the abbreviated month-and-year label. A higher stable entry number breaks same-day ties.</td></tr>
                 <tr><th scope="row"><code>title</code></th><td>Yes</td><td>Unique, descriptive, formal project name stated without unnecessary metaphor.</td></tr>
-                <tr><th scope="row"><code>type</code></th><td>Yes</td><td>Machine value matching a category filter: <code>article</code>, <code>report</code>, <code>documentation</code>, or <code>visualization</code>.</td></tr>
+                <tr><th scope="row"><code>type</code></th><td>Yes</td><td>Machine value matching a category filter: <code>article</code>, <code>report</code>, <code>documentation</code>, <code>visualization</code>, or <code>workshop</code>.</td></tr>
                 <tr><th scope="row"><code>tag</code></th><td>No</td><td>Specific visible card label; falls back to the category label.</td></tr>
                 <tr><th scope="row"><code>href</code></th><td>Yes for custom pages</td><td>Local destination from the index.</td></tr>
                 <tr><th scope="row"><code>glyph</code></th><td>Yes</td><td>Short decorative text; keep understandable when enlarged.</td></tr>
@@ -502,7 +528,7 @@
             <li>Site title: <strong>Blandat bös</strong>.</li>
             <li>Index heading: <strong>Project index</strong>.</li>
             <li>Long-form eyebrow: <strong>Category · Published D Mon YYYY · Author: Name</strong>.</li>
-            <li>Published project author: <strong>GPT-5.6 Sol Ultra</strong>.</li>
+            <li>Credit the author appropriate to each project. Existing research articles retain <strong>GPT-5.6 Sol Ultra</strong>; the firsthand school workshop credits <strong>Kristoffer Johansson</strong>.</li>
             <li>Entry numbers are editorial and stable. Display order is publication date descending; same-day projects use the higher entry number first.</li>
           </ul>
           <h3>Editorial style</h3>
@@ -629,7 +655,7 @@
             <div><h3>Accessibility</h3><ul><li>Skip link works and becomes visible on focus.</li><li>All controls are keyboard operable with visible focus.</li><li>Pressed and expanded states match the visible state.</li><li>Light and dark palettes meet required contrast.</li><li>Content reflows at 400% without two-dimensional page scrolling.</li><li>Tables have scoped headers and labelled scroll regions.</li><li>Illustrations have captions and equivalent text keys.</li></ul></div>
             <div><h3>Responsive and output</h3><ul><li>Review wide, 860px, 640px, and 590px layouts.</li><li>Long titles and labels wrap without collision.</li><li>About panel remains inside the viewport.</li><li>Reduced-motion mode removes smooth scrolling.</li><li>Print keeps reference content and readable borders.</li><li>Source and mirrored website folder contain matching files.</li></ul></div>
           </div>
-          <p class="updated">Specification version 2.0 · Published 27 Sep 2026 · Updated 30 Sep 2026 · Update this page whenever a named component, file responsibility, breakpoint, interaction, or content rule changes.</p>
+          <p class="updated">Specification version 2.1 · Published 27 Sep 2026 · Updated 14 Oct 2026 · Update this page whenever a named component, file responsibility, breakpoint, interaction, or content rule changes.</p>
         </section>
       </article>
     </div>

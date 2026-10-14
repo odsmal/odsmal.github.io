@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-page="school-workshop">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A classroom introduction to UX design, where nine-year-olds interviewed a classmate and designed a remote control for them. Browse the presentation, worksheet, and photos from the visit.">
+  <title>UX Design Workshop at School — Blandat bös</title>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/essay.css">
+  <link rel="stylesheet" href="assets/css/school-workshop.css">
+  <script src="assets/js/about.js" defer></script>
+  <script src="assets/js/school-workshop.js" defer></script>
+</head>
+<body class="workshop-page">
+  <a class="skip-link" href="#workshop">Skip to project</a>
+  <header class="shell topbar">
+    <a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a>
+    <div class="topbar-actions">
+      <div class="about-control">
+        <button class="about-disclosure" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">About</button>
+        <aside class="about-panel hidden" id="about-panel" aria-labelledby="about-person">
+          <h2 id="about-person">Kristoffer Johansson</h2>
+          <p>I work with digital user interfaces for physical products. Along the way, I have contributed to products ranging from fighter jets and production-line equipment to electric vehicles and medical devices. This site collects topics, ideas, and small projects that interest me.</p>
+          <p class="about-lexicon"><dfn lang="sv">Bös</dfn> · noun, Swedish, informal<br>Dirt, dust, or fluff; used here for an assortment of small things, ideas, and interests.</p>
+        </aside>
+      </div>
+      <div class="theme-segment" role="group" aria-label="Color theme">
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="workshop" tabindex="-1">
+    <header class="shell essay-hero">
+      <p class="eyebrow">Workshop · Published 14 Oct 2026 · Author: Kristoffer Johansson</p>
+      <h1>UX Design Workshop <em>at School</em></h1>
+      <p class="dek">An introduction to UX design through interviews and a remote-control design exercise.</p>
+    </header>
+
+    <div class="shell workshop-content">
+      <div class="workshop-story">
+        <p>I visited a class of nine-year-olds at a school in Sweden to explain my work as a UX designer. After a short presentation, the children interviewed a classmate about what they wanted from a remote control and what they found difficult to use. They then drew a remote control for that person, using the interview to decide which buttons it needed and how they should work.</p>
+        <p>The exercise gave them a small experience of the profession: listening to someone, understanding their needs, and turning what they learned into a design. The presentation and worksheet below are the Swedish materials I used during the visit.</p>
+      </div>
+
+      <section class="workshop-section" aria-labelledby="photos-heading">
+        <h2 id="photos-heading">From the visit</h2>
+        <div class="workshop-gallery">
+          <figure>
+            <a href="assets/media/school-workshop/classroom.webp" target="_blank" rel="noopener" aria-label="Open the classroom photograph at full size in a new tab"><img src="assets/media/school-workshop/classroom.webp" alt="The classroom before the workshop, with the projector and worktables ready." width="800" height="544" loading="lazy"></a>
+            <figcaption>The classroom before the workshop.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/media/school-workshop/workshop-faces-censored.webp" target="_blank" rel="noopener" aria-label="Open the workshop photograph at full size in a new tab"><img src="assets/media/school-workshop/workshop-faces-censored.webp" alt="Children work at tables on their remote-control designs. Every visible face is covered by an opaque mask." width="800" height="600" loading="lazy"></a>
+            <figcaption>Interviews and remote-control design in the classroom. Faces censored.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/media/school-workshop/designs-faces-censored.webp" target="_blank" rel="noopener" aria-label="Open the design display photograph at full size in a new tab"><img src="assets/media/school-workshop/designs-faces-censored.webp" alt="Remote-control drawings displayed on a brick wall, with two children standing below them. Both faces are covered by opaque masks." width="800" height="600" loading="lazy"></a>
+            <figcaption>The remote-control designs on display. Faces censored.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="workshop-section" aria-labelledby="presentation-heading">
+        <div class="material-heading"><h2 id="presentation-heading">Presentation</h2><span>6 slides · Swedish</span></div>
+        <div class="slide-viewer" id="presentation-viewer" role="region" aria-roledescription="carousel" aria-labelledby="presentation-heading" tabindex="0">
+          <div class="slide-stage">
+            <figure class="slide-card" id="presentation-slide-1" data-slide-title="UX designer">
+              <img src="assets/media/school-workshop/presentation-01.webp" width="1600" height="900" alt="Title slide: UX designer. Alices pappas jobb." lang="sv">
+              <figcaption><span>01</span>UX designer</figcaption>
+              <details class="slide-text"><summary>Read slide description</summary><div><p lang="sv">UX designer<br>Alices pappas jobb</p><p>Introduction to the profession: Alice’s dad’s job.</p></div></details>
+            </figure>
+            <figure class="slide-card" id="presentation-slide-2" data-slide-title="Interfaces in physical products">
+              <img src="assets/media/school-workshop/presentation-02.webp" width="1600" height="900" alt="Four examples of interfaces in physical products: an industrial tightening tool, an aircraft cockpit, a truck dashboard, and a laboratory instrument." loading="lazy">
+              <figcaption><span>02</span>Interfaces in physical products</figcaption>
+              <details class="slide-text"><summary>Read slide description</summary><div><p>The slide shows four photographs of interfaces in physical products: a tightening tool with a digital readout, an aircraft cockpit, a truck dashboard, and a laboratory instrument with a screen.</p></div></details>
+            </figure>
+            <figure class="slide-card" id="presentation-slide-3" data-slide-title="An interface in use">
+              <img src="assets/media/school-workshop/presentation-03.webp" width="1600" height="900" alt="A person uses a flight simulator with cockpit displays and a projected flight view." loading="lazy">
+              <figcaption><span>03</span>An interface in use</figcaption>
+              <details class="slide-text"><summary>Read slide description</summary><div><p>A photograph of a person operating a flight simulator, showing the cockpit controls, displays, and surrounding projected view.</p></div></details>
+            </figure>
+            <figure class="slide-card" id="presentation-slide-4" data-slide-title="Hur man jobbar">
+              <img src="assets/media/school-workshop/presentation-04.webp" width="1600" height="900" alt="Hur man jobbar. Kristoffer visar i separat mjukvara." lang="sv" loading="lazy">
+              <figcaption><span>04</span><span lang="sv">Hur man jobbar</span></figcaption>
+              <details class="slide-text"><summary>Read slide description</summary><div><p lang="sv">Hur man jobbar<br>Kristoffer visar i separat mjukvara</p><p>How the work is done. This slide introduced a demonstration in separate software during the visit. That demonstration is not part of the slide deck.</p></div></details>
+            </figure>
+            <figure class="slide-card" id="presentation-slide-5" data-slide-title="The design process">
+              <img src="assets/media/school-workshop/presentation-05.webp" width="1600" height="900" alt="A repeating design process: talk to the people who will use the product, design it, and let them try it." loading="lazy">
+              <figcaption><span>05</span>The design process</figcaption>
+              <details class="slide-text"><summary>Read slide description</summary><div><p>A circular diagram shows a repeating process.</p><ol lang="sv"><li>Prata med personer som ska använda saken</li><li>Designa saken</li><li>Låt personerna prova saken</li></ol><p>Talk to the people who will use the product, design it, and let them try it.</p></div></details>
+            </figure>
+            <figure class="slide-card" id="presentation-slide-6" data-slide-title="Designa fjärrkontroll">
+              <img src="assets/media/school-workshop/presentation-06.webp" width="1600" height="900" alt="Instructions for interviewing a classmate and drawing a remote control. The complete questions are in the slide description." loading="lazy">
+              <figcaption><span>06</span><span lang="sv">Designa fjärrkontroll</span></figcaption>
+              <details class="slide-text"><summary>Read slide description</summary><div lang="sv"><h3>1. Intervjua klasskompisen</h3><ul><li>Vad vill du kunna göra med din fjärrkontroll?</li><li>Vad tycker du är svårt med fjärrkontroller?</li><li>Om du bara fick välja tre viktiga knappar, vilka skulle du välja?</li></ul><h3>2. Designa fjärrkontrollen</h3><ul><li>Rita knapparna i fjärrkontrollen</li><li>Förklara med pilar och text</li></ul></div></details>
+            </figure>
+          </div>
+          <div class="slide-controls" hidden>
+            <div class="slide-navigation"><button type="button" data-direction="previous" aria-controls="presentation-viewer" disabled><span aria-hidden="true">←</span> Previous</button><p class="slide-count" aria-live="polite" aria-atomic="true">Slide 1 of 6</p><button type="button" data-direction="next" aria-controls="presentation-viewer">Next <span aria-hidden="true">→</span></button></div>
+            <a class="slide-enlarge" href="assets/media/school-workshop/presentation-01.webp" target="_blank" rel="noopener">Open full-size slide <span class="sr-only">in a new tab</span></a>
+          </div>
+          <ol class="slide-thumbnails" hidden aria-label="Choose a presentation slide"></ol>
+          <p class="slide-hint" hidden>Use the arrow keys to change slides while this viewer has focus.</p>
+        </div>
+      </section>
+
+      <section class="workshop-section" aria-labelledby="worksheet-heading">
+        <div class="material-heading"><h2 id="worksheet-heading">Workshop worksheet</h2><span>2 pages · Swedish</span></div>
+        <div class="slide-viewer slide-viewer--worksheet" id="worksheet-viewer" role="region" aria-roledescription="carousel" aria-labelledby="worksheet-heading" tabindex="0">
+          <div class="slide-stage">
+            <figure class="slide-card" id="worksheet-slide-1" data-slide-title="Intervjua klasskamraten">
+              <img src="assets/media/school-workshop/worksheet-01.webp" width="1224" height="1584" alt="Worksheet page 1: Intervjua klasskamraten. A large blank space for interview notes." lang="sv" loading="lazy">
+              <figcaption><span>01</span><span lang="sv">Intervjua klasskamraten</span></figcaption>
+              <details class="slide-text"><summary>Read page description</summary><div><p lang="sv">1. Intervjua klasskamraten</p><p>Interview your classmate. The first page provides a large blank area for recording what the classmate says.</p></div></details>
+            </figure>
+            <figure class="slide-card" id="worksheet-slide-2" data-slide-title="Designa fjärrkontrollen">
+              <img src="assets/media/school-workshop/worksheet-02.webp" width="1224" height="1584" alt="Worksheet page 2: Designa fjärrkontrollen. An empty remote-control outline and space for annotations." lang="sv" loading="lazy">
+              <figcaption><span>02</span><span lang="sv">Designa fjärrkontrollen</span></figcaption>
+              <details class="slide-text"><summary>Read page description</summary><div><p lang="sv">2. Designa fjärrkontrollen</p><p>Design the remote control. The second page contains an empty remote-control outline for drawing buttons, with surrounding space for explanations.</p></div></details>
+            </figure>
+          </div>
+          <div class="slide-controls" hidden>
+            <div class="slide-navigation"><button type="button" data-direction="previous" aria-controls="worksheet-viewer" disabled><span aria-hidden="true">←</span> Previous</button><p class="slide-count" aria-live="polite" aria-atomic="true">Page 1 of 2</p><button type="button" data-direction="next" aria-controls="worksheet-viewer">Next <span aria-hidden="true">→</span></button></div>
+            <a class="slide-enlarge" href="assets/media/school-workshop/worksheet-01.webp" target="_blank" rel="noopener">Open full-size page <span class="sr-only">in a new tab</span></a>
+          </div>
+          <ol class="slide-thumbnails" hidden aria-label="Choose a worksheet page"></ol>
+          <p class="slide-hint" hidden>Use the arrow keys to change pages while this viewer has focus.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="shell footer-inner"><a class="back" href="index.html"><svg class="back-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m7-7-7 7 7 7"/></svg><span>All projects</span></a><span>Workshop · Project 07</span></div></footer>
+</body>
+</html>

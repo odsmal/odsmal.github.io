@@ -16,11 +16,14 @@ Open `index.html` to view the site. No build command is required.
 - `assets/css/family-tree.css` — historical family-tree illustrations and interactive visualization layouts.
 - `assets/css/tables-history.css` — historical table illustrations, table anatomy, and decision-guide layouts.
 - `assets/css/gestalt-principles.css` — perceptual-grouping comparisons, diagrams, and responsive interface examples.
+- `assets/css/school-workshop.css` — classroom workshop layout and responsive document slide viewers.
 - `assets/js/theme.js` and `about.js` — shared behavior used by every page.
 - The remaining JavaScript files contain only page-specific interactions.
 - `assets/js/family-tree.js` — re-rooting, generation depth, view switching, and relationship-path exploration.
 - `assets/js/tables-history.js` — sortable and filterable table history plus the representation chooser.
 - `assets/js/gestalt-principles.js` — toolbar, table, workflow, and common-fate demonstrations.
+- `assets/js/school-workshop.js` — slide navigation, thumbnail selection, and keyboard controls.
+- `assets/media/school-workshop/` — WebP images of the six presentation slides, interview worksheet pages, and visit photographs. Visible faces are permanently covered in the published images; original attachments are kept outside the website.
 
 `project-showcase.html` remains as a compatibility redirect to `index.html`.
 
@@ -31,3 +34,5 @@ Open `index.html` to view the site. No build command is required.
 `tables-history-ux.html` documents the history of tables and their appropriate use in graphical interfaces.
 
 `gestalt-principles-gui.html` applies Gestalt principles to realistic graphical-interface problems with accessible, interactive examples.
+
+`ux-design-school-workshop.html` records a classroom UX workshop and presents its Swedish presentation and interview worksheet as manually controlled slides with text transcripts.
