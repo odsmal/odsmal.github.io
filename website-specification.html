@@ -27,7 +27,7 @@
         </aside>
       </div>
       <div class="theme-segment" role="group" aria-label="Color theme">
-        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true">☀</button>
+        <button class="theme-choice" id="theme-light" type="button" aria-label="Use light theme" aria-pressed="true"><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>
         <button class="theme-choice theme-choice-dark" id="theme-dark" type="button" aria-label="Use dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a9 9 0 1 0 11.5 11.5Z"/></svg></button>
       </div>
     </div>
@@ -238,7 +238,7 @@
               <li><code>.about-disclosure</code> — 48px pill button using <code>aria-expanded</code>.</li>
               <li><code>.about-panel</code> — rounded nonmodal popover anchored directly under About; at 590px and below on the index it is positioned from the top bar to remain within the viewport.</li>
               <li><code>.theme-segment</code> — 48px pill containing two exclusive theme choices.</li>
-              <li><code>.theme-choice</code> — 42 × 38px option using <code>aria-pressed</code>, centered vertically within the 48px segmented-control container.</li>
+              <li><code>.theme-choice</code> — 42 × 38px option using <code>aria-pressed</code>, with native button appearance and internal padding reset. Flex layout centers a 20 × 20px SVG icon in each option, avoiding font-dependent icon positioning on mobile browsers.</li>
             </ol>
           </figure>
           <h3>About disclosure</h3>
