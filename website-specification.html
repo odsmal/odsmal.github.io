@@ -265,7 +265,7 @@
               <li><strong>Top bar</strong> — About disclosure and theme selector.</li>
               <li><strong>Hero</strong> — the site title, Blandat bös. “Bös” uses the accent-colored serif emphasis treatment from long-form headings.</li>
               <li><strong>Index heading</strong> — “Project index” plus a horizontal rule.</li>
-              <li><strong>Category filters</strong> — independent rectangular buttons: All categories, Articles, Reports, Documentation, Visualizations, Workshops.</li>
+              <li><strong>Category filters</strong> — independent rectangular buttons: All categories, Articles, Reports, Documentation, Visualizations, Workshops. When these buttons and the view selector cannot fit on one row, a native category dropdown replaces the buttons. The selected category is retained when the layout changes.</li>
               <li><strong>View selector</strong> — right-aligned rectangular segmented control for card and table view, with both 38px choices centered within its 48px container.</li>
               <li><strong>Results line</strong> — live result count and sorting description.</li>
               <li><strong>Project collection</strong> — either the project grid or semantic data table.</li>
@@ -274,7 +274,7 @@
           </figure>
           <h3>Control order</h3>
           <ol>
-            <li>Category filters remain together on the left.</li>
+            <li>Category filters remain on the left, collapsing into a dropdown based on their measured width so the card/table selector stays on the same row.</li>
             <li>The card/table selector is pushed to the right with <code>margin-left: auto</code>.</li>
             <li>The result count follows the controls and uses <code>aria-live="polite"</code>.</li>
             <li>Only one collection view is visible; the other receives the shared <code>.hidden</code> utility.</li>

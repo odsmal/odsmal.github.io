@@ -27,7 +27,40 @@ const projects = [
       tableView.innerHTML = `<table><thead><tr><th scope="col">No.</th><th scope="col">Project</th><th scope="col">Kind</th><th scope="col">Published</th><th scope="col">Status</th></tr></thead><tbody>${list.map(p => `<tr><td class="table-number">${p.entry}</td><th scope="row" class="table-title"><a class="table-project-link" href="${projectHref(p)}">${p.title}</a></th><td class="table-kind"><span class="type-stamp">${typeLabel(p.type)}</span>${p.tag ? ` <span class="type-stamp">${p.tag}</span>` : ''}</td><td class="table-published">${publicationLabel(p.published)}</td><td class="table-status">${p.status}</td></tr>`).join('')}</tbody></table>`;
       cardView.classList.toggle('hidden', state.view !== 'cards'); tableView.classList.toggle('hidden', state.view !== 'table');
     }
-    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { state.filter = button.dataset.filter; document.querySelectorAll('.filter').forEach(b => b.setAttribute('aria-pressed', String(b === button))); render(); }));
+    const filterButtons = [...document.querySelectorAll('.filter')];
+    const categorySelect = document.getElementById('category-select');
+    function selectCategory(value) {
+      state.filter = value;
+      filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === value)));
+      categorySelect.value = value;
+      render();
+    }
+    filterButtons.forEach(button => button.addEventListener('click', () => selectCategory(button.dataset.filter)));
+    filterButtons.forEach(button => categorySelect.add(new Option(button.textContent, button.dataset.filter)));
+    categorySelect.addEventListener('change', () => selectCategory(categorySelect.value));
+
+    const controls = document.querySelector('.index-controls');
+    const filters = controls.querySelector('.filters');
+    const viewSwitch = controls.querySelector('.view-switch');
+    const selectWrapper = controls.querySelector('.category-select');
+    controls.classList.add('responsive-categories');
+    function updateCategoryLayout() {
+      const requiredWidth = filters.getBoundingClientRect().width + viewSwitch.getBoundingClientRect().width + parseFloat(getComputedStyle(controls).columnGap);
+      const collapsed = requiredWidth > controls.clientWidth;
+      const focused = document.activeElement;
+      controls.classList.toggle('categories-collapsed', collapsed);
+      filters.inert = collapsed;
+      if (collapsed) filters.setAttribute('aria-hidden', 'true');
+      else filters.removeAttribute('aria-hidden');
+      selectWrapper.hidden = !collapsed;
+      if (collapsed && filters.contains(focused)) categorySelect.focus({ preventScroll: true });
+      else if (!collapsed && focused === categorySelect) filterButtons.find(button => button.dataset.filter === state.filter).focus({ preventScroll: true });
+    }
+    const categoryLayoutObserver = new ResizeObserver(updateCategoryLayout);
+    categoryLayoutObserver.observe(controls);
+    categoryLayoutObserver.observe(filters);
+    document.fonts.ready.then(updateCategoryLayout);
+    updateCategoryLayout();
     document.getElementById('card-button').addEventListener('click', () => { state.view = 'cards'; document.getElementById('card-button').setAttribute('aria-pressed','true'); document.getElementById('table-button').setAttribute('aria-pressed','false'); render(); });
     document.getElementById('table-button').addEventListener('click', () => { state.view = 'table'; document.getElementById('card-button').setAttribute('aria-pressed','false'); document.getElementById('table-button').setAttribute('aria-pressed','true'); render(); });
     render();
